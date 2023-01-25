@@ -5,15 +5,15 @@ edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
-description="ISO 15924, Codes for the representation of names of scripts, is an international standard defining codes for writing systems or scripts (a \"set of graphic characters used for the written form of one or more languages\"). Each script is given both a four-letter code and a numeric code."
-repository="https://github.com/rust-iso/rust_iso15924"
+description="ISO 4217 is a standard published by the International Organization for Standardization (ISO) that defines alpha codes and numeric codes for the representation of currencies and provides information about the relationships between individual currencies and their minor units."
+repository="https://github.com/rust-iso/rust_iso4217"
 license="Apache-2.0"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 exclude = ["scripts/*"]
-documentation = "https://docs.rs/rust_iso15924/"
+documentation = "https://docs.rs/rust_iso4217/"
 
 
-keywords=[ "ISO15924","bcp47", "RFC5646"]
+keywords=[ "iso4217","4217","currency"]
 
 [lib]
 crate-type = ["cdylib", "rlib"]
