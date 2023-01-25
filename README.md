@@ -24,73 +24,27 @@ See [using](https://crates.io/crates/rust_iso4217) section of the documentation.
 Quick guide:
 
 ``` rust
-let country = rust_iso3166::from_alpha2("AU");
-let country = rust_iso3166::from_alpha3("AUS");
-let country = rust_iso3166::from_numeric(036);
-let country = rust_iso3166::from_numeric_str("036");
+let currency = rust_iso4217::from_code("EUR");
+let currency = rust_iso4217::from_numeric(360);
+let currency = rust_iso4217::from_numeric_str("643");
+let currencies = rust_iso4217::from_country("CHN");
 
-println!("{:?}", rust_iso3166::ALL);
-
-println!("{:?}", rust_iso3166::ALL_ALPHA2);   
-println!("{:?}", rust_iso3166::ALL_ALPHA3);   
-println!("{:?}", rust_iso3166::ALL_NAME);   
-println!("{:?}", rust_iso3166::ALL_NUMERIC);   
-println!("{:?}", rust_iso3166::ALL_NUMERIC_STR);   
-
-println!("{:?}", rust_iso3166::NUMERIC_MAP);  
-println!("{:?}", rust_iso3166::ALPHA3_MAP);  
-println!("{:?}", rust_iso3166::ALPHA2_MAP);  
-
-// for ISO 3166-2
-let country = rust_iso3166::from_alpha2("GB").unwrap();
-let subdivisions = country.subdivisions();
-assert!(subdivisions.unwrap().len() > 0);
-let country = rust_iso3166::iso3166_2::from_code("GB-EDH");
-assert_eq!("Edinburgh, City of", country.unwrap().name); 
-
-// for ISO 3166-3
-let sub = rust_iso3166::iso3166_3::from_code("PZPA");
-assert_eq!("Panama Canal Zone", sub.unwrap().name);
-```
-
-Data sample:
+println!("{:?}", rust_iso4217::ALL);
+println!("{:?}", rust_iso4217::ALL_MAP);
 
 ``` rust
-CountryCode { 
-    name: "Australia",
-    alpha2: "AU", 
-    alpha3: "AUS", 
-    numeric: 36 
-}
-
- iso3166_2::Subdivision {
-    name: "Bādghīs",
-    code: "AF-BDG",
-    subdivision_type: "Province",
-    country_name: "Afghanistan",
-    country_code: "AF",
-    region_code: "AF-BDG",
-}
-
-iso3166_3::CountryCode3 {
-    code: "BQAQ",
-    name: "British Antarctic Territory",
-    former: CountryCode { 
-        name: "British Antarctic Territory",
-        alpha2: "BQ", 
-        alpha3: "ATB", 
-        numeric: 0 
-    },
-    new_countries: [
-        CountryCode { 
-            name: "Antarctica",
-            alpha2: "AQ", 
-            alpha3: "ATA", 
-            numeric: 010
-        },    
-    ],
-    validity: [1974,1979],
-    desc: "Merged into Antarctica",
+pub struct CurrencyCode {
+    //English Name
+    pub name: &'static str,
+    //code
+    pub code: &'static str,
+    //ISO number
+    pub numeric: i32,
+    //Minor unit
+    pub unit: i32,
+    //type
+    pub code_type: &'static str, //currency,funds,historic
+    pub countries: &'static [&'static str], //iso 3166 code
 }
 ```
 
