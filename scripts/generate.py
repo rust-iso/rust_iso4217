@@ -117,20 +117,42 @@ for x in f:
     iso3166_code = x[2]
     iso3166_numeric = x[5]
     iso4217_name = x[18]
-    iso4217_code = x[22]
+    iso4217_codes = x[22].split(",")
     if "ISO3166-1-Alpha-3" == iso3166_code:
         continue
-    if iso4217_code not in currency_country:
-        currency_country[iso4217_code] = []
-    if iso3166_code != "":
-        currency_country[iso4217_code].append(
-            {"iso3166_code": iso3166_code, "iso3166_numeric": iso3166_numeric})
-    if iso3166_code not in country_currency:
-        country_currency[iso3166_code] = []
-    if iso4217_code != "":
-        country_currency[iso3166_code].append(
-            {"iso4217_code": iso4217_code, "iso4217_name": iso4217_name})
+    for iso4217_code in iso4217_codes:
+        if iso4217_code not in currency_country:
+            currency_country[iso4217_code] = []
+        if iso3166_code != "":
+            currency_country[iso4217_code].append(
+                {"iso3166_code": iso3166_code, "iso3166_numeric": iso3166_numeric})
+        if iso3166_code not in country_currency:
+            country_currency[iso3166_code] = []
+        if iso4217_code != "":
+            country_currency[iso3166_code].append(
+                {"iso4217_code": iso4217_code, "iso4217_name": iso4217_name})
 
+'''hot fix '''
+currency_country["BOV"] = [{"iso3166_code": "BOL"}]
+currency_country["CLF"] = [{"iso3166_code": "CHL"}]
+currency_country["COU"] = [{"iso3166_code": "COL"}]
+currency_country["MXV"] = [{"iso3166_code": "MEX"}]
+currency_country["CHW"] = [{"iso3166_code": "CHE"}]
+currency_country["CHE"] = [{"iso3166_code": "CHE"}]
+currency_country["UYI"] = [{"iso3166_code": "URY"}]
+currency_country["UYW"] = [{"iso3166_code": "URY"}]
+
+currency_country["VED"] = [{"iso3166_code": "VEN"}]
+country_currency["VEN"].append({"iso4217_code": "VED"})
+
+
+# print(country_currency["TWN"])
+# print(country_currency["TWD"])
+currency_country["TWD"] = [{"iso3166_code": "TWN"}]
+country_currency["TWN"].append({"iso4217_code": "TWD"})
+
+currency_country["FKP"] = [{"iso3166_code": "FLK"}]
+country_currency["FLK"].append({"iso4217_code": "FKP"})
 
 prefix = """use phf::{phf_map, Map};
 #[cfg(target_arch = "wasm32")]
@@ -402,7 +424,6 @@ for x in country_currency:
     currencies = ""
     currency_list = []
     for c in country_currency[x]:
-
         iso4217_code = c["iso4217_code"].upper()
         iso4217_codes = iso4217_code.split(",")
         iso4217_code = ",&".join(iso4217_codes)
