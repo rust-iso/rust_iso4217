@@ -18,6 +18,8 @@ for row in table_active.index:
     if code["entity"] == "ENTITY":
         continue
     code["type"] = "currency"
+    if code["code"] in ["BOV", "CLF", "COU", "CHW", "CHE", "MXV", "USN", "UYI", "UYW"]:
+        code["type"] = "funds"
     del code["entity"]
     if code["code"] not in codes_map:
         codes_map[code["code"]] = code
@@ -25,7 +27,8 @@ for row in table_active.index:
     else:
         pass
 
-table_funds = list_one_xls.parse(list_one_xls.sheet_names[1])
+
+"""table_funds = list_one_xls.parse(list_one_xls.sheet_names[1])
 for row in table_funds.index:
     code = {}
     code["code"] = table_funds.iloc[row][0].strip()
@@ -85,7 +88,7 @@ for row in table_funds.index:
         codes.append(code)
     else:
         pass
-
+"""
 list_three_xls = pd.ExcelFile(r"list-three.xls")
 table_historic = list_three_xls.parse(list_three_xls.sheet_names[0])
 
@@ -304,6 +307,36 @@ pub fn from_country(country: &str) -> Array {
     vector.into_iter().map(JsValue::from).collect()
 }
 
+#[cfg(target_arch = "wasm32")]
+#[wasm_bindgen]
+pub fn all_active_code() -> Array {
+    let mut vector: Vec<&str> = Vec::new();
+    for i in 0..ALL_ACTIVE_CODE.len() {
+        vector.push(ALL_ACTIVE_CODE[i].clone())
+    }
+    vector.into_iter().map(JsValue::from).collect()
+}
+
+#[cfg(target_arch = "wasm32")]
+#[wasm_bindgen]
+pub fn all_funds_code() -> Array {
+    let mut vector: Vec<&str> = Vec::new();
+    for i in 0..ALL_FUNDS_CODE.len() {
+        vector.push(ALL_FUNDS_CODE[i].clone())
+    }
+    vector.into_iter().map(JsValue::from).collect()
+}
+
+#[cfg(target_arch = "wasm32")]
+#[wasm_bindgen]
+pub fn all_historic_code() -> Array {
+    let mut vector: Vec<&str> = Vec::new();
+    for i in 0..ALL_HISTORIC_CODE.len() {
+        vector.push(ALL_HISTORIC_CODE[i].clone())
+    }
+    vector.into_iter().map(JsValue::from).collect()
+}
+
 """
 print(prefix)
 
@@ -397,6 +430,39 @@ pub const ALL_CODE: & [ & str] = &[
     """)
 for x in codes:
     print("\"%s\"," % (x["code"]))
+print("""
+];
+""")
+
+print("""
+///ALL Active codes
+pub const ALL_ACTIVE_CODE: & [ & str] = &[
+    """)
+for x in codes:
+    if x["type"] == "currency":
+        print("\"%s\"," % (x["code"]))
+print("""
+];
+""")
+
+print("""
+///ALL Active codes
+pub const ALL_FUNDS_CODE: & [ & str] = &[
+    """)
+for x in codes:
+    if x["type"] == "funds":
+        print("\"%s\"," % (x["code"]))
+print("""
+];
+""")
+
+print("""
+///ALL Historic codes
+pub const ALL_HISTORIC_CODE: & [ & str] = &[
+    """)
+for x in codes:
+    if x["type"] == "historic":
+        print("\"%s\"," % (x["code"]))
 print("""
 ];
 """)

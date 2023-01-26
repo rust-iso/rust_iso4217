@@ -94,6 +94,7 @@ impl CurrencyCode {
     #[wasm_bindgen(getter)]
     pub fn countries(&self) -> Array {
         let mut vector: Vec<&'static str> = Vec::new();
+        // self.individual_languages.into_serde().unwrap();
         for i in 0..self.countries.len() {
             vector.push(self.countries[i])
         }
@@ -168,6 +169,36 @@ pub fn from_country(country: &str) -> Array {
             }
         }
         None => todo!(),
+    }
+    vector.into_iter().map(JsValue::from).collect()
+}
+
+#[cfg(target_arch = "wasm32")]
+#[wasm_bindgen]
+pub fn all_active_code() -> Array {
+    let mut vector: Vec<&str> = Vec::new();
+    for i in 0..ALL_ACTIVE_CODE.len() {
+        vector.push(ALL_ACTIVE_CODE[i].clone())
+    }
+    vector.into_iter().map(JsValue::from).collect()
+}
+
+#[cfg(target_arch = "wasm32")]
+#[wasm_bindgen]
+pub fn all_funds_code() -> Array {
+    let mut vector: Vec<&str> = Vec::new();
+    for i in 0..ALL_FUNDS_CODE.len() {
+        vector.push(ALL_FUNDS_CODE[i].clone())
+    }
+    vector.into_iter().map(JsValue::from).collect()
+}
+
+#[cfg(target_arch = "wasm32")]
+#[wasm_bindgen]
+pub fn all_historic_code() -> Array {
+    let mut vector: Vec<&str> = Vec::new();
+    for i in 0..ALL_HISTORIC_CODE.len() {
+        vector.push(ALL_HISTORIC_CODE[i].clone())
     }
     vector.into_iter().map(JsValue::from).collect()
 }
@@ -391,7 +422,7 @@ pub const BOV: CurrencyCode = CurrencyCode {
     code: "BOV",
     numeric: 984,
     unit: 2,
-    code_type: "currency",
+    code_type: "funds",
     countries: &[],
 };
 
@@ -517,7 +548,7 @@ pub const CLF: CurrencyCode = CurrencyCode {
     code: "CLF",
     numeric: 990,
     unit: 4,
-    code_type: "currency",
+    code_type: "funds",
     countries: &[],
 };
 
@@ -544,7 +575,7 @@ pub const COU: CurrencyCode = CurrencyCode {
     code: "COU",
     numeric: 970,
     unit: 2,
-    code_type: "currency",
+    code_type: "funds",
     countries: &[],
 };
 
@@ -1120,7 +1151,7 @@ pub const MXV: CurrencyCode = CurrencyCode {
     code: "MXV",
     numeric: 979,
     unit: 2,
-    code_type: "currency",
+    code_type: "funds",
     countries: &[],
 };
 
@@ -1471,7 +1502,7 @@ pub const CHE: CurrencyCode = CurrencyCode {
     code: "CHE",
     numeric: 947,
     unit: 2,
-    code_type: "currency",
+    code_type: "funds",
     countries: &[],
 };
 
@@ -1480,7 +1511,7 @@ pub const CHW: CurrencyCode = CurrencyCode {
     code: "CHW",
     numeric: 948,
     unit: 2,
-    code_type: "currency",
+    code_type: "funds",
     countries: &[],
 };
 
@@ -1606,7 +1637,7 @@ pub const USN: CurrencyCode = CurrencyCode {
     code: "USN",
     numeric: 997,
     unit: 2,
-    code_type: "currency",
+    code_type: "funds",
     countries: &[],
 };
 
@@ -1624,7 +1655,7 @@ pub const UYI: CurrencyCode = CurrencyCode {
     code: "UYI",
     numeric: 940,
     unit: 0,
-    code_type: "currency",
+    code_type: "funds",
     countries: &[],
 };
 
@@ -1633,7 +1664,7 @@ pub const UYW: CurrencyCode = CurrencyCode {
     code: "UYW",
     numeric: 927,
     unit: 4,
-    code_type: "currency",
+    code_type: "funds",
     countries: &[],
 };
 
@@ -4070,6 +4101,43 @@ pub const ALL_CODE: &[&str] = &[
     "SDP", "SRG", "CHC", "TJR", "TPE", "TRL", "TMM", "UGS", "UGW", "UAK", "SUR", "USS", "UYN",
     "UYP", "VEB", "VEF", "VNC", "YDD", "YUD", "YUM", "YUN", "ZRN", "ZRZ", "ZMK", "ZWC", "ZWD",
     "ZWN", "ZWR", "XFO", "XRE", "XFU",
+];
+
+///ALL Active codes
+pub const ALL_ACTIVE_CODE: &[&str] = &[
+    "AFN", "EUR", "ALL", "DZD", "USD", "AOA", "XCD", "ARS", "AMD", "AWG", "AUD", "AZN", "BSD",
+    "BHD", "BDT", "BBD", "BYN", "BZD", "XOF", "BMD", "INR", "BTN", "BOB", "BAM", "BWP", "NOK",
+    "BRL", "BND", "BGN", "BIF", "CVE", "KHR", "XAF", "CAD", "KYD", "CLP", "CNY", "COP", "KMF",
+    "CDF", "NZD", "CRC", "CUP", "CUC", "ANG", "CZK", "DKK", "DJF", "DOP", "EGP", "SVC", "ERN",
+    "SZL", "ETB", "FKP", "FJD", "XPF", "GMD", "GEL", "GHS", "GIP", "GTQ", "GBP", "GNF", "GYD",
+    "HTG", "HNL", "HKD", "HUF", "ISK", "IDR", "XDR", "IRR", "IQD", "ILS", "JMD", "JPY", "JOD",
+    "KZT", "KES", "KPW", "KRW", "KWD", "KGS", "LAK", "LBP", "LSL", "ZAR", "LRD", "LYD", "CHF",
+    "MOP", "MKD", "MGA", "MWK", "MYR", "MVR", "MRU", "MUR", "XUA", "MXN", "MDL", "MNT", "MAD",
+    "MZN", "MMK", "NAD", "NPR", "NIO", "NGN", "OMR", "PKR", "PAB", "PGK", "PYG", "PEN", "PHP",
+    "PLN", "QAR", "RON", "RUB", "RWF", "SHP", "WST", "STN", "SAR", "RSD", "SCR", "SLL", "SLE",
+    "SGD", "XSU", "SBD", "SOS", "SSP", "LKR", "SDG", "SRD", "SEK", "SYP", "TWD", "TJS", "TZS",
+    "THB", "TOP", "TTD", "TND", "TRY", "TMT", "UGX", "UAH", "AED", "UYU", "UZS", "VUV", "VES",
+    "VED", "VND", "YER", "ZMW", "ZWL", "XBA", "XBB", "XBC", "XBD", "XTS", "XXX", "XAU", "XPD",
+    "XPT", "XAG",
+];
+
+///ALL Active codes
+pub const ALL_FUNDS_CODE: &[&str] = &[
+    "BOV", "CLF", "COU", "MXV", "CHE", "CHW", "USN", "UYI", "UYW",
+];
+
+///ALL Historic codes
+pub const ALL_HISTORIC_CODE: &[&str] = &[
+    "AFA", "FIM", "ALK", "ADP", "ESP", "FRF", "AOK", "AON", "AOR", "ARA", "ARP", "ARY", "RUR",
+    "ATS", "AYM", "AZM", "BYB", "BYR", "BEC", "BEF", "BEL", "BOP", "BAD", "BRB", "BRC", "BRE",
+    "BRN", "BRR", "BGJ", "BGK", "BGL", "BUK", "HRD", "HRK", "CYP", "CSJ", "CSK", "ECS", "ECV",
+    "GQE", "EEK", "XEU", "GEK", "DDM", "DEM", "GHC", "GHP", "GRD", "GNE", "GNS", "GWE", "GWP",
+    "ITL", "ISJ", "IEP", "ILP", "ILR", "LAJ", "LVL", "LVR", "LSM", "ZAL", "LTL", "LTT", "LUC",
+    "LUF", "LUL", "MGF", "MVQ", "MLF", "MTL", "MTP", "MRO", "MXP", "MZE", "MZM", "NLG", "NIC",
+    "PEH", "PEI", "PES", "PLZ", "PTE", "ROK", "ROL", "STD", "CSD", "SKK", "SIT", "RHD", "ESA",
+    "ESB", "SDD", "SDP", "SRG", "CHC", "TJR", "TPE", "TRL", "TMM", "UGS", "UGW", "UAK", "SUR",
+    "USS", "UYN", "UYP", "VEB", "VEF", "VNC", "YDD", "YUD", "YUM", "YUN", "ZRN", "ZRZ", "ZMK",
+    "ZWC", "ZWD", "ZWN", "ZWR", "XFO", "XRE", "XFU",
 ];
 
 ///ALL the CurrencyCode struct
