@@ -31,7 +31,16 @@ let currencies = rust_iso4217::from_country("CHN");
 
 println!("{:?}", rust_iso4217::ALL);
 println!("{:?}", rust_iso4217::ALL_MAP);
+```
 
+For Wasm you can get all codes by 
+```javascript
+let code_strs = rust_iso4217.all_active_code();
+let code_strs = rust_iso4217.all_funds_code();
+let code_strs = rust_iso4217.all_historic_code();
+```
+
+Struct
 ``` rust
 pub struct CurrencyCode {
     //English Name
