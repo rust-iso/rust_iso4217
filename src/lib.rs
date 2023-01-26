@@ -69,11 +69,11 @@ pub struct CurrencyCode {
 #[cfg(target_arch = "wasm32")]
 #[cfg_attr(target_arch = "wasm32", wasm_bindgen)]
 impl CurrencyCode {
-    #[wasm_bindgen(getter)]
+     #[wasm_bindgen(getter)]
     pub fn name(&self) -> String {
         self.name.into()
     }
-    #[wasm_bindgen(getter)]
+     #[wasm_bindgen(getter)]
     pub fn code(&self) -> String {
         self.code.into()
     }
@@ -95,10 +95,10 @@ impl CurrencyCode {
     pub fn countries(&self) -> Array {
         let mut vector: Vec<&'static str> = Vec::new();
         // self.individual_languages.into_serde().unwrap();
-        for i in 0..self.countries.len() {
-            vector.push(self.countries[i])
-        }
-        vector.into_iter().map(JsValue::from).collect()
+		for i in 0..self.countries.len() {
+			vector.push(self.countries[i])
+		}
+		vector.into_iter().map(JsValue::from).collect()
     }
 }
 
@@ -203,6 +203,8 @@ pub fn all_historic_code() -> Array {
     vector.into_iter().map(JsValue::from).collect()
 }
 
+
+
 pub const AFN: CurrencyCode = CurrencyCode {
     name: "Afghani",
     code: "AFN",
@@ -210,7 +212,9 @@ pub const AFN: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["AFG"],
+
 };
+
 
 pub const EUR: CurrencyCode = CurrencyCode {
     name: "Euro",
@@ -218,12 +222,10 @@ pub const EUR: CurrencyCode = CurrencyCode {
     numeric: 978,
     unit: 2,
     code_type: "currency",
-    countries: &[
-        "AND", "AUT", "BEL", "CYP", "EST", "FIN", "FRA", "GUF", "ATF", "DEU", "GRC", "GLP", "VAT",
-        "IRL", "ITA", "LVA", "LTU", "LUX", "MLT", "MTQ", "MYT", "MCO", "MNE", "NLD", "PRT", "REU",
-        "BLM", "MAF", "SPM", "SMR", "SVK", "SVN", "ESP", "ALA",
-    ],
+    countries: &["AND","AUT","BEL","CYP","EST","FIN","FRA","GUF","ATF","DEU","GRC","GLP","VAT","IRL","ITA","LVA","LTU","LUX","MLT","MTQ","MYT","MCO","MNE","NLD","PRT","REU","BLM","MAF","SPM","SMR","SVK","SVN","ESP","ALA"],
+
 };
+
 
 pub const ALL: CurrencyCode = CurrencyCode {
     name: "Lek",
@@ -232,7 +234,9 @@ pub const ALL: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["ALB"],
+
 };
+
 
 pub const DZD: CurrencyCode = CurrencyCode {
     name: "Algerian Dinar",
@@ -241,7 +245,9 @@ pub const DZD: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["DZA"],
+
 };
+
 
 pub const USD: CurrencyCode = CurrencyCode {
     name: "US Dollar",
@@ -249,11 +255,10 @@ pub const USD: CurrencyCode = CurrencyCode {
     numeric: 840,
     unit: 2,
     code_type: "currency",
-    countries: &[
-        "ASM", "BES", "IOT", "VGB", "ECU", "GUM", "MHL", "FSM", "MNP", "PLW", "PRI", "TLS", "TCA",
-        "UMI", "VIR", "USA",
-    ],
+    countries: &["ASM","BES","IOT","VGB","ECU","SLV","GUM","HTI","MHL","FSM","MNP","PLW","PAN","PRI","TLS","TCA","UMI","VIR","USA"],
+
 };
+
 
 pub const AOA: CurrencyCode = CurrencyCode {
     name: "Kwanza",
@@ -262,7 +267,9 @@ pub const AOA: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["AGO"],
+
 };
+
 
 pub const XCD: CurrencyCode = CurrencyCode {
     name: "East Caribbean Dollar",
@@ -270,8 +277,10 @@ pub const XCD: CurrencyCode = CurrencyCode {
     numeric: 951,
     unit: 2,
     code_type: "currency",
-    countries: &["AIA", "ATG", "DMA", "GRD", "MSR", "KNA", "LCA", "VCT"],
+    countries: &["AIA","ATG","DMA","GRD","MSR","KNA","LCA","VCT"],
+
 };
+
 
 pub const ARS: CurrencyCode = CurrencyCode {
     name: "Argentine Peso",
@@ -280,7 +289,9 @@ pub const ARS: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["ARG"],
+
 };
+
 
 pub const AMD: CurrencyCode = CurrencyCode {
     name: "Armenian Dram",
@@ -289,7 +300,9 @@ pub const AMD: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["ARM"],
+
 };
+
 
 pub const AWG: CurrencyCode = CurrencyCode {
     name: "Aruban Florin",
@@ -298,7 +311,9 @@ pub const AWG: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["ABW"],
+
 };
+
 
 pub const AUD: CurrencyCode = CurrencyCode {
     name: "Australian Dollar",
@@ -306,8 +321,10 @@ pub const AUD: CurrencyCode = CurrencyCode {
     numeric: 036,
     unit: 2,
     code_type: "currency",
-    countries: &["AUS", "CXR", "CCK", "HMD", "KIR", "NRU", "NFK", "TUV"],
+    countries: &["AUS","CXR","CCK","HMD","KIR","NRU","NFK","TUV"],
+
 };
+
 
 pub const AZN: CurrencyCode = CurrencyCode {
     name: "Azerbaijan Manat",
@@ -316,7 +333,9 @@ pub const AZN: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["AZE"],
+
 };
+
 
 pub const BSD: CurrencyCode = CurrencyCode {
     name: "Bahamian Dollar",
@@ -325,7 +344,9 @@ pub const BSD: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["BHS"],
+
 };
+
 
 pub const BHD: CurrencyCode = CurrencyCode {
     name: "Bahraini Dinar",
@@ -334,7 +355,9 @@ pub const BHD: CurrencyCode = CurrencyCode {
     unit: 3,
     code_type: "currency",
     countries: &["BHR"],
+
 };
+
 
 pub const BDT: CurrencyCode = CurrencyCode {
     name: "Taka",
@@ -343,7 +366,9 @@ pub const BDT: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["BGD"],
+
 };
+
 
 pub const BBD: CurrencyCode = CurrencyCode {
     name: "Barbados Dollar",
@@ -352,7 +377,9 @@ pub const BBD: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["BRB"],
+
 };
+
 
 pub const BYN: CurrencyCode = CurrencyCode {
     name: "Belarusian Ruble",
@@ -361,7 +388,9 @@ pub const BYN: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["BLR"],
+
 };
+
 
 pub const BZD: CurrencyCode = CurrencyCode {
     name: "Belize Dollar",
@@ -370,7 +399,9 @@ pub const BZD: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["BLZ"],
+
 };
+
 
 pub const XOF: CurrencyCode = CurrencyCode {
     name: "CFA Franc BCEAO",
@@ -378,8 +409,10 @@ pub const XOF: CurrencyCode = CurrencyCode {
     numeric: 952,
     unit: 0,
     code_type: "currency",
-    countries: &["BEN", "BFA", "CIV", "GNB", "MLI", "NER", "SEN", "TGO"],
+    countries: &["BEN","BFA","CIV","GNB","MLI","NER","SEN","TGO"],
+
 };
+
 
 pub const BMD: CurrencyCode = CurrencyCode {
     name: "Bermudian Dollar",
@@ -388,7 +421,9 @@ pub const BMD: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["BMU"],
+
 };
+
 
 pub const INR: CurrencyCode = CurrencyCode {
     name: "Indian Rupee",
@@ -396,8 +431,10 @@ pub const INR: CurrencyCode = CurrencyCode {
     numeric: 356,
     unit: 2,
     code_type: "currency",
-    countries: &["IND"],
+    countries: &["BTN","IND"],
+
 };
+
 
 pub const BTN: CurrencyCode = CurrencyCode {
     name: "Ngultrum",
@@ -405,8 +442,10 @@ pub const BTN: CurrencyCode = CurrencyCode {
     numeric: 064,
     unit: 2,
     code_type: "currency",
-    countries: &[],
+    countries: &["BTN"],
+
 };
+
 
 pub const BOB: CurrencyCode = CurrencyCode {
     name: "Boliviano",
@@ -415,7 +454,9 @@ pub const BOB: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["BOL"],
+
 };
+
 
 pub const BOV: CurrencyCode = CurrencyCode {
     name: "Mvdol",
@@ -423,8 +464,10 @@ pub const BOV: CurrencyCode = CurrencyCode {
     numeric: 984,
     unit: 2,
     code_type: "funds",
-    countries: &[],
+    countries: &["BOL"],
+
 };
+
 
 pub const BAM: CurrencyCode = CurrencyCode {
     name: "Convertible Mark",
@@ -433,7 +476,9 @@ pub const BAM: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["BIH"],
+
 };
+
 
 pub const BWP: CurrencyCode = CurrencyCode {
     name: "Pula",
@@ -442,7 +487,9 @@ pub const BWP: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["BWA"],
+
 };
+
 
 pub const NOK: CurrencyCode = CurrencyCode {
     name: "Norwegian Krone",
@@ -450,8 +497,10 @@ pub const NOK: CurrencyCode = CurrencyCode {
     numeric: 578,
     unit: 2,
     code_type: "currency",
-    countries: &["BVT", "NOR", "SJM"],
+    countries: &["BVT","NOR","SJM"],
+
 };
+
 
 pub const BRL: CurrencyCode = CurrencyCode {
     name: "Brazilian Real",
@@ -460,7 +509,9 @@ pub const BRL: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["BRA"],
+
 };
+
 
 pub const BND: CurrencyCode = CurrencyCode {
     name: "Brunei Dollar",
@@ -469,7 +520,9 @@ pub const BND: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["BRN"],
+
 };
+
 
 pub const BGN: CurrencyCode = CurrencyCode {
     name: "Bulgarian Lev",
@@ -478,7 +531,9 @@ pub const BGN: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["BGR"],
+
 };
+
 
 pub const BIF: CurrencyCode = CurrencyCode {
     name: "Burundi Franc",
@@ -487,7 +542,9 @@ pub const BIF: CurrencyCode = CurrencyCode {
     unit: 0,
     code_type: "currency",
     countries: &["BDI"],
+
 };
+
 
 pub const CVE: CurrencyCode = CurrencyCode {
     name: "Cabo Verde Escudo",
@@ -496,7 +553,9 @@ pub const CVE: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["CPV"],
+
 };
+
 
 pub const KHR: CurrencyCode = CurrencyCode {
     name: "Riel",
@@ -505,7 +564,9 @@ pub const KHR: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["KHM"],
+
 };
+
 
 pub const XAF: CurrencyCode = CurrencyCode {
     name: "CFA Franc BEAC",
@@ -513,8 +574,10 @@ pub const XAF: CurrencyCode = CurrencyCode {
     numeric: 950,
     unit: 0,
     code_type: "currency",
-    countries: &["CMR", "CAF", "TCD", "COG", "GNQ", "GAB"],
+    countries: &["CMR","CAF","TCD","COG","GNQ","GAB"],
+
 };
+
 
 pub const CAD: CurrencyCode = CurrencyCode {
     name: "Canadian Dollar",
@@ -523,7 +586,9 @@ pub const CAD: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["CAN"],
+
 };
+
 
 pub const KYD: CurrencyCode = CurrencyCode {
     name: "Cayman Islands Dollar",
@@ -532,7 +597,9 @@ pub const KYD: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["CYM"],
+
 };
+
 
 pub const CLP: CurrencyCode = CurrencyCode {
     name: "Chilean Peso",
@@ -541,7 +608,9 @@ pub const CLP: CurrencyCode = CurrencyCode {
     unit: 0,
     code_type: "currency",
     countries: &["CHL"],
+
 };
+
 
 pub const CLF: CurrencyCode = CurrencyCode {
     name: "Unidad de Fomento",
@@ -549,8 +618,10 @@ pub const CLF: CurrencyCode = CurrencyCode {
     numeric: 990,
     unit: 4,
     code_type: "funds",
-    countries: &[],
+    countries: &["CHL"],
+
 };
+
 
 pub const CNY: CurrencyCode = CurrencyCode {
     name: "Yuan Renminbi",
@@ -559,7 +630,9 @@ pub const CNY: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["CHN"],
+
 };
+
 
 pub const COP: CurrencyCode = CurrencyCode {
     name: "Colombian Peso",
@@ -568,7 +641,9 @@ pub const COP: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["COL"],
+
 };
+
 
 pub const COU: CurrencyCode = CurrencyCode {
     name: "Unidad de Valor Real",
@@ -576,8 +651,10 @@ pub const COU: CurrencyCode = CurrencyCode {
     numeric: 970,
     unit: 2,
     code_type: "funds",
-    countries: &[],
+    countries: &["COL"],
+
 };
+
 
 pub const KMF: CurrencyCode = CurrencyCode {
     name: "Comorian Franc ",
@@ -586,7 +663,9 @@ pub const KMF: CurrencyCode = CurrencyCode {
     unit: 0,
     code_type: "currency",
     countries: &["COM"],
+
 };
+
 
 pub const CDF: CurrencyCode = CurrencyCode {
     name: "Congolese Franc",
@@ -595,7 +674,9 @@ pub const CDF: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["COD"],
+
 };
+
 
 pub const NZD: CurrencyCode = CurrencyCode {
     name: "New Zealand Dollar",
@@ -603,8 +684,10 @@ pub const NZD: CurrencyCode = CurrencyCode {
     numeric: 554,
     unit: 2,
     code_type: "currency",
-    countries: &["COK", "NZL", "NIU", "PCN", "TKL"],
+    countries: &["COK","NZL","NIU","PCN","TKL"],
+
 };
+
 
 pub const CRC: CurrencyCode = CurrencyCode {
     name: "Costa Rican Colon",
@@ -613,7 +696,9 @@ pub const CRC: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["CRI"],
+
 };
+
 
 pub const CUP: CurrencyCode = CurrencyCode {
     name: "Cuban Peso",
@@ -621,8 +706,10 @@ pub const CUP: CurrencyCode = CurrencyCode {
     numeric: 192,
     unit: 2,
     code_type: "currency",
-    countries: &[],
+    countries: &["CUB"],
+
 };
+
 
 pub const CUC: CurrencyCode = CurrencyCode {
     name: "Peso Convertible",
@@ -630,8 +717,10 @@ pub const CUC: CurrencyCode = CurrencyCode {
     numeric: 931,
     unit: 2,
     code_type: "currency",
-    countries: &[],
+    countries: &["CUB"],
+
 };
+
 
 pub const ANG: CurrencyCode = CurrencyCode {
     name: "Netherlands Antillean Guilder",
@@ -639,8 +728,10 @@ pub const ANG: CurrencyCode = CurrencyCode {
     numeric: 532,
     unit: 2,
     code_type: "currency",
-    countries: &["CUW", "SXM"],
+    countries: &["CUW","SXM"],
+
 };
+
 
 pub const CZK: CurrencyCode = CurrencyCode {
     name: "Czech Koruna",
@@ -649,7 +740,9 @@ pub const CZK: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["CZE"],
+
 };
+
 
 pub const DKK: CurrencyCode = CurrencyCode {
     name: "Danish Krone",
@@ -657,8 +750,10 @@ pub const DKK: CurrencyCode = CurrencyCode {
     numeric: 208,
     unit: 2,
     code_type: "currency",
-    countries: &["DNK", "FRO", "GRL"],
+    countries: &["DNK","FRO","GRL"],
+
 };
+
 
 pub const DJF: CurrencyCode = CurrencyCode {
     name: "Djibouti Franc",
@@ -667,7 +762,9 @@ pub const DJF: CurrencyCode = CurrencyCode {
     unit: 0,
     code_type: "currency",
     countries: &["DJI"],
+
 };
+
 
 pub const DOP: CurrencyCode = CurrencyCode {
     name: "Dominican Peso",
@@ -676,7 +773,9 @@ pub const DOP: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["DOM"],
+
 };
+
 
 pub const EGP: CurrencyCode = CurrencyCode {
     name: "Egyptian Pound",
@@ -685,7 +784,9 @@ pub const EGP: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["EGY"],
+
 };
+
 
 pub const SVC: CurrencyCode = CurrencyCode {
     name: "El Salvador Colon",
@@ -693,8 +794,10 @@ pub const SVC: CurrencyCode = CurrencyCode {
     numeric: 222,
     unit: 2,
     code_type: "currency",
-    countries: &[],
+    countries: &["SLV"],
+
 };
+
 
 pub const ERN: CurrencyCode = CurrencyCode {
     name: "Nakfa",
@@ -703,7 +806,9 @@ pub const ERN: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["ERI"],
+
 };
+
 
 pub const SZL: CurrencyCode = CurrencyCode {
     name: "Lilangeni",
@@ -712,7 +817,9 @@ pub const SZL: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["SWZ"],
+
 };
+
 
 pub const ETB: CurrencyCode = CurrencyCode {
     name: "Ethiopian Birr",
@@ -721,7 +828,9 @@ pub const ETB: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["ETH"],
+
 };
+
 
 pub const FKP: CurrencyCode = CurrencyCode {
     name: "Falkland Islands Pound",
@@ -729,8 +838,10 @@ pub const FKP: CurrencyCode = CurrencyCode {
     numeric: 238,
     unit: 2,
     code_type: "currency",
-    countries: &[],
+    countries: &["FLK"],
+
 };
+
 
 pub const FJD: CurrencyCode = CurrencyCode {
     name: "Fiji Dollar",
@@ -739,7 +850,9 @@ pub const FJD: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["FJI"],
+
 };
+
 
 pub const XPF: CurrencyCode = CurrencyCode {
     name: "CFP Franc",
@@ -747,8 +860,10 @@ pub const XPF: CurrencyCode = CurrencyCode {
     numeric: 953,
     unit: 0,
     code_type: "currency",
-    countries: &["PYF", "NCL", "WLF"],
+    countries: &["PYF","NCL","WLF"],
+
 };
+
 
 pub const GMD: CurrencyCode = CurrencyCode {
     name: "Dalasi",
@@ -757,7 +872,9 @@ pub const GMD: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["GMB"],
+
 };
+
 
 pub const GEL: CurrencyCode = CurrencyCode {
     name: "Lari",
@@ -766,7 +883,9 @@ pub const GEL: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["GEO"],
+
 };
+
 
 pub const GHS: CurrencyCode = CurrencyCode {
     name: "Ghana Cedi",
@@ -775,7 +894,9 @@ pub const GHS: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["GHA"],
+
 };
+
 
 pub const GIP: CurrencyCode = CurrencyCode {
     name: "Gibraltar Pound",
@@ -784,7 +905,9 @@ pub const GIP: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["GIB"],
+
 };
+
 
 pub const GTQ: CurrencyCode = CurrencyCode {
     name: "Quetzal",
@@ -793,7 +916,9 @@ pub const GTQ: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["GTM"],
+
 };
+
 
 pub const GBP: CurrencyCode = CurrencyCode {
     name: "Pound Sterling",
@@ -801,8 +926,10 @@ pub const GBP: CurrencyCode = CurrencyCode {
     numeric: 826,
     unit: 2,
     code_type: "currency",
-    countries: &["GGY", "IMN", "JEY", "GBR"],
+    countries: &["GGY","IMN","JEY","GBR"],
+
 };
+
 
 pub const GNF: CurrencyCode = CurrencyCode {
     name: "Guinean Franc",
@@ -811,7 +938,9 @@ pub const GNF: CurrencyCode = CurrencyCode {
     unit: 0,
     code_type: "currency",
     countries: &["GIN"],
+
 };
+
 
 pub const GYD: CurrencyCode = CurrencyCode {
     name: "Guyana Dollar",
@@ -820,7 +949,9 @@ pub const GYD: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["GUY"],
+
 };
+
 
 pub const HTG: CurrencyCode = CurrencyCode {
     name: "Gourde",
@@ -828,8 +959,10 @@ pub const HTG: CurrencyCode = CurrencyCode {
     numeric: 332,
     unit: 2,
     code_type: "currency",
-    countries: &[],
+    countries: &["HTI"],
+
 };
+
 
 pub const HNL: CurrencyCode = CurrencyCode {
     name: "Lempira",
@@ -838,7 +971,9 @@ pub const HNL: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["HND"],
+
 };
+
 
 pub const HKD: CurrencyCode = CurrencyCode {
     name: "Hong Kong Dollar",
@@ -847,7 +982,9 @@ pub const HKD: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["HKG"],
+
 };
+
 
 pub const HUF: CurrencyCode = CurrencyCode {
     name: "Forint",
@@ -856,7 +993,9 @@ pub const HUF: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["HUN"],
+
 };
+
 
 pub const ISK: CurrencyCode = CurrencyCode {
     name: "Iceland Krona",
@@ -865,7 +1004,9 @@ pub const ISK: CurrencyCode = CurrencyCode {
     unit: 0,
     code_type: "currency",
     countries: &["ISL"],
+
 };
+
 
 pub const IDR: CurrencyCode = CurrencyCode {
     name: "Rupiah",
@@ -874,7 +1015,9 @@ pub const IDR: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["IDN"],
+
 };
+
 
 pub const XDR: CurrencyCode = CurrencyCode {
     name: "SDR (Special Drawing Right)",
@@ -883,7 +1026,9 @@ pub const XDR: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "currency",
     countries: &[],
+
 };
+
 
 pub const IRR: CurrencyCode = CurrencyCode {
     name: "Iranian Rial",
@@ -892,7 +1037,9 @@ pub const IRR: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["IRN"],
+
 };
+
 
 pub const IQD: CurrencyCode = CurrencyCode {
     name: "Iraqi Dinar",
@@ -901,7 +1048,9 @@ pub const IQD: CurrencyCode = CurrencyCode {
     unit: 3,
     code_type: "currency",
     countries: &["IRQ"],
+
 };
+
 
 pub const ILS: CurrencyCode = CurrencyCode {
     name: "New Israeli Sheqel",
@@ -910,7 +1059,9 @@ pub const ILS: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["ISR"],
+
 };
+
 
 pub const JMD: CurrencyCode = CurrencyCode {
     name: "Jamaican Dollar",
@@ -919,7 +1070,9 @@ pub const JMD: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["JAM"],
+
 };
+
 
 pub const JPY: CurrencyCode = CurrencyCode {
     name: "Yen",
@@ -928,7 +1081,9 @@ pub const JPY: CurrencyCode = CurrencyCode {
     unit: 0,
     code_type: "currency",
     countries: &["JPN"],
+
 };
+
 
 pub const JOD: CurrencyCode = CurrencyCode {
     name: "Jordanian Dinar",
@@ -937,7 +1092,9 @@ pub const JOD: CurrencyCode = CurrencyCode {
     unit: 3,
     code_type: "currency",
     countries: &["JOR"],
+
 };
+
 
 pub const KZT: CurrencyCode = CurrencyCode {
     name: "Tenge",
@@ -946,7 +1103,9 @@ pub const KZT: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["KAZ"],
+
 };
+
 
 pub const KES: CurrencyCode = CurrencyCode {
     name: "Kenyan Shilling",
@@ -955,7 +1114,9 @@ pub const KES: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["KEN"],
+
 };
+
 
 pub const KPW: CurrencyCode = CurrencyCode {
     name: "North Korean Won",
@@ -964,7 +1125,9 @@ pub const KPW: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["PRK"],
+
 };
+
 
 pub const KRW: CurrencyCode = CurrencyCode {
     name: "Won",
@@ -973,7 +1136,9 @@ pub const KRW: CurrencyCode = CurrencyCode {
     unit: 0,
     code_type: "currency",
     countries: &["KOR"],
+
 };
+
 
 pub const KWD: CurrencyCode = CurrencyCode {
     name: "Kuwaiti Dinar",
@@ -982,7 +1147,9 @@ pub const KWD: CurrencyCode = CurrencyCode {
     unit: 3,
     code_type: "currency",
     countries: &["KWT"],
+
 };
+
 
 pub const KGS: CurrencyCode = CurrencyCode {
     name: "Som",
@@ -991,7 +1158,9 @@ pub const KGS: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["KGZ"],
+
 };
+
 
 pub const LAK: CurrencyCode = CurrencyCode {
     name: "Lao Kip",
@@ -1000,7 +1169,9 @@ pub const LAK: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["LAO"],
+
 };
+
 
 pub const LBP: CurrencyCode = CurrencyCode {
     name: "Lebanese Pound",
@@ -1009,7 +1180,9 @@ pub const LBP: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["LBN"],
+
 };
+
 
 pub const LSL: CurrencyCode = CurrencyCode {
     name: "Loti",
@@ -1017,8 +1190,10 @@ pub const LSL: CurrencyCode = CurrencyCode {
     numeric: 426,
     unit: 2,
     code_type: "currency",
-    countries: &[],
+    countries: &["LSO"],
+
 };
+
 
 pub const ZAR: CurrencyCode = CurrencyCode {
     name: "Rand",
@@ -1026,8 +1201,10 @@ pub const ZAR: CurrencyCode = CurrencyCode {
     numeric: 710,
     unit: 2,
     code_type: "currency",
-    countries: &["ZAF"],
+    countries: &["LSO","NAM","ZAF"],
+
 };
+
 
 pub const LRD: CurrencyCode = CurrencyCode {
     name: "Liberian Dollar",
@@ -1036,7 +1213,9 @@ pub const LRD: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["LBR"],
+
 };
+
 
 pub const LYD: CurrencyCode = CurrencyCode {
     name: "Libyan Dinar",
@@ -1045,7 +1224,9 @@ pub const LYD: CurrencyCode = CurrencyCode {
     unit: 3,
     code_type: "currency",
     countries: &["LBY"],
+
 };
+
 
 pub const CHF: CurrencyCode = CurrencyCode {
     name: "Swiss Franc",
@@ -1053,8 +1234,10 @@ pub const CHF: CurrencyCode = CurrencyCode {
     numeric: 756,
     unit: 2,
     code_type: "currency",
-    countries: &["LIE", "CHE"],
+    countries: &["LIE","CHE"],
+
 };
+
 
 pub const MOP: CurrencyCode = CurrencyCode {
     name: "Pataca",
@@ -1063,7 +1246,9 @@ pub const MOP: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["MAC"],
+
 };
+
 
 pub const MKD: CurrencyCode = CurrencyCode {
     name: "Denar",
@@ -1072,7 +1257,9 @@ pub const MKD: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["MKD"],
+
 };
+
 
 pub const MGA: CurrencyCode = CurrencyCode {
     name: "Malagasy Ariary",
@@ -1081,7 +1268,9 @@ pub const MGA: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["MDG"],
+
 };
+
 
 pub const MWK: CurrencyCode = CurrencyCode {
     name: "Malawi Kwacha",
@@ -1090,7 +1279,9 @@ pub const MWK: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["MWI"],
+
 };
+
 
 pub const MYR: CurrencyCode = CurrencyCode {
     name: "Malaysian Ringgit",
@@ -1099,7 +1290,9 @@ pub const MYR: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["MYS"],
+
 };
+
 
 pub const MVR: CurrencyCode = CurrencyCode {
     name: "Rufiyaa",
@@ -1108,7 +1301,9 @@ pub const MVR: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["MDV"],
+
 };
+
 
 pub const MRU: CurrencyCode = CurrencyCode {
     name: "Ouguiya",
@@ -1117,7 +1312,9 @@ pub const MRU: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["MRT"],
+
 };
+
 
 pub const MUR: CurrencyCode = CurrencyCode {
     name: "Mauritius Rupee",
@@ -1126,7 +1323,9 @@ pub const MUR: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["MUS"],
+
 };
+
 
 pub const XUA: CurrencyCode = CurrencyCode {
     name: "ADB Unit of Account",
@@ -1135,7 +1334,9 @@ pub const XUA: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "currency",
     countries: &[],
+
 };
+
 
 pub const MXN: CurrencyCode = CurrencyCode {
     name: "Mexican Peso",
@@ -1144,7 +1345,9 @@ pub const MXN: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["MEX"],
+
 };
+
 
 pub const MXV: CurrencyCode = CurrencyCode {
     name: "Mexican Unidad de Inversion (UDI)",
@@ -1152,8 +1355,10 @@ pub const MXV: CurrencyCode = CurrencyCode {
     numeric: 979,
     unit: 2,
     code_type: "funds",
-    countries: &[],
+    countries: &["MEX"],
+
 };
+
 
 pub const MDL: CurrencyCode = CurrencyCode {
     name: "Moldovan Leu",
@@ -1162,7 +1367,9 @@ pub const MDL: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["MDA"],
+
 };
+
 
 pub const MNT: CurrencyCode = CurrencyCode {
     name: "Tugrik",
@@ -1171,7 +1378,9 @@ pub const MNT: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["MNG"],
+
 };
+
 
 pub const MAD: CurrencyCode = CurrencyCode {
     name: "Moroccan Dirham",
@@ -1179,8 +1388,10 @@ pub const MAD: CurrencyCode = CurrencyCode {
     numeric: 504,
     unit: 2,
     code_type: "currency",
-    countries: &["MAR", "ESH"],
+    countries: &["MAR","ESH"],
+
 };
+
 
 pub const MZN: CurrencyCode = CurrencyCode {
     name: "Mozambique Metical",
@@ -1189,7 +1400,9 @@ pub const MZN: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["MOZ"],
+
 };
+
 
 pub const MMK: CurrencyCode = CurrencyCode {
     name: "Kyat",
@@ -1198,7 +1411,9 @@ pub const MMK: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["MMR"],
+
 };
+
 
 pub const NAD: CurrencyCode = CurrencyCode {
     name: "Namibia Dollar",
@@ -1206,8 +1421,10 @@ pub const NAD: CurrencyCode = CurrencyCode {
     numeric: 516,
     unit: 2,
     code_type: "currency",
-    countries: &[],
+    countries: &["NAM"],
+
 };
+
 
 pub const NPR: CurrencyCode = CurrencyCode {
     name: "Nepalese Rupee",
@@ -1216,7 +1433,9 @@ pub const NPR: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["NPL"],
+
 };
+
 
 pub const NIO: CurrencyCode = CurrencyCode {
     name: "Cordoba Oro",
@@ -1225,7 +1444,9 @@ pub const NIO: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["NIC"],
+
 };
+
 
 pub const NGN: CurrencyCode = CurrencyCode {
     name: "Naira",
@@ -1234,7 +1455,9 @@ pub const NGN: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["NGA"],
+
 };
+
 
 pub const OMR: CurrencyCode = CurrencyCode {
     name: "Rial Omani",
@@ -1243,7 +1466,9 @@ pub const OMR: CurrencyCode = CurrencyCode {
     unit: 3,
     code_type: "currency",
     countries: &["OMN"],
+
 };
+
 
 pub const PKR: CurrencyCode = CurrencyCode {
     name: "Pakistan Rupee",
@@ -1252,7 +1477,9 @@ pub const PKR: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["PAK"],
+
 };
+
 
 pub const PAB: CurrencyCode = CurrencyCode {
     name: "Balboa",
@@ -1260,8 +1487,10 @@ pub const PAB: CurrencyCode = CurrencyCode {
     numeric: 590,
     unit: 2,
     code_type: "currency",
-    countries: &[],
+    countries: &["PAN"],
+
 };
+
 
 pub const PGK: CurrencyCode = CurrencyCode {
     name: "Kina",
@@ -1270,7 +1499,9 @@ pub const PGK: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["PNG"],
+
 };
+
 
 pub const PYG: CurrencyCode = CurrencyCode {
     name: "Guarani",
@@ -1279,7 +1510,9 @@ pub const PYG: CurrencyCode = CurrencyCode {
     unit: 0,
     code_type: "currency",
     countries: &["PRY"],
+
 };
+
 
 pub const PEN: CurrencyCode = CurrencyCode {
     name: "Sol",
@@ -1288,7 +1521,9 @@ pub const PEN: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["PER"],
+
 };
+
 
 pub const PHP: CurrencyCode = CurrencyCode {
     name: "Philippine Peso",
@@ -1297,7 +1532,9 @@ pub const PHP: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["PHL"],
+
 };
+
 
 pub const PLN: CurrencyCode = CurrencyCode {
     name: "Zloty",
@@ -1306,7 +1543,9 @@ pub const PLN: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["POL"],
+
 };
+
 
 pub const QAR: CurrencyCode = CurrencyCode {
     name: "Qatari Rial",
@@ -1315,7 +1554,9 @@ pub const QAR: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["QAT"],
+
 };
+
 
 pub const RON: CurrencyCode = CurrencyCode {
     name: "Romanian Leu",
@@ -1324,7 +1565,9 @@ pub const RON: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["ROU"],
+
 };
+
 
 pub const RUB: CurrencyCode = CurrencyCode {
     name: "Russian Ruble",
@@ -1333,7 +1576,9 @@ pub const RUB: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["RUS"],
+
 };
+
 
 pub const RWF: CurrencyCode = CurrencyCode {
     name: "Rwanda Franc",
@@ -1342,7 +1587,9 @@ pub const RWF: CurrencyCode = CurrencyCode {
     unit: 0,
     code_type: "currency",
     countries: &["RWA"],
+
 };
+
 
 pub const SHP: CurrencyCode = CurrencyCode {
     name: "Saint Helena Pound",
@@ -1351,7 +1598,9 @@ pub const SHP: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["SHN"],
+
 };
+
 
 pub const WST: CurrencyCode = CurrencyCode {
     name: "Tala",
@@ -1360,7 +1609,9 @@ pub const WST: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["WSM"],
+
 };
+
 
 pub const STN: CurrencyCode = CurrencyCode {
     name: "Dobra",
@@ -1369,7 +1620,9 @@ pub const STN: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["STP"],
+
 };
+
 
 pub const SAR: CurrencyCode = CurrencyCode {
     name: "Saudi Riyal",
@@ -1378,7 +1631,9 @@ pub const SAR: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["SAU"],
+
 };
+
 
 pub const RSD: CurrencyCode = CurrencyCode {
     name: "Serbian Dinar",
@@ -1387,7 +1642,9 @@ pub const RSD: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["SRB"],
+
 };
+
 
 pub const SCR: CurrencyCode = CurrencyCode {
     name: "Seychelles Rupee",
@@ -1396,7 +1653,9 @@ pub const SCR: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["SYC"],
+
 };
+
 
 pub const SLL: CurrencyCode = CurrencyCode {
     name: "Leone",
@@ -1405,7 +1664,9 @@ pub const SLL: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["SLE"],
+
 };
+
 
 pub const SLE: CurrencyCode = CurrencyCode {
     name: "Leone",
@@ -1414,7 +1675,9 @@ pub const SLE: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &[],
+
 };
+
 
 pub const SGD: CurrencyCode = CurrencyCode {
     name: "Singapore Dollar",
@@ -1423,7 +1686,9 @@ pub const SGD: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["SGP"],
+
 };
+
 
 pub const XSU: CurrencyCode = CurrencyCode {
     name: "Sucre",
@@ -1432,7 +1697,9 @@ pub const XSU: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "currency",
     countries: &[],
+
 };
+
 
 pub const SBD: CurrencyCode = CurrencyCode {
     name: "Solomon Islands Dollar",
@@ -1441,7 +1708,9 @@ pub const SBD: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["SLB"],
+
 };
+
 
 pub const SOS: CurrencyCode = CurrencyCode {
     name: "Somali Shilling",
@@ -1450,7 +1719,9 @@ pub const SOS: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["SOM"],
+
 };
+
 
 pub const SSP: CurrencyCode = CurrencyCode {
     name: "South Sudanese Pound",
@@ -1459,7 +1730,9 @@ pub const SSP: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["SSD"],
+
 };
+
 
 pub const LKR: CurrencyCode = CurrencyCode {
     name: "Sri Lanka Rupee",
@@ -1468,7 +1741,9 @@ pub const LKR: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["LKA"],
+
 };
+
 
 pub const SDG: CurrencyCode = CurrencyCode {
     name: "Sudanese Pound",
@@ -1477,7 +1752,9 @@ pub const SDG: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["SDN"],
+
 };
+
 
 pub const SRD: CurrencyCode = CurrencyCode {
     name: "Surinam Dollar",
@@ -1486,7 +1763,9 @@ pub const SRD: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["SUR"],
+
 };
+
 
 pub const SEK: CurrencyCode = CurrencyCode {
     name: "Swedish Krona",
@@ -1495,7 +1774,9 @@ pub const SEK: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["SWE"],
+
 };
+
 
 pub const CHE: CurrencyCode = CurrencyCode {
     name: "WIR Euro",
@@ -1503,8 +1784,10 @@ pub const CHE: CurrencyCode = CurrencyCode {
     numeric: 947,
     unit: 2,
     code_type: "funds",
-    countries: &[],
+    countries: &["CHE"],
+
 };
+
 
 pub const CHW: CurrencyCode = CurrencyCode {
     name: "WIR Franc",
@@ -1512,8 +1795,10 @@ pub const CHW: CurrencyCode = CurrencyCode {
     numeric: 948,
     unit: 2,
     code_type: "funds",
-    countries: &[],
+    countries: &["CHE"],
+
 };
+
 
 pub const SYP: CurrencyCode = CurrencyCode {
     name: "Syrian Pound",
@@ -1522,7 +1807,9 @@ pub const SYP: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["SYR"],
+
 };
+
 
 pub const TWD: CurrencyCode = CurrencyCode {
     name: "New Taiwan Dollar",
@@ -1530,8 +1817,10 @@ pub const TWD: CurrencyCode = CurrencyCode {
     numeric: 901,
     unit: 2,
     code_type: "currency",
-    countries: &[],
+    countries: &["TWN"],
+
 };
+
 
 pub const TJS: CurrencyCode = CurrencyCode {
     name: "Somoni",
@@ -1540,7 +1829,9 @@ pub const TJS: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["TJK"],
+
 };
+
 
 pub const TZS: CurrencyCode = CurrencyCode {
     name: "Tanzanian Shilling",
@@ -1549,7 +1840,9 @@ pub const TZS: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["TZA"],
+
 };
+
 
 pub const THB: CurrencyCode = CurrencyCode {
     name: "Baht",
@@ -1558,7 +1851,9 @@ pub const THB: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["THA"],
+
 };
+
 
 pub const TOP: CurrencyCode = CurrencyCode {
     name: "Pa’anga",
@@ -1567,7 +1862,9 @@ pub const TOP: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["TON"],
+
 };
+
 
 pub const TTD: CurrencyCode = CurrencyCode {
     name: "Trinidad and Tobago Dollar",
@@ -1576,7 +1873,9 @@ pub const TTD: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["TTO"],
+
 };
+
 
 pub const TND: CurrencyCode = CurrencyCode {
     name: "Tunisian Dinar",
@@ -1585,7 +1884,9 @@ pub const TND: CurrencyCode = CurrencyCode {
     unit: 3,
     code_type: "currency",
     countries: &["TUN"],
+
 };
+
 
 pub const TRY: CurrencyCode = CurrencyCode {
     name: "Turkish Lira",
@@ -1594,7 +1895,9 @@ pub const TRY: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["TUR"],
+
 };
+
 
 pub const TMT: CurrencyCode = CurrencyCode {
     name: "Turkmenistan New Manat",
@@ -1603,7 +1906,9 @@ pub const TMT: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["TKM"],
+
 };
+
 
 pub const UGX: CurrencyCode = CurrencyCode {
     name: "Uganda Shilling",
@@ -1612,7 +1917,9 @@ pub const UGX: CurrencyCode = CurrencyCode {
     unit: 0,
     code_type: "currency",
     countries: &["UGA"],
+
 };
+
 
 pub const UAH: CurrencyCode = CurrencyCode {
     name: "Hryvnia",
@@ -1621,7 +1928,9 @@ pub const UAH: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["UKR"],
+
 };
+
 
 pub const AED: CurrencyCode = CurrencyCode {
     name: "UAE Dirham",
@@ -1630,7 +1939,9 @@ pub const AED: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["ARE"],
+
 };
+
 
 pub const USN: CurrencyCode = CurrencyCode {
     name: "US Dollar (Next day)",
@@ -1639,7 +1950,9 @@ pub const USN: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "funds",
     countries: &[],
+
 };
+
 
 pub const UYU: CurrencyCode = CurrencyCode {
     name: "Peso Uruguayo",
@@ -1648,7 +1961,9 @@ pub const UYU: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["URY"],
+
 };
+
 
 pub const UYI: CurrencyCode = CurrencyCode {
     name: "Uruguay Peso en Unidades Indexadas (UI)",
@@ -1656,8 +1971,10 @@ pub const UYI: CurrencyCode = CurrencyCode {
     numeric: 940,
     unit: 0,
     code_type: "funds",
-    countries: &[],
+    countries: &["URY"],
+
 };
+
 
 pub const UYW: CurrencyCode = CurrencyCode {
     name: "Unidad Previsional",
@@ -1665,8 +1982,10 @@ pub const UYW: CurrencyCode = CurrencyCode {
     numeric: 927,
     unit: 4,
     code_type: "funds",
-    countries: &[],
+    countries: &["URY"],
+
 };
+
 
 pub const UZS: CurrencyCode = CurrencyCode {
     name: "Uzbekistan Sum",
@@ -1675,7 +1994,9 @@ pub const UZS: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["UZB"],
+
 };
+
 
 pub const VUV: CurrencyCode = CurrencyCode {
     name: "Vatu",
@@ -1684,7 +2005,9 @@ pub const VUV: CurrencyCode = CurrencyCode {
     unit: 0,
     code_type: "currency",
     countries: &["VUT"],
+
 };
+
 
 pub const VES: CurrencyCode = CurrencyCode {
     name: "Bolívar Soberano",
@@ -1693,7 +2016,9 @@ pub const VES: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["VEN"],
+
 };
+
 
 pub const VED: CurrencyCode = CurrencyCode {
     name: "Bolívar Soberano",
@@ -1701,8 +2026,10 @@ pub const VED: CurrencyCode = CurrencyCode {
     numeric: 926,
     unit: 2,
     code_type: "currency",
-    countries: &[],
+    countries: &["VEN"],
+
 };
+
 
 pub const VND: CurrencyCode = CurrencyCode {
     name: "Dong",
@@ -1711,7 +2038,9 @@ pub const VND: CurrencyCode = CurrencyCode {
     unit: 0,
     code_type: "currency",
     countries: &["VNM"],
+
 };
+
 
 pub const YER: CurrencyCode = CurrencyCode {
     name: "Yemeni Rial",
@@ -1720,7 +2049,9 @@ pub const YER: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["YEM"],
+
 };
+
 
 pub const ZMW: CurrencyCode = CurrencyCode {
     name: "Zambian Kwacha",
@@ -1729,7 +2060,9 @@ pub const ZMW: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["ZMB"],
+
 };
+
 
 pub const ZWL: CurrencyCode = CurrencyCode {
     name: "Zimbabwe Dollar",
@@ -1738,7 +2071,9 @@ pub const ZWL: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["ZWE"],
+
 };
+
 
 pub const XBA: CurrencyCode = CurrencyCode {
     name: "Bond Markets Unit European Composite Unit (EURCO)",
@@ -1747,7 +2082,9 @@ pub const XBA: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "currency",
     countries: &[],
+
 };
+
 
 pub const XBB: CurrencyCode = CurrencyCode {
     name: "Bond Markets Unit European Monetary Unit (E.M.U.-6)",
@@ -1756,7 +2093,9 @@ pub const XBB: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "currency",
     countries: &[],
+
 };
+
 
 pub const XBC: CurrencyCode = CurrencyCode {
     name: "Bond Markets Unit European Unit of Account 9 (E.U.A.-9)",
@@ -1765,7 +2104,9 @@ pub const XBC: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "currency",
     countries: &[],
+
 };
+
 
 pub const XBD: CurrencyCode = CurrencyCode {
     name: "Bond Markets Unit European Unit of Account 17 (E.U.A.-17)",
@@ -1774,7 +2115,9 @@ pub const XBD: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "currency",
     countries: &[],
+
 };
+
 
 pub const XTS: CurrencyCode = CurrencyCode {
     name: "Codes specifically reserved for testing purposes",
@@ -1783,7 +2126,9 @@ pub const XTS: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "currency",
     countries: &[],
+
 };
+
 
 pub const XXX: CurrencyCode = CurrencyCode {
     name: "The codes assigned for transactions where no currency is involved",
@@ -1792,7 +2137,9 @@ pub const XXX: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "currency",
     countries: &[],
+
 };
+
 
 pub const XAU: CurrencyCode = CurrencyCode {
     name: "Gold",
@@ -1801,7 +2148,9 @@ pub const XAU: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "currency",
     countries: &[],
+
 };
+
 
 pub const XPD: CurrencyCode = CurrencyCode {
     name: "Palladium",
@@ -1810,7 +2159,9 @@ pub const XPD: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "currency",
     countries: &[],
+
 };
+
 
 pub const XPT: CurrencyCode = CurrencyCode {
     name: "Platinum",
@@ -1819,7 +2170,9 @@ pub const XPT: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "currency",
     countries: &[],
+
 };
+
 
 pub const XAG: CurrencyCode = CurrencyCode {
     name: "Silver",
@@ -1828,7 +2181,9 @@ pub const XAG: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "currency",
     countries: &[],
+
 };
+
 
 pub const AFA: CurrencyCode = CurrencyCode {
     name: "Afghani",
@@ -1837,7 +2192,9 @@ pub const AFA: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const FIM: CurrencyCode = CurrencyCode {
     name: "Markka",
@@ -1846,7 +2203,9 @@ pub const FIM: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const ALK: CurrencyCode = CurrencyCode {
     name: "Old Lek",
@@ -1855,7 +2214,9 @@ pub const ALK: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const ADP: CurrencyCode = CurrencyCode {
     name: "Andorran Peseta",
@@ -1864,7 +2225,9 @@ pub const ADP: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const ESP: CurrencyCode = CurrencyCode {
     name: "Spanish Peseta",
@@ -1873,7 +2236,9 @@ pub const ESP: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const FRF: CurrencyCode = CurrencyCode {
     name: "French Franc",
@@ -1882,7 +2247,9 @@ pub const FRF: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const AOK: CurrencyCode = CurrencyCode {
     name: "Kwanza",
@@ -1891,7 +2258,9 @@ pub const AOK: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const AON: CurrencyCode = CurrencyCode {
     name: "New Kwanza",
@@ -1900,7 +2269,9 @@ pub const AON: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const AOR: CurrencyCode = CurrencyCode {
     name: "Kwanza Reajustado",
@@ -1909,7 +2280,9 @@ pub const AOR: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const ARA: CurrencyCode = CurrencyCode {
     name: "Austral",
@@ -1918,7 +2291,9 @@ pub const ARA: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const ARP: CurrencyCode = CurrencyCode {
     name: "Peso Argentino",
@@ -1927,7 +2302,9 @@ pub const ARP: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const ARY: CurrencyCode = CurrencyCode {
     name: "Peso",
@@ -1936,7 +2313,9 @@ pub const ARY: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const RUR: CurrencyCode = CurrencyCode {
     name: "Russian Ruble",
@@ -1945,7 +2324,9 @@ pub const RUR: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const ATS: CurrencyCode = CurrencyCode {
     name: "Schilling",
@@ -1954,7 +2335,9 @@ pub const ATS: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const AYM: CurrencyCode = CurrencyCode {
     name: "Azerbaijan Manat",
@@ -1963,7 +2346,9 @@ pub const AYM: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const AZM: CurrencyCode = CurrencyCode {
     name: "Azerbaijanian Manat",
@@ -1972,7 +2357,9 @@ pub const AZM: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const BYB: CurrencyCode = CurrencyCode {
     name: "Belarusian Ruble",
@@ -1981,7 +2368,9 @@ pub const BYB: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const BYR: CurrencyCode = CurrencyCode {
     name: "Belarusian Ruble",
@@ -1990,7 +2379,9 @@ pub const BYR: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const BEC: CurrencyCode = CurrencyCode {
     name: "Convertible Franc",
@@ -1999,7 +2390,9 @@ pub const BEC: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const BEF: CurrencyCode = CurrencyCode {
     name: "Belgian Franc",
@@ -2008,7 +2401,9 @@ pub const BEF: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const BEL: CurrencyCode = CurrencyCode {
     name: "Financial Franc",
@@ -2017,7 +2412,9 @@ pub const BEL: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const BOP: CurrencyCode = CurrencyCode {
     name: "Peso boliviano",
@@ -2026,7 +2423,9 @@ pub const BOP: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const BAD: CurrencyCode = CurrencyCode {
     name: "Dinar",
@@ -2035,7 +2434,9 @@ pub const BAD: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const BRB: CurrencyCode = CurrencyCode {
     name: "Cruzeiro",
@@ -2044,7 +2445,9 @@ pub const BRB: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const BRC: CurrencyCode = CurrencyCode {
     name: "Cruzado",
@@ -2053,7 +2456,9 @@ pub const BRC: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const BRE: CurrencyCode = CurrencyCode {
     name: "Cruzeiro",
@@ -2062,7 +2467,9 @@ pub const BRE: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const BRN: CurrencyCode = CurrencyCode {
     name: "New Cruzado",
@@ -2071,7 +2478,9 @@ pub const BRN: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const BRR: CurrencyCode = CurrencyCode {
     name: "Cruzeiro Real",
@@ -2080,7 +2489,9 @@ pub const BRR: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const BGJ: CurrencyCode = CurrencyCode {
     name: "Lev A/52",
@@ -2089,7 +2500,9 @@ pub const BGJ: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const BGK: CurrencyCode = CurrencyCode {
     name: "Lev A/62",
@@ -2098,7 +2511,9 @@ pub const BGK: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const BGL: CurrencyCode = CurrencyCode {
     name: "Lev",
@@ -2107,7 +2522,9 @@ pub const BGL: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const BUK: CurrencyCode = CurrencyCode {
     name: "Kyat",
@@ -2116,7 +2533,9 @@ pub const BUK: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const HRD: CurrencyCode = CurrencyCode {
     name: "Croatian Dinar",
@@ -2125,7 +2544,9 @@ pub const HRD: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const HRK: CurrencyCode = CurrencyCode {
     name: "Croatian Kuna",
@@ -2134,7 +2555,9 @@ pub const HRK: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &["HRV"],
+
 };
+
 
 pub const CYP: CurrencyCode = CurrencyCode {
     name: "Cyprus Pound",
@@ -2143,7 +2566,9 @@ pub const CYP: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const CSJ: CurrencyCode = CurrencyCode {
     name: "Krona A/53",
@@ -2152,7 +2577,9 @@ pub const CSJ: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const CSK: CurrencyCode = CurrencyCode {
     name: "Koruna",
@@ -2161,7 +2588,9 @@ pub const CSK: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const ECS: CurrencyCode = CurrencyCode {
     name: "Sucre",
@@ -2170,7 +2599,9 @@ pub const ECS: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const ECV: CurrencyCode = CurrencyCode {
     name: "Unidad de Valor Constante (UVC)",
@@ -2179,7 +2610,9 @@ pub const ECV: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const GQE: CurrencyCode = CurrencyCode {
     name: "Ekwele",
@@ -2188,7 +2621,9 @@ pub const GQE: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const EEK: CurrencyCode = CurrencyCode {
     name: "Kroon",
@@ -2197,7 +2632,9 @@ pub const EEK: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const XEU: CurrencyCode = CurrencyCode {
     name: "European Currency Unit (E.C.U)",
@@ -2206,7 +2643,9 @@ pub const XEU: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const GEK: CurrencyCode = CurrencyCode {
     name: "Georgian Coupon",
@@ -2215,7 +2654,9 @@ pub const GEK: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const DDM: CurrencyCode = CurrencyCode {
     name: "Mark der DDR",
@@ -2224,7 +2665,9 @@ pub const DDM: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const DEM: CurrencyCode = CurrencyCode {
     name: "Deutsche Mark",
@@ -2233,7 +2676,9 @@ pub const DEM: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const GHC: CurrencyCode = CurrencyCode {
     name: "Cedi",
@@ -2242,7 +2687,9 @@ pub const GHC: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const GHP: CurrencyCode = CurrencyCode {
     name: "Ghana Cedi",
@@ -2251,7 +2698,9 @@ pub const GHP: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const GRD: CurrencyCode = CurrencyCode {
     name: "Drachma",
@@ -2260,7 +2709,9 @@ pub const GRD: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const GNE: CurrencyCode = CurrencyCode {
     name: "Syli",
@@ -2269,7 +2720,9 @@ pub const GNE: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const GNS: CurrencyCode = CurrencyCode {
     name: "Syli",
@@ -2278,7 +2731,9 @@ pub const GNS: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const GWE: CurrencyCode = CurrencyCode {
     name: "Guinea Escudo",
@@ -2287,7 +2742,9 @@ pub const GWE: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const GWP: CurrencyCode = CurrencyCode {
     name: "Guinea-Bissau Peso",
@@ -2296,7 +2753,9 @@ pub const GWP: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const ITL: CurrencyCode = CurrencyCode {
     name: "Italian Lira",
@@ -2305,7 +2764,9 @@ pub const ITL: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const ISJ: CurrencyCode = CurrencyCode {
     name: "Old Krona",
@@ -2314,7 +2775,9 @@ pub const ISJ: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const IEP: CurrencyCode = CurrencyCode {
     name: "Irish Pound",
@@ -2323,7 +2786,9 @@ pub const IEP: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const ILP: CurrencyCode = CurrencyCode {
     name: "Pound",
@@ -2332,7 +2797,9 @@ pub const ILP: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const ILR: CurrencyCode = CurrencyCode {
     name: "Old Shekel",
@@ -2341,7 +2808,9 @@ pub const ILR: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const LAJ: CurrencyCode = CurrencyCode {
     name: "Pathet Lao Kip",
@@ -2350,7 +2819,9 @@ pub const LAJ: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const LVL: CurrencyCode = CurrencyCode {
     name: "Latvian Lats",
@@ -2359,7 +2830,9 @@ pub const LVL: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const LVR: CurrencyCode = CurrencyCode {
     name: "Latvian Ruble",
@@ -2368,7 +2841,9 @@ pub const LVR: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const LSM: CurrencyCode = CurrencyCode {
     name: "Loti",
@@ -2377,7 +2852,9 @@ pub const LSM: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const ZAL: CurrencyCode = CurrencyCode {
     name: "Financial Rand",
@@ -2386,7 +2863,9 @@ pub const ZAL: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const LTL: CurrencyCode = CurrencyCode {
     name: "Lithuanian Litas",
@@ -2395,7 +2874,9 @@ pub const LTL: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const LTT: CurrencyCode = CurrencyCode {
     name: "Talonas",
@@ -2404,7 +2885,9 @@ pub const LTT: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const LUC: CurrencyCode = CurrencyCode {
     name: "Luxembourg Convertible Franc",
@@ -2413,7 +2896,9 @@ pub const LUC: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const LUF: CurrencyCode = CurrencyCode {
     name: "Luxembourg Franc",
@@ -2422,7 +2907,9 @@ pub const LUF: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const LUL: CurrencyCode = CurrencyCode {
     name: "Luxembourg Financial Franc",
@@ -2431,7 +2918,9 @@ pub const LUL: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const MGF: CurrencyCode = CurrencyCode {
     name: "Malagasy Franc",
@@ -2440,7 +2929,9 @@ pub const MGF: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const MVQ: CurrencyCode = CurrencyCode {
     name: "Maldive Rupee",
@@ -2449,7 +2940,9 @@ pub const MVQ: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const MLF: CurrencyCode = CurrencyCode {
     name: "Mali Franc",
@@ -2458,7 +2951,9 @@ pub const MLF: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const MTL: CurrencyCode = CurrencyCode {
     name: "Maltese Lira",
@@ -2467,7 +2962,9 @@ pub const MTL: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const MTP: CurrencyCode = CurrencyCode {
     name: "Maltese Pound",
@@ -2476,7 +2973,9 @@ pub const MTP: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const MRO: CurrencyCode = CurrencyCode {
     name: "Ouguiya",
@@ -2485,7 +2984,9 @@ pub const MRO: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const MXP: CurrencyCode = CurrencyCode {
     name: "Mexican Peso",
@@ -2494,7 +2995,9 @@ pub const MXP: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const MZE: CurrencyCode = CurrencyCode {
     name: "Mozambique Escudo",
@@ -2503,7 +3006,9 @@ pub const MZE: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const MZM: CurrencyCode = CurrencyCode {
     name: "Mozambique Metical",
@@ -2512,7 +3017,9 @@ pub const MZM: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const NLG: CurrencyCode = CurrencyCode {
     name: "Netherlands Guilder",
@@ -2521,7 +3028,9 @@ pub const NLG: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const NIC: CurrencyCode = CurrencyCode {
     name: "Cordoba",
@@ -2530,7 +3039,9 @@ pub const NIC: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const PEH: CurrencyCode = CurrencyCode {
     name: "Sol",
@@ -2539,7 +3050,9 @@ pub const PEH: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const PEI: CurrencyCode = CurrencyCode {
     name: "Inti",
@@ -2548,7 +3061,9 @@ pub const PEI: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const PES: CurrencyCode = CurrencyCode {
     name: "Sol",
@@ -2557,7 +3072,9 @@ pub const PES: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const PLZ: CurrencyCode = CurrencyCode {
     name: "Zloty",
@@ -2566,7 +3083,9 @@ pub const PLZ: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const PTE: CurrencyCode = CurrencyCode {
     name: "Portuguese Escudo",
@@ -2575,7 +3094,9 @@ pub const PTE: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const ROK: CurrencyCode = CurrencyCode {
     name: "Leu A/52",
@@ -2584,7 +3105,9 @@ pub const ROK: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const ROL: CurrencyCode = CurrencyCode {
     name: "Old Leu",
@@ -2593,7 +3116,9 @@ pub const ROL: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const STD: CurrencyCode = CurrencyCode {
     name: "Dobra",
@@ -2602,7 +3127,9 @@ pub const STD: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const CSD: CurrencyCode = CurrencyCode {
     name: "Serbian Dinar",
@@ -2611,7 +3138,9 @@ pub const CSD: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const SKK: CurrencyCode = CurrencyCode {
     name: "Slovak Koruna",
@@ -2620,7 +3149,9 @@ pub const SKK: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const SIT: CurrencyCode = CurrencyCode {
     name: "Tolar",
@@ -2629,7 +3160,9 @@ pub const SIT: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const RHD: CurrencyCode = CurrencyCode {
     name: "Rhodesian Dollar",
@@ -2638,7 +3171,9 @@ pub const RHD: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const ESA: CurrencyCode = CurrencyCode {
     name: "Spanish Peseta",
@@ -2647,7 +3182,9 @@ pub const ESA: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const ESB: CurrencyCode = CurrencyCode {
     name: "\"A\" Account (convertible Peseta Account)",
@@ -2656,7 +3193,9 @@ pub const ESB: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const SDD: CurrencyCode = CurrencyCode {
     name: "Sudanese Dinar",
@@ -2665,7 +3204,9 @@ pub const SDD: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const SDP: CurrencyCode = CurrencyCode {
     name: "Sudanese Pound",
@@ -2674,7 +3215,9 @@ pub const SDP: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const SRG: CurrencyCode = CurrencyCode {
     name: "Surinam Guilder",
@@ -2683,7 +3226,9 @@ pub const SRG: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const CHC: CurrencyCode = CurrencyCode {
     name: "WIR Franc (for electronic)",
@@ -2692,7 +3237,9 @@ pub const CHC: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const TJR: CurrencyCode = CurrencyCode {
     name: "Tajik Ruble",
@@ -2701,7 +3248,9 @@ pub const TJR: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const TPE: CurrencyCode = CurrencyCode {
     name: "Timor Escudo",
@@ -2710,7 +3259,9 @@ pub const TPE: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const TRL: CurrencyCode = CurrencyCode {
     name: "Old Turkish Lira",
@@ -2719,7 +3270,9 @@ pub const TRL: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const TMM: CurrencyCode = CurrencyCode {
     name: "Turkmenistan Manat",
@@ -2728,7 +3281,9 @@ pub const TMM: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const UGS: CurrencyCode = CurrencyCode {
     name: "Uganda Shilling",
@@ -2737,7 +3292,9 @@ pub const UGS: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const UGW: CurrencyCode = CurrencyCode {
     name: "Old Shilling",
@@ -2746,7 +3303,9 @@ pub const UGW: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const UAK: CurrencyCode = CurrencyCode {
     name: "Karbovanet",
@@ -2755,7 +3314,9 @@ pub const UAK: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const SUR: CurrencyCode = CurrencyCode {
     name: "Rouble",
@@ -2764,7 +3325,9 @@ pub const SUR: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const USS: CurrencyCode = CurrencyCode {
     name: "US Dollar (Same day)",
@@ -2773,7 +3336,9 @@ pub const USS: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const UYN: CurrencyCode = CurrencyCode {
     name: "Old Uruguay Peso",
@@ -2782,7 +3347,9 @@ pub const UYN: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const UYP: CurrencyCode = CurrencyCode {
     name: "Uruguayan Peso",
@@ -2791,7 +3358,9 @@ pub const UYP: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const VEB: CurrencyCode = CurrencyCode {
     name: "Bolivar",
@@ -2800,7 +3369,9 @@ pub const VEB: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const VEF: CurrencyCode = CurrencyCode {
     name: "Bolivar Fuerte",
@@ -2809,7 +3380,9 @@ pub const VEF: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const VNC: CurrencyCode = CurrencyCode {
     name: "Old Dong",
@@ -2818,7 +3391,9 @@ pub const VNC: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const YDD: CurrencyCode = CurrencyCode {
     name: "Yemeni Dinar",
@@ -2827,7 +3402,9 @@ pub const YDD: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const YUD: CurrencyCode = CurrencyCode {
     name: "New Yugoslavian Dinar",
@@ -2836,7 +3413,9 @@ pub const YUD: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const YUM: CurrencyCode = CurrencyCode {
     name: "New Dinar",
@@ -2845,7 +3424,9 @@ pub const YUM: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const YUN: CurrencyCode = CurrencyCode {
     name: "Yugoslavian Dinar",
@@ -2854,7 +3435,9 @@ pub const YUN: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const ZRN: CurrencyCode = CurrencyCode {
     name: "New Zaire",
@@ -2863,7 +3446,9 @@ pub const ZRN: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const ZRZ: CurrencyCode = CurrencyCode {
     name: "Zaire",
@@ -2872,7 +3457,9 @@ pub const ZRZ: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const ZMK: CurrencyCode = CurrencyCode {
     name: "Zambian Kwacha",
@@ -2881,7 +3468,9 @@ pub const ZMK: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const ZWC: CurrencyCode = CurrencyCode {
     name: "Rhodesian Dollar",
@@ -2890,7 +3479,9 @@ pub const ZWC: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const ZWD: CurrencyCode = CurrencyCode {
     name: "Zimbabwe Dollar (old)",
@@ -2899,7 +3490,9 @@ pub const ZWD: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const ZWN: CurrencyCode = CurrencyCode {
     name: "Zimbabwe Dollar (new)",
@@ -2908,7 +3501,9 @@ pub const ZWN: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const ZWR: CurrencyCode = CurrencyCode {
     name: "Zimbabwe Dollar",
@@ -2917,7 +3512,9 @@ pub const ZWR: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const XFO: CurrencyCode = CurrencyCode {
     name: "Gold-Franc",
@@ -2926,7 +3523,9 @@ pub const XFO: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const XRE: CurrencyCode = CurrencyCode {
     name: "RINET Funds Code",
@@ -2935,7 +3534,9 @@ pub const XRE: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 pub const XFU: CurrencyCode = CurrencyCode {
     name: "UIC-Franc",
@@ -2944,1260 +3545,2614 @@ pub const XFU: CurrencyCode = CurrencyCode {
     unit: -1,
     code_type: "historic",
     countries: &[],
+
 };
+
 
 ///CurrencyCode map with  alpha3  str Code key
 pub const ALL_MAP: Map<&str, CurrencyCode> = phf_map! {
-
-"AFN" => AFN,
-"EUR" => EUR,
-"ALL" => ALL,
-"DZD" => DZD,
-"USD" => USD,
-"AOA" => AOA,
-"XCD" => XCD,
-"ARS" => ARS,
-"AMD" => AMD,
-"AWG" => AWG,
-"AUD" => AUD,
-"AZN" => AZN,
-"BSD" => BSD,
-"BHD" => BHD,
-"BDT" => BDT,
-"BBD" => BBD,
-"BYN" => BYN,
-"BZD" => BZD,
-"XOF" => XOF,
-"BMD" => BMD,
-"INR" => INR,
-"BTN" => BTN,
-"BOB" => BOB,
-"BOV" => BOV,
-"BAM" => BAM,
-"BWP" => BWP,
-"NOK" => NOK,
-"BRL" => BRL,
-"BND" => BND,
-"BGN" => BGN,
-"BIF" => BIF,
-"CVE" => CVE,
-"KHR" => KHR,
-"XAF" => XAF,
-"CAD" => CAD,
-"KYD" => KYD,
-"CLP" => CLP,
-"CLF" => CLF,
-"CNY" => CNY,
-"COP" => COP,
-"COU" => COU,
-"KMF" => KMF,
-"CDF" => CDF,
-"NZD" => NZD,
-"CRC" => CRC,
-"CUP" => CUP,
-"CUC" => CUC,
-"ANG" => ANG,
-"CZK" => CZK,
-"DKK" => DKK,
-"DJF" => DJF,
-"DOP" => DOP,
-"EGP" => EGP,
-"SVC" => SVC,
-"ERN" => ERN,
-"SZL" => SZL,
-"ETB" => ETB,
-"FKP" => FKP,
-"FJD" => FJD,
-"XPF" => XPF,
-"GMD" => GMD,
-"GEL" => GEL,
-"GHS" => GHS,
-"GIP" => GIP,
-"GTQ" => GTQ,
-"GBP" => GBP,
-"GNF" => GNF,
-"GYD" => GYD,
-"HTG" => HTG,
-"HNL" => HNL,
-"HKD" => HKD,
-"HUF" => HUF,
-"ISK" => ISK,
-"IDR" => IDR,
-"XDR" => XDR,
-"IRR" => IRR,
-"IQD" => IQD,
-"ILS" => ILS,
-"JMD" => JMD,
-"JPY" => JPY,
-"JOD" => JOD,
-"KZT" => KZT,
-"KES" => KES,
-"KPW" => KPW,
-"KRW" => KRW,
-"KWD" => KWD,
-"KGS" => KGS,
-"LAK" => LAK,
-"LBP" => LBP,
-"LSL" => LSL,
-"ZAR" => ZAR,
-"LRD" => LRD,
-"LYD" => LYD,
-"CHF" => CHF,
-"MOP" => MOP,
-"MKD" => MKD,
-"MGA" => MGA,
-"MWK" => MWK,
-"MYR" => MYR,
-"MVR" => MVR,
-"MRU" => MRU,
-"MUR" => MUR,
-"XUA" => XUA,
-"MXN" => MXN,
-"MXV" => MXV,
-"MDL" => MDL,
-"MNT" => MNT,
-"MAD" => MAD,
-"MZN" => MZN,
-"MMK" => MMK,
-"NAD" => NAD,
-"NPR" => NPR,
-"NIO" => NIO,
-"NGN" => NGN,
-"OMR" => OMR,
-"PKR" => PKR,
-"PAB" => PAB,
-"PGK" => PGK,
-"PYG" => PYG,
-"PEN" => PEN,
-"PHP" => PHP,
-"PLN" => PLN,
-"QAR" => QAR,
-"RON" => RON,
-"RUB" => RUB,
-"RWF" => RWF,
-"SHP" => SHP,
-"WST" => WST,
-"STN" => STN,
-"SAR" => SAR,
-"RSD" => RSD,
-"SCR" => SCR,
-"SLL" => SLL,
-"SLE" => SLE,
-"SGD" => SGD,
-"XSU" => XSU,
-"SBD" => SBD,
-"SOS" => SOS,
-"SSP" => SSP,
-"LKR" => LKR,
-"SDG" => SDG,
-"SRD" => SRD,
-"SEK" => SEK,
-"CHE" => CHE,
-"CHW" => CHW,
-"SYP" => SYP,
-"TWD" => TWD,
-"TJS" => TJS,
-"TZS" => TZS,
-"THB" => THB,
-"TOP" => TOP,
-"TTD" => TTD,
-"TND" => TND,
-"TRY" => TRY,
-"TMT" => TMT,
-"UGX" => UGX,
-"UAH" => UAH,
-"AED" => AED,
-"USN" => USN,
-"UYU" => UYU,
-"UYI" => UYI,
-"UYW" => UYW,
-"UZS" => UZS,
-"VUV" => VUV,
-"VES" => VES,
-"VED" => VED,
-"VND" => VND,
-"YER" => YER,
-"ZMW" => ZMW,
-"ZWL" => ZWL,
-"XBA" => XBA,
-"XBB" => XBB,
-"XBC" => XBC,
-"XBD" => XBD,
-"XTS" => XTS,
-"XXX" => XXX,
-"XAU" => XAU,
-"XPD" => XPD,
-"XPT" => XPT,
-"XAG" => XAG,
-"AFA" => AFA,
-"FIM" => FIM,
-"ALK" => ALK,
-"ADP" => ADP,
-"ESP" => ESP,
-"FRF" => FRF,
-"AOK" => AOK,
-"AON" => AON,
-"AOR" => AOR,
-"ARA" => ARA,
-"ARP" => ARP,
-"ARY" => ARY,
-"RUR" => RUR,
-"ATS" => ATS,
-"AYM" => AYM,
-"AZM" => AZM,
-"BYB" => BYB,
-"BYR" => BYR,
-"BEC" => BEC,
-"BEF" => BEF,
-"BEL" => BEL,
-"BOP" => BOP,
-"BAD" => BAD,
-"BRB" => BRB,
-"BRC" => BRC,
-"BRE" => BRE,
-"BRN" => BRN,
-"BRR" => BRR,
-"BGJ" => BGJ,
-"BGK" => BGK,
-"BGL" => BGL,
-"BUK" => BUK,
-"HRD" => HRD,
-"HRK" => HRK,
-"CYP" => CYP,
-"CSJ" => CSJ,
-"CSK" => CSK,
-"ECS" => ECS,
-"ECV" => ECV,
-"GQE" => GQE,
-"EEK" => EEK,
-"XEU" => XEU,
-"GEK" => GEK,
-"DDM" => DDM,
-"DEM" => DEM,
-"GHC" => GHC,
-"GHP" => GHP,
-"GRD" => GRD,
-"GNE" => GNE,
-"GNS" => GNS,
-"GWE" => GWE,
-"GWP" => GWP,
-"ITL" => ITL,
-"ISJ" => ISJ,
-"IEP" => IEP,
-"ILP" => ILP,
-"ILR" => ILR,
-"LAJ" => LAJ,
-"LVL" => LVL,
-"LVR" => LVR,
-"LSM" => LSM,
-"ZAL" => ZAL,
-"LTL" => LTL,
-"LTT" => LTT,
-"LUC" => LUC,
-"LUF" => LUF,
-"LUL" => LUL,
-"MGF" => MGF,
-"MVQ" => MVQ,
-"MLF" => MLF,
-"MTL" => MTL,
-"MTP" => MTP,
-"MRO" => MRO,
-"MXP" => MXP,
-"MZE" => MZE,
-"MZM" => MZM,
-"NLG" => NLG,
-"NIC" => NIC,
-"PEH" => PEH,
-"PEI" => PEI,
-"PES" => PES,
-"PLZ" => PLZ,
-"PTE" => PTE,
-"ROK" => ROK,
-"ROL" => ROL,
-"STD" => STD,
-"CSD" => CSD,
-"SKK" => SKK,
-"SIT" => SIT,
-"RHD" => RHD,
-"ESA" => ESA,
-"ESB" => ESB,
-"SDD" => SDD,
-"SDP" => SDP,
-"SRG" => SRG,
-"CHC" => CHC,
-"TJR" => TJR,
-"TPE" => TPE,
-"TRL" => TRL,
-"TMM" => TMM,
-"UGS" => UGS,
-"UGW" => UGW,
-"UAK" => UAK,
-"SUR" => SUR,
-"USS" => USS,
-"UYN" => UYN,
-"UYP" => UYP,
-"VEB" => VEB,
-"VEF" => VEF,
-"VNC" => VNC,
-"YDD" => YDD,
-"YUD" => YUD,
-"YUM" => YUM,
-"YUN" => YUN,
-"ZRN" => ZRN,
-"ZRZ" => ZRZ,
-"ZMK" => ZMK,
-"ZWC" => ZWC,
-"ZWD" => ZWD,
-"ZWN" => ZWN,
-"ZWR" => ZWR,
-"XFO" => XFO,
-"XRE" => XRE,
-"XFU" => XFU,
+    
+"AFN" => AFN, 
+"EUR" => EUR, 
+"ALL" => ALL, 
+"DZD" => DZD, 
+"USD" => USD, 
+"AOA" => AOA, 
+"XCD" => XCD, 
+"ARS" => ARS, 
+"AMD" => AMD, 
+"AWG" => AWG, 
+"AUD" => AUD, 
+"AZN" => AZN, 
+"BSD" => BSD, 
+"BHD" => BHD, 
+"BDT" => BDT, 
+"BBD" => BBD, 
+"BYN" => BYN, 
+"BZD" => BZD, 
+"XOF" => XOF, 
+"BMD" => BMD, 
+"INR" => INR, 
+"BTN" => BTN, 
+"BOB" => BOB, 
+"BOV" => BOV, 
+"BAM" => BAM, 
+"BWP" => BWP, 
+"NOK" => NOK, 
+"BRL" => BRL, 
+"BND" => BND, 
+"BGN" => BGN, 
+"BIF" => BIF, 
+"CVE" => CVE, 
+"KHR" => KHR, 
+"XAF" => XAF, 
+"CAD" => CAD, 
+"KYD" => KYD, 
+"CLP" => CLP, 
+"CLF" => CLF, 
+"CNY" => CNY, 
+"COP" => COP, 
+"COU" => COU, 
+"KMF" => KMF, 
+"CDF" => CDF, 
+"NZD" => NZD, 
+"CRC" => CRC, 
+"CUP" => CUP, 
+"CUC" => CUC, 
+"ANG" => ANG, 
+"CZK" => CZK, 
+"DKK" => DKK, 
+"DJF" => DJF, 
+"DOP" => DOP, 
+"EGP" => EGP, 
+"SVC" => SVC, 
+"ERN" => ERN, 
+"SZL" => SZL, 
+"ETB" => ETB, 
+"FKP" => FKP, 
+"FJD" => FJD, 
+"XPF" => XPF, 
+"GMD" => GMD, 
+"GEL" => GEL, 
+"GHS" => GHS, 
+"GIP" => GIP, 
+"GTQ" => GTQ, 
+"GBP" => GBP, 
+"GNF" => GNF, 
+"GYD" => GYD, 
+"HTG" => HTG, 
+"HNL" => HNL, 
+"HKD" => HKD, 
+"HUF" => HUF, 
+"ISK" => ISK, 
+"IDR" => IDR, 
+"XDR" => XDR, 
+"IRR" => IRR, 
+"IQD" => IQD, 
+"ILS" => ILS, 
+"JMD" => JMD, 
+"JPY" => JPY, 
+"JOD" => JOD, 
+"KZT" => KZT, 
+"KES" => KES, 
+"KPW" => KPW, 
+"KRW" => KRW, 
+"KWD" => KWD, 
+"KGS" => KGS, 
+"LAK" => LAK, 
+"LBP" => LBP, 
+"LSL" => LSL, 
+"ZAR" => ZAR, 
+"LRD" => LRD, 
+"LYD" => LYD, 
+"CHF" => CHF, 
+"MOP" => MOP, 
+"MKD" => MKD, 
+"MGA" => MGA, 
+"MWK" => MWK, 
+"MYR" => MYR, 
+"MVR" => MVR, 
+"MRU" => MRU, 
+"MUR" => MUR, 
+"XUA" => XUA, 
+"MXN" => MXN, 
+"MXV" => MXV, 
+"MDL" => MDL, 
+"MNT" => MNT, 
+"MAD" => MAD, 
+"MZN" => MZN, 
+"MMK" => MMK, 
+"NAD" => NAD, 
+"NPR" => NPR, 
+"NIO" => NIO, 
+"NGN" => NGN, 
+"OMR" => OMR, 
+"PKR" => PKR, 
+"PAB" => PAB, 
+"PGK" => PGK, 
+"PYG" => PYG, 
+"PEN" => PEN, 
+"PHP" => PHP, 
+"PLN" => PLN, 
+"QAR" => QAR, 
+"RON" => RON, 
+"RUB" => RUB, 
+"RWF" => RWF, 
+"SHP" => SHP, 
+"WST" => WST, 
+"STN" => STN, 
+"SAR" => SAR, 
+"RSD" => RSD, 
+"SCR" => SCR, 
+"SLL" => SLL, 
+"SLE" => SLE, 
+"SGD" => SGD, 
+"XSU" => XSU, 
+"SBD" => SBD, 
+"SOS" => SOS, 
+"SSP" => SSP, 
+"LKR" => LKR, 
+"SDG" => SDG, 
+"SRD" => SRD, 
+"SEK" => SEK, 
+"CHE" => CHE, 
+"CHW" => CHW, 
+"SYP" => SYP, 
+"TWD" => TWD, 
+"TJS" => TJS, 
+"TZS" => TZS, 
+"THB" => THB, 
+"TOP" => TOP, 
+"TTD" => TTD, 
+"TND" => TND, 
+"TRY" => TRY, 
+"TMT" => TMT, 
+"UGX" => UGX, 
+"UAH" => UAH, 
+"AED" => AED, 
+"USN" => USN, 
+"UYU" => UYU, 
+"UYI" => UYI, 
+"UYW" => UYW, 
+"UZS" => UZS, 
+"VUV" => VUV, 
+"VES" => VES, 
+"VED" => VED, 
+"VND" => VND, 
+"YER" => YER, 
+"ZMW" => ZMW, 
+"ZWL" => ZWL, 
+"XBA" => XBA, 
+"XBB" => XBB, 
+"XBC" => XBC, 
+"XBD" => XBD, 
+"XTS" => XTS, 
+"XXX" => XXX, 
+"XAU" => XAU, 
+"XPD" => XPD, 
+"XPT" => XPT, 
+"XAG" => XAG, 
+"AFA" => AFA, 
+"FIM" => FIM, 
+"ALK" => ALK, 
+"ADP" => ADP, 
+"ESP" => ESP, 
+"FRF" => FRF, 
+"AOK" => AOK, 
+"AON" => AON, 
+"AOR" => AOR, 
+"ARA" => ARA, 
+"ARP" => ARP, 
+"ARY" => ARY, 
+"RUR" => RUR, 
+"ATS" => ATS, 
+"AYM" => AYM, 
+"AZM" => AZM, 
+"BYB" => BYB, 
+"BYR" => BYR, 
+"BEC" => BEC, 
+"BEF" => BEF, 
+"BEL" => BEL, 
+"BOP" => BOP, 
+"BAD" => BAD, 
+"BRB" => BRB, 
+"BRC" => BRC, 
+"BRE" => BRE, 
+"BRN" => BRN, 
+"BRR" => BRR, 
+"BGJ" => BGJ, 
+"BGK" => BGK, 
+"BGL" => BGL, 
+"BUK" => BUK, 
+"HRD" => HRD, 
+"HRK" => HRK, 
+"CYP" => CYP, 
+"CSJ" => CSJ, 
+"CSK" => CSK, 
+"ECS" => ECS, 
+"ECV" => ECV, 
+"GQE" => GQE, 
+"EEK" => EEK, 
+"XEU" => XEU, 
+"GEK" => GEK, 
+"DDM" => DDM, 
+"DEM" => DEM, 
+"GHC" => GHC, 
+"GHP" => GHP, 
+"GRD" => GRD, 
+"GNE" => GNE, 
+"GNS" => GNS, 
+"GWE" => GWE, 
+"GWP" => GWP, 
+"ITL" => ITL, 
+"ISJ" => ISJ, 
+"IEP" => IEP, 
+"ILP" => ILP, 
+"ILR" => ILR, 
+"LAJ" => LAJ, 
+"LVL" => LVL, 
+"LVR" => LVR, 
+"LSM" => LSM, 
+"ZAL" => ZAL, 
+"LTL" => LTL, 
+"LTT" => LTT, 
+"LUC" => LUC, 
+"LUF" => LUF, 
+"LUL" => LUL, 
+"MGF" => MGF, 
+"MVQ" => MVQ, 
+"MLF" => MLF, 
+"MTL" => MTL, 
+"MTP" => MTP, 
+"MRO" => MRO, 
+"MXP" => MXP, 
+"MZE" => MZE, 
+"MZM" => MZM, 
+"NLG" => NLG, 
+"NIC" => NIC, 
+"PEH" => PEH, 
+"PEI" => PEI, 
+"PES" => PES, 
+"PLZ" => PLZ, 
+"PTE" => PTE, 
+"ROK" => ROK, 
+"ROL" => ROL, 
+"STD" => STD, 
+"CSD" => CSD, 
+"SKK" => SKK, 
+"SIT" => SIT, 
+"RHD" => RHD, 
+"ESA" => ESA, 
+"ESB" => ESB, 
+"SDD" => SDD, 
+"SDP" => SDP, 
+"SRG" => SRG, 
+"CHC" => CHC, 
+"TJR" => TJR, 
+"TPE" => TPE, 
+"TRL" => TRL, 
+"TMM" => TMM, 
+"UGS" => UGS, 
+"UGW" => UGW, 
+"UAK" => UAK, 
+"SUR" => SUR, 
+"USS" => USS, 
+"UYN" => UYN, 
+"UYP" => UYP, 
+"VEB" => VEB, 
+"VEF" => VEF, 
+"VNC" => VNC, 
+"YDD" => YDD, 
+"YUD" => YUD, 
+"YUM" => YUM, 
+"YUN" => YUN, 
+"ZRN" => ZRN, 
+"ZRZ" => ZRZ, 
+"ZMK" => ZMK, 
+"ZWC" => ZWC, 
+"ZWD" => ZWD, 
+"ZWN" => ZWN, 
+"ZWR" => ZWR, 
+"XFO" => XFO, 
+"XRE" => XRE, 
+"XFU" => XFU, 
 
 };
+
 
 ///CurrencyCode map with  3 len numeric str Code key
 pub const NUMERIC_MAP: Map<&str, CurrencyCode> = phf_map! {
-
-"971" => AFN,
-"978" => EUR,
-"008" => ALL,
-"012" => DZD,
-"840" => USD,
-"973" => AOA,
-"951" => XCD,
-"032" => ARS,
-"051" => AMD,
-"533" => AWG,
-"036" => AUD,
-"944" => AZN,
-"044" => BSD,
-"048" => BHD,
-"050" => BDT,
-"052" => BBD,
-"933" => BYN,
-"084" => BZD,
-"952" => XOF,
-"060" => BMD,
-"356" => INR,
-"064" => BTN,
-"068" => BOB,
-"984" => BOV,
-"977" => BAM,
-"072" => BWP,
-"578" => NOK,
-"986" => BRL,
-"096" => BND,
-"975" => BGN,
-"108" => BIF,
-"132" => CVE,
-"116" => KHR,
-"950" => XAF,
-"124" => CAD,
-"136" => KYD,
-"152" => CLP,
-"990" => CLF,
-"156" => CNY,
-"170" => COP,
-"970" => COU,
-"174" => KMF,
-"976" => CDF,
-"554" => NZD,
-"188" => CRC,
-"192" => CUP,
-"931" => CUC,
-"532" => ANG,
-"203" => CZK,
-"208" => DKK,
-"262" => DJF,
-"214" => DOP,
-"818" => EGP,
-"222" => SVC,
-"232" => ERN,
-"748" => SZL,
-"230" => ETB,
-"238" => FKP,
-"242" => FJD,
-"953" => XPF,
-"270" => GMD,
-"981" => GEL,
-"936" => GHS,
-"292" => GIP,
-"320" => GTQ,
-"826" => GBP,
-"324" => GNF,
-"328" => GYD,
-"332" => HTG,
-"340" => HNL,
-"344" => HKD,
-"348" => HUF,
-"352" => ISK,
-"360" => IDR,
-"960" => XDR,
-"364" => IRR,
-"368" => IQD,
-"376" => ILS,
-"388" => JMD,
-"392" => JPY,
-"400" => JOD,
-"398" => KZT,
-"404" => KES,
-"408" => KPW,
-"410" => KRW,
-"414" => KWD,
-"417" => KGS,
-"418" => LAK,
-"422" => LBP,
-"426" => LSL,
-"710" => ZAR,
-"430" => LRD,
-"434" => LYD,
-"756" => CHF,
-"446" => MOP,
-"807" => MKD,
-"969" => MGA,
-"454" => MWK,
-"458" => MYR,
-"462" => MVR,
-"929" => MRU,
-"480" => MUR,
-"965" => XUA,
-"484" => MXN,
-"979" => MXV,
-"498" => MDL,
-"496" => MNT,
-"504" => MAD,
-"943" => MZN,
-"104" => MMK,
-"516" => NAD,
-"524" => NPR,
-"558" => NIO,
-"566" => NGN,
-"512" => OMR,
-"586" => PKR,
-"590" => PAB,
-"598" => PGK,
-"600" => PYG,
-"604" => PEN,
-"608" => PHP,
-"985" => PLN,
-"634" => QAR,
-"946" => RON,
-"643" => RUB,
-"646" => RWF,
-"654" => SHP,
-"882" => WST,
-"930" => STN,
-"682" => SAR,
-"941" => RSD,
-"690" => SCR,
-"694" => SLL,
-"925" => SLE,
-"702" => SGD,
-"994" => XSU,
-"090" => SBD,
-"706" => SOS,
-"728" => SSP,
-"144" => LKR,
-"938" => SDG,
-"968" => SRD,
-"752" => SEK,
-"947" => CHE,
-"948" => CHW,
-"760" => SYP,
-"901" => TWD,
-"972" => TJS,
-"834" => TZS,
-"764" => THB,
-"776" => TOP,
-"780" => TTD,
-"788" => TND,
-"949" => TRY,
-"934" => TMT,
-"800" => UGX,
-"980" => UAH,
-"784" => AED,
-"997" => USN,
-"858" => UYU,
-"940" => UYI,
-"927" => UYW,
-"860" => UZS,
-"548" => VUV,
-"928" => VES,
-"926" => VED,
-"704" => VND,
-"886" => YER,
-"967" => ZMW,
-"932" => ZWL,
-"955" => XBA,
-"956" => XBB,
-"957" => XBC,
-"958" => XBD,
-"963" => XTS,
-"999" => XXX,
-"959" => XAU,
-"964" => XPD,
-"962" => XPT,
-"961" => XAG,
-"004" => AFA,
-"246" => FIM,
-"020" => ADP,
-"724" => ESP,
-"250" => FRF,
-"024" => AOK,
-"982" => AOR,
-"810" => RUR,
-"040" => ATS,
-"945" => AYM,
-"031" => AZM,
-"112" => BYB,
-"974" => BYR,
-"993" => BEC,
-"056" => BEF,
-"992" => BEL,
-"070" => BAD,
-"076" => BRB,
-"987" => BRR,
-"100" => BGJ,
-"191" => HRD,
-"196" => CYP,
-"200" => CSK,
-"218" => ECS,
-"983" => ECV,
-"226" => GQE,
-"233" => EEK,
-"954" => XEU,
-"268" => GEK,
-"278" => DDM,
-"276" => DEM,
-"288" => GHC,
-"939" => GHP,
-"300" => GRD,
-"624" => GWE,
-"380" => ITL,
-"372" => IEP,
-"428" => LVL,
-"991" => ZAL,
-"440" => LTL,
-"989" => LUC,
-"442" => LUF,
-"988" => LUL,
-"450" => MGF,
-"466" => MLF,
-"470" => MTL,
-"478" => MRO,
-"508" => MZE,
-"528" => NLG,
-"616" => PLZ,
-"620" => PTE,
-"642" => ROK,
-"678" => STD,
-"891" => CSD,
-"703" => SKK,
-"705" => SIT,
-"716" => RHD,
-"996" => ESA,
-"995" => ESB,
-"736" => SDD,
-"740" => SRG,
-"762" => TJR,
-"626" => TPE,
-"792" => TRL,
-"795" => TMM,
-"804" => UAK,
-"998" => USS,
-"862" => VEB,
-"937" => VEF,
-"720" => YDD,
-"890" => YUD,
-"180" => ZRN,
-"894" => ZMK,
-"942" => ZWN,
-"935" => ZWR,
+    
+"971" => AFN, 
+"978" => EUR, 
+"008" => ALL, 
+"012" => DZD, 
+"840" => USD, 
+"973" => AOA, 
+"951" => XCD, 
+"032" => ARS, 
+"051" => AMD, 
+"533" => AWG, 
+"036" => AUD, 
+"944" => AZN, 
+"044" => BSD, 
+"048" => BHD, 
+"050" => BDT, 
+"052" => BBD, 
+"933" => BYN, 
+"084" => BZD, 
+"952" => XOF, 
+"060" => BMD, 
+"356" => INR, 
+"064" => BTN, 
+"068" => BOB, 
+"984" => BOV, 
+"977" => BAM, 
+"072" => BWP, 
+"578" => NOK, 
+"986" => BRL, 
+"096" => BND, 
+"975" => BGN, 
+"108" => BIF, 
+"132" => CVE, 
+"116" => KHR, 
+"950" => XAF, 
+"124" => CAD, 
+"136" => KYD, 
+"152" => CLP, 
+"990" => CLF, 
+"156" => CNY, 
+"170" => COP, 
+"970" => COU, 
+"174" => KMF, 
+"976" => CDF, 
+"554" => NZD, 
+"188" => CRC, 
+"192" => CUP, 
+"931" => CUC, 
+"532" => ANG, 
+"203" => CZK, 
+"208" => DKK, 
+"262" => DJF, 
+"214" => DOP, 
+"818" => EGP, 
+"222" => SVC, 
+"232" => ERN, 
+"748" => SZL, 
+"230" => ETB, 
+"238" => FKP, 
+"242" => FJD, 
+"953" => XPF, 
+"270" => GMD, 
+"981" => GEL, 
+"936" => GHS, 
+"292" => GIP, 
+"320" => GTQ, 
+"826" => GBP, 
+"324" => GNF, 
+"328" => GYD, 
+"332" => HTG, 
+"340" => HNL, 
+"344" => HKD, 
+"348" => HUF, 
+"352" => ISK, 
+"360" => IDR, 
+"960" => XDR, 
+"364" => IRR, 
+"368" => IQD, 
+"376" => ILS, 
+"388" => JMD, 
+"392" => JPY, 
+"400" => JOD, 
+"398" => KZT, 
+"404" => KES, 
+"408" => KPW, 
+"410" => KRW, 
+"414" => KWD, 
+"417" => KGS, 
+"418" => LAK, 
+"422" => LBP, 
+"426" => LSL, 
+"710" => ZAR, 
+"430" => LRD, 
+"434" => LYD, 
+"756" => CHF, 
+"446" => MOP, 
+"807" => MKD, 
+"969" => MGA, 
+"454" => MWK, 
+"458" => MYR, 
+"462" => MVR, 
+"929" => MRU, 
+"480" => MUR, 
+"965" => XUA, 
+"484" => MXN, 
+"979" => MXV, 
+"498" => MDL, 
+"496" => MNT, 
+"504" => MAD, 
+"943" => MZN, 
+"104" => MMK, 
+"516" => NAD, 
+"524" => NPR, 
+"558" => NIO, 
+"566" => NGN, 
+"512" => OMR, 
+"586" => PKR, 
+"590" => PAB, 
+"598" => PGK, 
+"600" => PYG, 
+"604" => PEN, 
+"608" => PHP, 
+"985" => PLN, 
+"634" => QAR, 
+"946" => RON, 
+"643" => RUB, 
+"646" => RWF, 
+"654" => SHP, 
+"882" => WST, 
+"930" => STN, 
+"682" => SAR, 
+"941" => RSD, 
+"690" => SCR, 
+"694" => SLL, 
+"925" => SLE, 
+"702" => SGD, 
+"994" => XSU, 
+"090" => SBD, 
+"706" => SOS, 
+"728" => SSP, 
+"144" => LKR, 
+"938" => SDG, 
+"968" => SRD, 
+"752" => SEK, 
+"947" => CHE, 
+"948" => CHW, 
+"760" => SYP, 
+"901" => TWD, 
+"972" => TJS, 
+"834" => TZS, 
+"764" => THB, 
+"776" => TOP, 
+"780" => TTD, 
+"788" => TND, 
+"949" => TRY, 
+"934" => TMT, 
+"800" => UGX, 
+"980" => UAH, 
+"784" => AED, 
+"997" => USN, 
+"858" => UYU, 
+"940" => UYI, 
+"927" => UYW, 
+"860" => UZS, 
+"548" => VUV, 
+"928" => VES, 
+"926" => VED, 
+"704" => VND, 
+"886" => YER, 
+"967" => ZMW, 
+"932" => ZWL, 
+"955" => XBA, 
+"956" => XBB, 
+"957" => XBC, 
+"958" => XBD, 
+"963" => XTS, 
+"999" => XXX, 
+"959" => XAU, 
+"964" => XPD, 
+"962" => XPT, 
+"961" => XAG, 
+"004" => AFA, 
+"246" => FIM, 
+"020" => ADP, 
+"724" => ESP, 
+"250" => FRF, 
+"024" => AOK, 
+"982" => AOR, 
+"810" => RUR, 
+"040" => ATS, 
+"945" => AYM, 
+"031" => AZM, 
+"112" => BYB, 
+"974" => BYR, 
+"993" => BEC, 
+"056" => BEF, 
+"992" => BEL, 
+"070" => BAD, 
+"076" => BRB, 
+"987" => BRR, 
+"100" => BGJ, 
+"191" => HRD, 
+"196" => CYP, 
+"200" => CSK, 
+"218" => ECS, 
+"983" => ECV, 
+"226" => GQE, 
+"233" => EEK, 
+"954" => XEU, 
+"268" => GEK, 
+"278" => DDM, 
+"276" => DEM, 
+"288" => GHC, 
+"939" => GHP, 
+"300" => GRD, 
+"624" => GWE, 
+"380" => ITL, 
+"372" => IEP, 
+"428" => LVL, 
+"991" => ZAL, 
+"440" => LTL, 
+"989" => LUC, 
+"442" => LUF, 
+"988" => LUL, 
+"450" => MGF, 
+"466" => MLF, 
+"470" => MTL, 
+"478" => MRO, 
+"508" => MZE, 
+"528" => NLG, 
+"616" => PLZ, 
+"620" => PTE, 
+"642" => ROK, 
+"678" => STD, 
+"891" => CSD, 
+"703" => SKK, 
+"705" => SIT, 
+"716" => RHD, 
+"996" => ESA, 
+"995" => ESB, 
+"736" => SDD, 
+"740" => SRG, 
+"762" => TJR, 
+"626" => TPE, 
+"792" => TRL, 
+"795" => TMM, 
+"804" => UAK, 
+"998" => USS, 
+"862" => VEB, 
+"937" => VEF, 
+"720" => YDD, 
+"890" => YUD, 
+"180" => ZRN, 
+"894" => ZMK, 
+"942" => ZWN, 
+"935" => ZWR, 
 
 };
+
 
 ///CurrencyCode map with  3 len numeric str Code key
-pub const COUNTRY_MAP: Map<&str, &'static [&'static CurrencyCode]> = phf_map! {
-
-"AFG" => &[&AFN],
-"ALB" => &[&ALL],
-"DZA" => &[&DZD],
-"ASM" => &[&USD],
-"AND" => &[&EUR],
-"AGO" => &[&AOA],
-"AIA" => &[&XCD],
-"ATG" => &[&XCD],
-"ARG" => &[&ARS],
-"ARM" => &[&AMD],
-"ABW" => &[&AWG],
-"AUS" => &[&AUD],
-"AUT" => &[&EUR],
-"AZE" => &[&AZN],
-"BHS" => &[&BSD],
-"BHR" => &[&BHD],
-"BGD" => &[&BDT],
-"BRB" => &[&BBD],
-"BLR" => &[&BYN],
-"BEL" => &[&EUR],
-"BLZ" => &[&BZD],
-"BEN" => &[&XOF],
-"BMU" => &[&BMD],
-"BTN" => &[&INR,&BTN],
-"BOL" => &[&BOB],
-"BES" => &[&USD],
-"BIH" => &[&BAM],
-"BWA" => &[&BWP],
-"BVT" => &[&NOK],
-"BRA" => &[&BRL],
-"IOT" => &[&USD],
-"VGB" => &[&USD],
-"BRN" => &[&BND],
-"BGR" => &[&BGN],
-"BFA" => &[&XOF],
-"BDI" => &[&BIF],
-"CPV" => &[&CVE],
-"KHM" => &[&KHR],
-"CMR" => &[&XAF],
-"CAN" => &[&CAD],
-"CYM" => &[&KYD],
-"CAF" => &[&XAF],
-"TCD" => &[&XAF],
-"CHL" => &[&CLP],
-"CHN" => &[&CNY],
-"HKG" => &[&HKD],
-"MAC" => &[&MOP],
-"CXR" => &[&AUD],
-"CCK" => &[&AUD],
-"COL" => &[&COP],
-"COM" => &[&KMF],
-"COG" => &[&XAF],
-"COK" => &[&NZD],
-"CRI" => &[&CRC],
-"HRV" => &[&HRK],
-"CUB" => &[&CUP,&CUC],
-"CUW" => &[&ANG],
-"CYP" => &[&EUR],
-"CZE" => &[&CZK],
-"CIV" => &[&XOF],
-"PRK" => &[&KPW],
-"COD" => &[&CDF],
-"DNK" => &[&DKK],
-"DJI" => &[&DJF],
-"DMA" => &[&XCD],
-"DOM" => &[&DOP],
-"ECU" => &[&USD],
-"EGY" => &[&EGP],
-"SLV" => &[&SVC,&USD],
-"GNQ" => &[&XAF],
-"ERI" => &[&ERN],
-"EST" => &[&EUR],
-"SWZ" => &[&SZL],
-"ETH" => &[&ETB],
-"FRO" => &[&DKK],
-"FJI" => &[&FJD],
-"FIN" => &[&EUR],
-"FRA" => &[&EUR],
-"GUF" => &[&EUR],
-"PYF" => &[&XPF],
-"ATF" => &[&EUR],
-"GAB" => &[&XAF],
-"GMB" => &[&GMD],
-"GEO" => &[&GEL],
-"DEU" => &[&EUR],
-"GHA" => &[&GHS],
-"GIB" => &[&GIP],
-"GRC" => &[&EUR],
-"GRL" => &[&DKK],
-"GRD" => &[&XCD],
-"GLP" => &[&EUR],
-"GUM" => &[&USD],
-"GTM" => &[&GTQ],
-"GGY" => &[&GBP],
-"GIN" => &[&GNF],
-"GNB" => &[&XOF],
-"GUY" => &[&GYD],
-"HTI" => &[&HTG,&USD],
-"HMD" => &[&AUD],
-"VAT" => &[&EUR],
-"HND" => &[&HNL],
-"HUN" => &[&HUF],
-"ISL" => &[&ISK],
-"IND" => &[&INR],
-"IDN" => &[&IDR],
-"IRN" => &[&IRR],
-"IRQ" => &[&IQD],
-"IRL" => &[&EUR],
-"IMN" => &[&GBP],
-"ISR" => &[&ILS],
-"ITA" => &[&EUR],
-"JAM" => &[&JMD],
-"JPN" => &[&JPY],
-"JEY" => &[&GBP],
-"JOR" => &[&JOD],
-"KAZ" => &[&KZT],
-"KEN" => &[&KES],
-"KIR" => &[&AUD],
-"KWT" => &[&KWD],
-"KGZ" => &[&KGS],
-"LAO" => &[&LAK],
-"LVA" => &[&EUR],
-"LBN" => &[&LBP],
-"LSO" => &[&LSL,&ZAR],
-"LBR" => &[&LRD],
-"LBY" => &[&LYD],
-"LIE" => &[&CHF],
-"LTU" => &[&EUR],
-"LUX" => &[&EUR],
-"MDG" => &[&MGA],
-"MWI" => &[&MWK],
-"MYS" => &[&MYR],
-"MDV" => &[&MVR],
-"MLI" => &[&XOF],
-"MLT" => &[&EUR],
-"MHL" => &[&USD],
-"MTQ" => &[&EUR],
-"MRT" => &[&MRU],
-"MUS" => &[&MUR],
-"MYT" => &[&EUR],
-"MEX" => &[&MXN],
-"FSM" => &[&USD],
-"MCO" => &[&EUR],
-"MNG" => &[&MNT],
-"MNE" => &[&EUR],
-"MSR" => &[&XCD],
-"MAR" => &[&MAD],
-"MOZ" => &[&MZN],
-"MMR" => &[&MMK],
-"NAM" => &[&NAD,&ZAR],
-"NRU" => &[&AUD],
-"NPL" => &[&NPR],
-"NLD" => &[&EUR],
-"NCL" => &[&XPF],
-"NZL" => &[&NZD],
-"NIC" => &[&NIO],
-"NER" => &[&XOF],
-"NGA" => &[&NGN],
-"NIU" => &[&NZD],
-"NFK" => &[&AUD],
-"MNP" => &[&USD],
-"NOR" => &[&NOK],
-"OMN" => &[&OMR],
-"PAK" => &[&PKR],
-"PLW" => &[&USD],
-"PAN" => &[&PAB,&USD],
-"PNG" => &[&PGK],
-"PRY" => &[&PYG],
-"PER" => &[&PEN],
-"PHL" => &[&PHP],
-"PCN" => &[&NZD],
-"POL" => &[&PLN],
-"PRT" => &[&EUR],
-"PRI" => &[&USD],
-"QAT" => &[&QAR],
-"KOR" => &[&KRW],
-"MDA" => &[&MDL],
-"ROU" => &[&RON],
-"RUS" => &[&RUB],
-"RWA" => &[&RWF],
-"REU" => &[&EUR],
-"BLM" => &[&EUR],
-"SHN" => &[&SHP],
-"KNA" => &[&XCD],
-"LCA" => &[&XCD],
-"MAF" => &[&EUR],
-"SPM" => &[&EUR],
-"VCT" => &[&XCD],
-"WSM" => &[&WST],
-"SMR" => &[&EUR],
-"STP" => &[&STN],
-"SAU" => &[&SAR],
-"SEN" => &[&XOF],
-"SRB" => &[&RSD],
-"SYC" => &[&SCR],
-"SLE" => &[&SLL],
-"SGP" => &[&SGD],
-"SXM" => &[&ANG],
-"SVK" => &[&EUR],
-"SVN" => &[&EUR],
-"SLB" => &[&SBD],
-"SOM" => &[&SOS],
-"ZAF" => &[&ZAR],
-"SSD" => &[&SSP],
-"ESP" => &[&EUR],
-"LKA" => &[&LKR],
-"SDN" => &[&SDG],
-"SUR" => &[&SRD],
-"SJM" => &[&NOK],
-"SWE" => &[&SEK],
-"CHE" => &[&CHF],
-"SYR" => &[&SYP],
-"TJK" => &[&TJS],
-"THA" => &[&THB],
-"MKD" => &[&MKD],
-"TLS" => &[&USD],
-"TGO" => &[&XOF],
-"TKL" => &[&NZD],
-"TON" => &[&TOP],
-"TTO" => &[&TTD],
-"TUN" => &[&TND],
-"TUR" => &[&TRY],
-"TKM" => &[&TMT],
-"TCA" => &[&USD],
-"TUV" => &[&AUD],
-"UGA" => &[&UGX],
-"UKR" => &[&UAH],
-"ARE" => &[&AED],
-"GBR" => &[&GBP],
-"TZA" => &[&TZS],
-"UMI" => &[&USD],
-"VIR" => &[&USD],
-"USA" => &[&USD],
-"URY" => &[&UYU],
-"UZB" => &[&UZS],
-"VUT" => &[&VUV],
-"VEN" => &[&VES],
-"VNM" => &[&VND],
-"WLF" => &[&XPF],
-"ESH" => &[&MAD],
-"YEM" => &[&YER],
-"ZMB" => &[&ZMW],
-"ZWE" => &[&ZWL],
-"ALA" => &[&EUR],
+pub const COUNTRY_MAP: Map<&str,&'static [&'static CurrencyCode]> = phf_map! {
+    
+"TWN" => &[&TWD], 
+"AFG" => &[&AFN], 
+"ALB" => &[&ALL], 
+"DZA" => &[&DZD], 
+"ASM" => &[&USD], 
+"AND" => &[&EUR], 
+"AGO" => &[&AOA], 
+"AIA" => &[&XCD], 
+"ATG" => &[&XCD], 
+"ARG" => &[&ARS], 
+"ARM" => &[&AMD], 
+"ABW" => &[&AWG], 
+"AUS" => &[&AUD], 
+"AUT" => &[&EUR], 
+"AZE" => &[&AZN], 
+"BHS" => &[&BSD], 
+"BHR" => &[&BHD], 
+"BGD" => &[&BDT], 
+"BRB" => &[&BBD], 
+"BLR" => &[&BYN], 
+"BEL" => &[&EUR], 
+"BLZ" => &[&BZD], 
+"BEN" => &[&XOF], 
+"BMU" => &[&BMD], 
+"BTN" => &[&INR,&BTN], 
+"BOL" => &[&BOB], 
+"BES" => &[&USD], 
+"BIH" => &[&BAM], 
+"BWA" => &[&BWP], 
+"BVT" => &[&NOK], 
+"BRA" => &[&BRL], 
+"IOT" => &[&USD], 
+"VGB" => &[&USD], 
+"BRN" => &[&BND], 
+"BGR" => &[&BGN], 
+"BFA" => &[&XOF], 
+"BDI" => &[&BIF], 
+"CPV" => &[&CVE], 
+"KHM" => &[&KHR], 
+"CMR" => &[&XAF], 
+"CAN" => &[&CAD], 
+"CYM" => &[&KYD], 
+"CAF" => &[&XAF], 
+"TCD" => &[&XAF], 
+"CHL" => &[&CLP], 
+"CHN" => &[&CNY], 
+"HKG" => &[&HKD], 
+"MAC" => &[&MOP], 
+"CXR" => &[&AUD], 
+"CCK" => &[&AUD], 
+"COL" => &[&COP], 
+"COM" => &[&KMF], 
+"COG" => &[&XAF], 
+"COK" => &[&NZD], 
+"CRI" => &[&CRC], 
+"HRV" => &[&HRK], 
+"CUB" => &[&CUP,&CUC], 
+"CUW" => &[&ANG], 
+"CYP" => &[&EUR], 
+"CZE" => &[&CZK], 
+"CIV" => &[&XOF], 
+"PRK" => &[&KPW], 
+"COD" => &[&CDF], 
+"DNK" => &[&DKK], 
+"DJI" => &[&DJF], 
+"DMA" => &[&XCD], 
+"DOM" => &[&DOP], 
+"ECU" => &[&USD], 
+"EGY" => &[&EGP], 
+"SLV" => &[&SVC,&USD], 
+"GNQ" => &[&XAF], 
+"ERI" => &[&ERN], 
+"EST" => &[&EUR], 
+"SWZ" => &[&SZL], 
+"ETH" => &[&ETB], 
+"FLK" => &[&FKP], 
+"FRO" => &[&DKK], 
+"FJI" => &[&FJD], 
+"FIN" => &[&EUR], 
+"FRA" => &[&EUR], 
+"GUF" => &[&EUR], 
+"PYF" => &[&XPF], 
+"ATF" => &[&EUR], 
+"GAB" => &[&XAF], 
+"GMB" => &[&GMD], 
+"GEO" => &[&GEL], 
+"DEU" => &[&EUR], 
+"GHA" => &[&GHS], 
+"GIB" => &[&GIP], 
+"GRC" => &[&EUR], 
+"GRL" => &[&DKK], 
+"GRD" => &[&XCD], 
+"GLP" => &[&EUR], 
+"GUM" => &[&USD], 
+"GTM" => &[&GTQ], 
+"GGY" => &[&GBP], 
+"GIN" => &[&GNF], 
+"GNB" => &[&XOF], 
+"GUY" => &[&GYD], 
+"HTI" => &[&HTG,&USD], 
+"HMD" => &[&AUD], 
+"VAT" => &[&EUR], 
+"HND" => &[&HNL], 
+"HUN" => &[&HUF], 
+"ISL" => &[&ISK], 
+"IND" => &[&INR], 
+"IDN" => &[&IDR], 
+"IRN" => &[&IRR], 
+"IRQ" => &[&IQD], 
+"IRL" => &[&EUR], 
+"IMN" => &[&GBP], 
+"ISR" => &[&ILS], 
+"ITA" => &[&EUR], 
+"JAM" => &[&JMD], 
+"JPN" => &[&JPY], 
+"JEY" => &[&GBP], 
+"JOR" => &[&JOD], 
+"KAZ" => &[&KZT], 
+"KEN" => &[&KES], 
+"KIR" => &[&AUD], 
+"KWT" => &[&KWD], 
+"KGZ" => &[&KGS], 
+"LAO" => &[&LAK], 
+"LVA" => &[&EUR], 
+"LBN" => &[&LBP], 
+"LSO" => &[&LSL,&ZAR], 
+"LBR" => &[&LRD], 
+"LBY" => &[&LYD], 
+"LIE" => &[&CHF], 
+"LTU" => &[&EUR], 
+"LUX" => &[&EUR], 
+"MDG" => &[&MGA], 
+"MWI" => &[&MWK], 
+"MYS" => &[&MYR], 
+"MDV" => &[&MVR], 
+"MLI" => &[&XOF], 
+"MLT" => &[&EUR], 
+"MHL" => &[&USD], 
+"MTQ" => &[&EUR], 
+"MRT" => &[&MRU], 
+"MUS" => &[&MUR], 
+"MYT" => &[&EUR], 
+"MEX" => &[&MXN], 
+"FSM" => &[&USD], 
+"MCO" => &[&EUR], 
+"MNG" => &[&MNT], 
+"MNE" => &[&EUR], 
+"MSR" => &[&XCD], 
+"MAR" => &[&MAD], 
+"MOZ" => &[&MZN], 
+"MMR" => &[&MMK], 
+"NAM" => &[&NAD,&ZAR], 
+"NRU" => &[&AUD], 
+"NPL" => &[&NPR], 
+"NLD" => &[&EUR], 
+"NCL" => &[&XPF], 
+"NZL" => &[&NZD], 
+"NIC" => &[&NIO], 
+"NER" => &[&XOF], 
+"NGA" => &[&NGN], 
+"NIU" => &[&NZD], 
+"NFK" => &[&AUD], 
+"MNP" => &[&USD], 
+"NOR" => &[&NOK], 
+"OMN" => &[&OMR], 
+"PAK" => &[&PKR], 
+"PLW" => &[&USD], 
+"PAN" => &[&PAB,&USD], 
+"PNG" => &[&PGK], 
+"PRY" => &[&PYG], 
+"PER" => &[&PEN], 
+"PHL" => &[&PHP], 
+"PCN" => &[&NZD], 
+"POL" => &[&PLN], 
+"PRT" => &[&EUR], 
+"PRI" => &[&USD], 
+"QAT" => &[&QAR], 
+"KOR" => &[&KRW], 
+"MDA" => &[&MDL], 
+"ROU" => &[&RON], 
+"RUS" => &[&RUB], 
+"RWA" => &[&RWF], 
+"REU" => &[&EUR], 
+"BLM" => &[&EUR], 
+"SHN" => &[&SHP], 
+"KNA" => &[&XCD], 
+"LCA" => &[&XCD], 
+"MAF" => &[&EUR], 
+"SPM" => &[&EUR], 
+"VCT" => &[&XCD], 
+"WSM" => &[&WST], 
+"SMR" => &[&EUR], 
+"STP" => &[&STN], 
+"SAU" => &[&SAR], 
+"SEN" => &[&XOF], 
+"SRB" => &[&RSD], 
+"SYC" => &[&SCR], 
+"SLE" => &[&SLL], 
+"SGP" => &[&SGD], 
+"SXM" => &[&ANG], 
+"SVK" => &[&EUR], 
+"SVN" => &[&EUR], 
+"SLB" => &[&SBD], 
+"SOM" => &[&SOS], 
+"ZAF" => &[&ZAR], 
+"SSD" => &[&SSP], 
+"ESP" => &[&EUR], 
+"LKA" => &[&LKR], 
+"SDN" => &[&SDG], 
+"SUR" => &[&SRD], 
+"SJM" => &[&NOK], 
+"SWE" => &[&SEK], 
+"CHE" => &[&CHF], 
+"SYR" => &[&SYP], 
+"TJK" => &[&TJS], 
+"THA" => &[&THB], 
+"MKD" => &[&MKD], 
+"TLS" => &[&USD], 
+"TGO" => &[&XOF], 
+"TKL" => &[&NZD], 
+"TON" => &[&TOP], 
+"TTO" => &[&TTD], 
+"TUN" => &[&TND], 
+"TUR" => &[&TRY], 
+"TKM" => &[&TMT], 
+"TCA" => &[&USD], 
+"TUV" => &[&AUD], 
+"UGA" => &[&UGX], 
+"UKR" => &[&UAH], 
+"ARE" => &[&AED], 
+"GBR" => &[&GBP], 
+"TZA" => &[&TZS], 
+"UMI" => &[&USD], 
+"VIR" => &[&USD], 
+"USA" => &[&USD], 
+"URY" => &[&UYU], 
+"UZB" => &[&UZS], 
+"VUT" => &[&VUV], 
+"VEN" => &[&VES,&VED], 
+"VNM" => &[&VND], 
+"WLF" => &[&XPF], 
+"ESH" => &[&MAD], 
+"YEM" => &[&YER], 
+"ZMB" => &[&ZMW], 
+"ZWE" => &[&ZWL], 
+"ALA" => &[&EUR], 
 
 };
 
+
 ///ALL names
-pub const ALL_NAME: &[&str] = &[
-    "Afghani",
-    "Euro",
-    "Lek",
-    "Algerian Dinar",
-    "US Dollar",
-    "Kwanza",
-    "East Caribbean Dollar",
-    "Argentine Peso",
-    "Armenian Dram",
-    "Aruban Florin",
-    "Australian Dollar",
-    "Azerbaijan Manat",
-    "Bahamian Dollar",
-    "Bahraini Dinar",
-    "Taka",
-    "Barbados Dollar",
-    "Belarusian Ruble",
-    "Belize Dollar",
-    "CFA Franc BCEAO",
-    "Bermudian Dollar",
-    "Indian Rupee",
-    "Ngultrum",
-    "Boliviano",
-    "Mvdol",
-    "Convertible Mark",
-    "Pula",
-    "Norwegian Krone",
-    "Brazilian Real",
-    "Brunei Dollar",
-    "Bulgarian Lev",
-    "Burundi Franc",
-    "Cabo Verde Escudo",
-    "Riel",
-    "CFA Franc BEAC",
-    "Canadian Dollar",
-    "Cayman Islands Dollar",
-    "Chilean Peso",
-    "Unidad de Fomento",
-    "Yuan Renminbi",
-    "Colombian Peso",
-    "Unidad de Valor Real",
-    "Comorian Franc ",
-    "Congolese Franc",
-    "New Zealand Dollar",
-    "Costa Rican Colon",
-    "Cuban Peso",
-    "Peso Convertible",
-    "Netherlands Antillean Guilder",
-    "Czech Koruna",
-    "Danish Krone",
-    "Djibouti Franc",
-    "Dominican Peso",
-    "Egyptian Pound",
-    "El Salvador Colon",
-    "Nakfa",
-    "Lilangeni",
-    "Ethiopian Birr",
-    "Falkland Islands Pound",
-    "Fiji Dollar",
-    "CFP Franc",
-    "Dalasi",
-    "Lari",
-    "Ghana Cedi",
-    "Gibraltar Pound",
-    "Quetzal",
-    "Pound Sterling",
-    "Guinean Franc",
-    "Guyana Dollar",
-    "Gourde",
-    "Lempira",
-    "Hong Kong Dollar",
-    "Forint",
-    "Iceland Krona",
-    "Rupiah",
-    "SDR (Special Drawing Right)",
-    "Iranian Rial",
-    "Iraqi Dinar",
-    "New Israeli Sheqel",
-    "Jamaican Dollar",
-    "Yen",
-    "Jordanian Dinar",
-    "Tenge",
-    "Kenyan Shilling",
-    "North Korean Won",
-    "Won",
-    "Kuwaiti Dinar",
-    "Som",
-    "Lao Kip",
-    "Lebanese Pound",
-    "Loti",
-    "Rand",
-    "Liberian Dollar",
-    "Libyan Dinar",
-    "Swiss Franc",
-    "Pataca",
-    "Denar",
-    "Malagasy Ariary",
-    "Malawi Kwacha",
-    "Malaysian Ringgit",
-    "Rufiyaa",
-    "Ouguiya",
-    "Mauritius Rupee",
-    "ADB Unit of Account",
-    "Mexican Peso",
-    "Mexican Unidad de Inversion (UDI)",
-    "Moldovan Leu",
-    "Tugrik",
-    "Moroccan Dirham",
-    "Mozambique Metical",
-    "Kyat",
-    "Namibia Dollar",
-    "Nepalese Rupee",
-    "Cordoba Oro",
-    "Naira",
-    "Rial Omani",
-    "Pakistan Rupee",
-    "Balboa",
-    "Kina",
-    "Guarani",
-    "Sol",
-    "Philippine Peso",
-    "Zloty",
-    "Qatari Rial",
-    "Romanian Leu",
-    "Russian Ruble",
-    "Rwanda Franc",
-    "Saint Helena Pound",
-    "Tala",
-    "Dobra",
-    "Saudi Riyal",
-    "Serbian Dinar",
-    "Seychelles Rupee",
-    "Leone",
-    "Leone",
-    "Singapore Dollar",
-    "Sucre",
-    "Solomon Islands Dollar",
-    "Somali Shilling",
-    "South Sudanese Pound",
-    "Sri Lanka Rupee",
-    "Sudanese Pound",
-    "Surinam Dollar",
-    "Swedish Krona",
-    "WIR Euro",
-    "WIR Franc",
-    "Syrian Pound",
-    "New Taiwan Dollar",
-    "Somoni",
-    "Tanzanian Shilling",
-    "Baht",
-    "Pa’anga",
-    "Trinidad and Tobago Dollar",
-    "Tunisian Dinar",
-    "Turkish Lira",
-    "Turkmenistan New Manat",
-    "Uganda Shilling",
-    "Hryvnia",
-    "UAE Dirham",
-    "US Dollar (Next day)",
-    "Peso Uruguayo",
-    "Uruguay Peso en Unidades Indexadas (UI)",
-    "Unidad Previsional",
-    "Uzbekistan Sum",
-    "Vatu",
-    "Bolívar Soberano",
-    "Bolívar Soberano",
-    "Dong",
-    "Yemeni Rial",
-    "Zambian Kwacha",
-    "Zimbabwe Dollar",
-    "Bond Markets Unit European Composite Unit (EURCO)",
-    "Bond Markets Unit European Monetary Unit (E.M.U.-6)",
-    "Bond Markets Unit European Unit of Account 9 (E.U.A.-9)",
-    "Bond Markets Unit European Unit of Account 17 (E.U.A.-17)",
-    "Codes specifically reserved for testing purposes",
-    "The codes assigned for transactions where no currency is involved",
-    "Gold",
-    "Palladium",
-    "Platinum",
-    "Silver",
-    "Afghani",
-    "Markka",
-    "Old Lek",
-    "Andorran Peseta",
-    "Spanish Peseta",
-    "French Franc",
-    "Kwanza",
-    "New Kwanza",
-    "Kwanza Reajustado",
-    "Austral",
-    "Peso Argentino",
-    "Peso",
-    "Russian Ruble",
-    "Schilling",
-    "Azerbaijan Manat",
-    "Azerbaijanian Manat",
-    "Belarusian Ruble",
-    "Belarusian Ruble",
-    "Convertible Franc",
-    "Belgian Franc",
-    "Financial Franc",
-    "Peso boliviano",
-    "Dinar",
-    "Cruzeiro",
-    "Cruzado",
-    "Cruzeiro",
-    "New Cruzado",
-    "Cruzeiro Real",
-    "Lev A/52",
-    "Lev A/62",
-    "Lev",
-    "Kyat",
-    "Croatian Dinar",
-    "Croatian Kuna",
-    "Cyprus Pound",
-    "Krona A/53",
-    "Koruna",
-    "Sucre",
-    "Unidad de Valor Constante (UVC)",
-    "Ekwele",
-    "Kroon",
-    "European Currency Unit (E.C.U)",
-    "Georgian Coupon",
-    "Mark der DDR",
-    "Deutsche Mark",
-    "Cedi",
-    "Ghana Cedi",
-    "Drachma",
-    "Syli",
-    "Syli",
-    "Guinea Escudo",
-    "Guinea-Bissau Peso",
-    "Italian Lira",
-    "Old Krona",
-    "Irish Pound",
-    "Pound",
-    "Old Shekel",
-    "Pathet Lao Kip",
-    "Latvian Lats",
-    "Latvian Ruble",
-    "Loti",
-    "Financial Rand",
-    "Lithuanian Litas",
-    "Talonas",
-    "Luxembourg Convertible Franc",
-    "Luxembourg Franc",
-    "Luxembourg Financial Franc",
-    "Malagasy Franc",
-    "Maldive Rupee",
-    "Mali Franc",
-    "Maltese Lira",
-    "Maltese Pound",
-    "Ouguiya",
-    "Mexican Peso",
-    "Mozambique Escudo",
-    "Mozambique Metical",
-    "Netherlands Guilder",
-    "Cordoba",
-    "Sol",
-    "Inti",
-    "Sol",
-    "Zloty",
-    "Portuguese Escudo",
-    "Leu A/52",
-    "Old Leu",
-    "Dobra",
-    "Serbian Dinar",
-    "Slovak Koruna",
-    "Tolar",
-    "Rhodesian Dollar",
-    "Spanish Peseta",
-    "\"A\" Account (convertible Peseta Account)",
-    "Sudanese Dinar",
-    "Sudanese Pound",
-    "Surinam Guilder",
-    "WIR Franc (for electronic)",
-    "Tajik Ruble",
-    "Timor Escudo",
-    "Old Turkish Lira",
-    "Turkmenistan Manat",
-    "Uganda Shilling",
-    "Old Shilling",
-    "Karbovanet",
-    "Rouble",
-    "US Dollar (Same day)",
-    "Old Uruguay Peso",
-    "Uruguayan Peso",
-    "Bolivar",
-    "Bolivar Fuerte",
-    "Old Dong",
-    "Yemeni Dinar",
-    "New Yugoslavian Dinar",
-    "New Dinar",
-    "Yugoslavian Dinar",
-    "New Zaire",
-    "Zaire",
-    "Zambian Kwacha",
-    "Rhodesian Dollar",
-    "Zimbabwe Dollar (old)",
-    "Zimbabwe Dollar (new)",
-    "Zimbabwe Dollar",
-    "Gold-Franc",
-    "RINET Funds Code",
-    "UIC-Franc",
+pub const ALL_NAME: & [ & str] = &[
+    
+"Afghani",
+"Euro",
+"Lek",
+"Algerian Dinar",
+"US Dollar",
+"Kwanza",
+"East Caribbean Dollar",
+"Argentine Peso",
+"Armenian Dram",
+"Aruban Florin",
+"Australian Dollar",
+"Azerbaijan Manat",
+"Bahamian Dollar",
+"Bahraini Dinar",
+"Taka",
+"Barbados Dollar",
+"Belarusian Ruble",
+"Belize Dollar",
+"CFA Franc BCEAO",
+"Bermudian Dollar",
+"Indian Rupee",
+"Ngultrum",
+"Boliviano",
+"Mvdol",
+"Convertible Mark",
+"Pula",
+"Norwegian Krone",
+"Brazilian Real",
+"Brunei Dollar",
+"Bulgarian Lev",
+"Burundi Franc",
+"Cabo Verde Escudo",
+"Riel",
+"CFA Franc BEAC",
+"Canadian Dollar",
+"Cayman Islands Dollar",
+"Chilean Peso",
+"Unidad de Fomento",
+"Yuan Renminbi",
+"Colombian Peso",
+"Unidad de Valor Real",
+"Comorian Franc ",
+"Congolese Franc",
+"New Zealand Dollar",
+"Costa Rican Colon",
+"Cuban Peso",
+"Peso Convertible",
+"Netherlands Antillean Guilder",
+"Czech Koruna",
+"Danish Krone",
+"Djibouti Franc",
+"Dominican Peso",
+"Egyptian Pound",
+"El Salvador Colon",
+"Nakfa",
+"Lilangeni",
+"Ethiopian Birr",
+"Falkland Islands Pound",
+"Fiji Dollar",
+"CFP Franc",
+"Dalasi",
+"Lari",
+"Ghana Cedi",
+"Gibraltar Pound",
+"Quetzal",
+"Pound Sterling",
+"Guinean Franc",
+"Guyana Dollar",
+"Gourde",
+"Lempira",
+"Hong Kong Dollar",
+"Forint",
+"Iceland Krona",
+"Rupiah",
+"SDR (Special Drawing Right)",
+"Iranian Rial",
+"Iraqi Dinar",
+"New Israeli Sheqel",
+"Jamaican Dollar",
+"Yen",
+"Jordanian Dinar",
+"Tenge",
+"Kenyan Shilling",
+"North Korean Won",
+"Won",
+"Kuwaiti Dinar",
+"Som",
+"Lao Kip",
+"Lebanese Pound",
+"Loti",
+"Rand",
+"Liberian Dollar",
+"Libyan Dinar",
+"Swiss Franc",
+"Pataca",
+"Denar",
+"Malagasy Ariary",
+"Malawi Kwacha",
+"Malaysian Ringgit",
+"Rufiyaa",
+"Ouguiya",
+"Mauritius Rupee",
+"ADB Unit of Account",
+"Mexican Peso",
+"Mexican Unidad de Inversion (UDI)",
+"Moldovan Leu",
+"Tugrik",
+"Moroccan Dirham",
+"Mozambique Metical",
+"Kyat",
+"Namibia Dollar",
+"Nepalese Rupee",
+"Cordoba Oro",
+"Naira",
+"Rial Omani",
+"Pakistan Rupee",
+"Balboa",
+"Kina",
+"Guarani",
+"Sol",
+"Philippine Peso",
+"Zloty",
+"Qatari Rial",
+"Romanian Leu",
+"Russian Ruble",
+"Rwanda Franc",
+"Saint Helena Pound",
+"Tala",
+"Dobra",
+"Saudi Riyal",
+"Serbian Dinar",
+"Seychelles Rupee",
+"Leone",
+"Leone",
+"Singapore Dollar",
+"Sucre",
+"Solomon Islands Dollar",
+"Somali Shilling",
+"South Sudanese Pound",
+"Sri Lanka Rupee",
+"Sudanese Pound",
+"Surinam Dollar",
+"Swedish Krona",
+"WIR Euro",
+"WIR Franc",
+"Syrian Pound",
+"New Taiwan Dollar",
+"Somoni",
+"Tanzanian Shilling",
+"Baht",
+"Pa’anga",
+"Trinidad and Tobago Dollar",
+"Tunisian Dinar",
+"Turkish Lira",
+"Turkmenistan New Manat",
+"Uganda Shilling",
+"Hryvnia",
+"UAE Dirham",
+"US Dollar (Next day)",
+"Peso Uruguayo",
+"Uruguay Peso en Unidades Indexadas (UI)",
+"Unidad Previsional",
+"Uzbekistan Sum",
+"Vatu",
+"Bolívar Soberano",
+"Bolívar Soberano",
+"Dong",
+"Yemeni Rial",
+"Zambian Kwacha",
+"Zimbabwe Dollar",
+"Bond Markets Unit European Composite Unit (EURCO)",
+"Bond Markets Unit European Monetary Unit (E.M.U.-6)",
+"Bond Markets Unit European Unit of Account 9 (E.U.A.-9)",
+"Bond Markets Unit European Unit of Account 17 (E.U.A.-17)",
+"Codes specifically reserved for testing purposes",
+"The codes assigned for transactions where no currency is involved",
+"Gold",
+"Palladium",
+"Platinum",
+"Silver",
+"Afghani",
+"Markka",
+"Old Lek",
+"Andorran Peseta",
+"Spanish Peseta",
+"French Franc",
+"Kwanza",
+"New Kwanza",
+"Kwanza Reajustado",
+"Austral",
+"Peso Argentino",
+"Peso",
+"Russian Ruble",
+"Schilling",
+"Azerbaijan Manat",
+"Azerbaijanian Manat",
+"Belarusian Ruble",
+"Belarusian Ruble",
+"Convertible Franc",
+"Belgian Franc",
+"Financial Franc",
+"Peso boliviano",
+"Dinar",
+"Cruzeiro",
+"Cruzado",
+"Cruzeiro",
+"New Cruzado",
+"Cruzeiro Real",
+"Lev A/52",
+"Lev A/62",
+"Lev",
+"Kyat",
+"Croatian Dinar",
+"Croatian Kuna",
+"Cyprus Pound",
+"Krona A/53",
+"Koruna",
+"Sucre",
+"Unidad de Valor Constante (UVC)",
+"Ekwele",
+"Kroon",
+"European Currency Unit (E.C.U)",
+"Georgian Coupon",
+"Mark der DDR",
+"Deutsche Mark",
+"Cedi",
+"Ghana Cedi",
+"Drachma",
+"Syli",
+"Syli",
+"Guinea Escudo",
+"Guinea-Bissau Peso",
+"Italian Lira",
+"Old Krona",
+"Irish Pound",
+"Pound",
+"Old Shekel",
+"Pathet Lao Kip",
+"Latvian Lats",
+"Latvian Ruble",
+"Loti",
+"Financial Rand",
+"Lithuanian Litas",
+"Talonas",
+"Luxembourg Convertible Franc",
+"Luxembourg Franc",
+"Luxembourg Financial Franc",
+"Malagasy Franc",
+"Maldive Rupee",
+"Mali Franc",
+"Maltese Lira",
+"Maltese Pound",
+"Ouguiya",
+"Mexican Peso",
+"Mozambique Escudo",
+"Mozambique Metical",
+"Netherlands Guilder",
+"Cordoba",
+"Sol",
+"Inti",
+"Sol",
+"Zloty",
+"Portuguese Escudo",
+"Leu A/52",
+"Old Leu",
+"Dobra",
+"Serbian Dinar",
+"Slovak Koruna",
+"Tolar",
+"Rhodesian Dollar",
+"Spanish Peseta",
+"\"A\" Account (convertible Peseta Account)",
+"Sudanese Dinar",
+"Sudanese Pound",
+"Surinam Guilder",
+"WIR Franc (for electronic)",
+"Tajik Ruble",
+"Timor Escudo",
+"Old Turkish Lira",
+"Turkmenistan Manat",
+"Uganda Shilling",
+"Old Shilling",
+"Karbovanet",
+"Rouble",
+"US Dollar (Same day)",
+"Old Uruguay Peso",
+"Uruguayan Peso",
+"Bolivar",
+"Bolivar Fuerte",
+"Old Dong",
+"Yemeni Dinar",
+"New Yugoslavian Dinar",
+"New Dinar",
+"Yugoslavian Dinar",
+"New Zaire",
+"Zaire",
+"Zambian Kwacha",
+"Rhodesian Dollar",
+"Zimbabwe Dollar (old)",
+"Zimbabwe Dollar (new)",
+"Zimbabwe Dollar",
+"Gold-Franc",
+"RINET Funds Code",
+"UIC-Franc",
+
 ];
+
 
 ///ALL codes
-pub const ALL_CODE: &[&str] = &[
-    "AFN", "EUR", "ALL", "DZD", "USD", "AOA", "XCD", "ARS", "AMD", "AWG", "AUD", "AZN", "BSD",
-    "BHD", "BDT", "BBD", "BYN", "BZD", "XOF", "BMD", "INR", "BTN", "BOB", "BOV", "BAM", "BWP",
-    "NOK", "BRL", "BND", "BGN", "BIF", "CVE", "KHR", "XAF", "CAD", "KYD", "CLP", "CLF", "CNY",
-    "COP", "COU", "KMF", "CDF", "NZD", "CRC", "CUP", "CUC", "ANG", "CZK", "DKK", "DJF", "DOP",
-    "EGP", "SVC", "ERN", "SZL", "ETB", "FKP", "FJD", "XPF", "GMD", "GEL", "GHS", "GIP", "GTQ",
-    "GBP", "GNF", "GYD", "HTG", "HNL", "HKD", "HUF", "ISK", "IDR", "XDR", "IRR", "IQD", "ILS",
-    "JMD", "JPY", "JOD", "KZT", "KES", "KPW", "KRW", "KWD", "KGS", "LAK", "LBP", "LSL", "ZAR",
-    "LRD", "LYD", "CHF", "MOP", "MKD", "MGA", "MWK", "MYR", "MVR", "MRU", "MUR", "XUA", "MXN",
-    "MXV", "MDL", "MNT", "MAD", "MZN", "MMK", "NAD", "NPR", "NIO", "NGN", "OMR", "PKR", "PAB",
-    "PGK", "PYG", "PEN", "PHP", "PLN", "QAR", "RON", "RUB", "RWF", "SHP", "WST", "STN", "SAR",
-    "RSD", "SCR", "SLL", "SLE", "SGD", "XSU", "SBD", "SOS", "SSP", "LKR", "SDG", "SRD", "SEK",
-    "CHE", "CHW", "SYP", "TWD", "TJS", "TZS", "THB", "TOP", "TTD", "TND", "TRY", "TMT", "UGX",
-    "UAH", "AED", "USN", "UYU", "UYI", "UYW", "UZS", "VUV", "VES", "VED", "VND", "YER", "ZMW",
-    "ZWL", "XBA", "XBB", "XBC", "XBD", "XTS", "XXX", "XAU", "XPD", "XPT", "XAG", "AFA", "FIM",
-    "ALK", "ADP", "ESP", "FRF", "AOK", "AON", "AOR", "ARA", "ARP", "ARY", "RUR", "ATS", "AYM",
-    "AZM", "BYB", "BYR", "BEC", "BEF", "BEL", "BOP", "BAD", "BRB", "BRC", "BRE", "BRN", "BRR",
-    "BGJ", "BGK", "BGL", "BUK", "HRD", "HRK", "CYP", "CSJ", "CSK", "ECS", "ECV", "GQE", "EEK",
-    "XEU", "GEK", "DDM", "DEM", "GHC", "GHP", "GRD", "GNE", "GNS", "GWE", "GWP", "ITL", "ISJ",
-    "IEP", "ILP", "ILR", "LAJ", "LVL", "LVR", "LSM", "ZAL", "LTL", "LTT", "LUC", "LUF", "LUL",
-    "MGF", "MVQ", "MLF", "MTL", "MTP", "MRO", "MXP", "MZE", "MZM", "NLG", "NIC", "PEH", "PEI",
-    "PES", "PLZ", "PTE", "ROK", "ROL", "STD", "CSD", "SKK", "SIT", "RHD", "ESA", "ESB", "SDD",
-    "SDP", "SRG", "CHC", "TJR", "TPE", "TRL", "TMM", "UGS", "UGW", "UAK", "SUR", "USS", "UYN",
-    "UYP", "VEB", "VEF", "VNC", "YDD", "YUD", "YUM", "YUN", "ZRN", "ZRZ", "ZMK", "ZWC", "ZWD",
-    "ZWN", "ZWR", "XFO", "XRE", "XFU",
+pub const ALL_CODE: & [ & str] = &[
+    
+"AFN",
+"EUR",
+"ALL",
+"DZD",
+"USD",
+"AOA",
+"XCD",
+"ARS",
+"AMD",
+"AWG",
+"AUD",
+"AZN",
+"BSD",
+"BHD",
+"BDT",
+"BBD",
+"BYN",
+"BZD",
+"XOF",
+"BMD",
+"INR",
+"BTN",
+"BOB",
+"BOV",
+"BAM",
+"BWP",
+"NOK",
+"BRL",
+"BND",
+"BGN",
+"BIF",
+"CVE",
+"KHR",
+"XAF",
+"CAD",
+"KYD",
+"CLP",
+"CLF",
+"CNY",
+"COP",
+"COU",
+"KMF",
+"CDF",
+"NZD",
+"CRC",
+"CUP",
+"CUC",
+"ANG",
+"CZK",
+"DKK",
+"DJF",
+"DOP",
+"EGP",
+"SVC",
+"ERN",
+"SZL",
+"ETB",
+"FKP",
+"FJD",
+"XPF",
+"GMD",
+"GEL",
+"GHS",
+"GIP",
+"GTQ",
+"GBP",
+"GNF",
+"GYD",
+"HTG",
+"HNL",
+"HKD",
+"HUF",
+"ISK",
+"IDR",
+"XDR",
+"IRR",
+"IQD",
+"ILS",
+"JMD",
+"JPY",
+"JOD",
+"KZT",
+"KES",
+"KPW",
+"KRW",
+"KWD",
+"KGS",
+"LAK",
+"LBP",
+"LSL",
+"ZAR",
+"LRD",
+"LYD",
+"CHF",
+"MOP",
+"MKD",
+"MGA",
+"MWK",
+"MYR",
+"MVR",
+"MRU",
+"MUR",
+"XUA",
+"MXN",
+"MXV",
+"MDL",
+"MNT",
+"MAD",
+"MZN",
+"MMK",
+"NAD",
+"NPR",
+"NIO",
+"NGN",
+"OMR",
+"PKR",
+"PAB",
+"PGK",
+"PYG",
+"PEN",
+"PHP",
+"PLN",
+"QAR",
+"RON",
+"RUB",
+"RWF",
+"SHP",
+"WST",
+"STN",
+"SAR",
+"RSD",
+"SCR",
+"SLL",
+"SLE",
+"SGD",
+"XSU",
+"SBD",
+"SOS",
+"SSP",
+"LKR",
+"SDG",
+"SRD",
+"SEK",
+"CHE",
+"CHW",
+"SYP",
+"TWD",
+"TJS",
+"TZS",
+"THB",
+"TOP",
+"TTD",
+"TND",
+"TRY",
+"TMT",
+"UGX",
+"UAH",
+"AED",
+"USN",
+"UYU",
+"UYI",
+"UYW",
+"UZS",
+"VUV",
+"VES",
+"VED",
+"VND",
+"YER",
+"ZMW",
+"ZWL",
+"XBA",
+"XBB",
+"XBC",
+"XBD",
+"XTS",
+"XXX",
+"XAU",
+"XPD",
+"XPT",
+"XAG",
+"AFA",
+"FIM",
+"ALK",
+"ADP",
+"ESP",
+"FRF",
+"AOK",
+"AON",
+"AOR",
+"ARA",
+"ARP",
+"ARY",
+"RUR",
+"ATS",
+"AYM",
+"AZM",
+"BYB",
+"BYR",
+"BEC",
+"BEF",
+"BEL",
+"BOP",
+"BAD",
+"BRB",
+"BRC",
+"BRE",
+"BRN",
+"BRR",
+"BGJ",
+"BGK",
+"BGL",
+"BUK",
+"HRD",
+"HRK",
+"CYP",
+"CSJ",
+"CSK",
+"ECS",
+"ECV",
+"GQE",
+"EEK",
+"XEU",
+"GEK",
+"DDM",
+"DEM",
+"GHC",
+"GHP",
+"GRD",
+"GNE",
+"GNS",
+"GWE",
+"GWP",
+"ITL",
+"ISJ",
+"IEP",
+"ILP",
+"ILR",
+"LAJ",
+"LVL",
+"LVR",
+"LSM",
+"ZAL",
+"LTL",
+"LTT",
+"LUC",
+"LUF",
+"LUL",
+"MGF",
+"MVQ",
+"MLF",
+"MTL",
+"MTP",
+"MRO",
+"MXP",
+"MZE",
+"MZM",
+"NLG",
+"NIC",
+"PEH",
+"PEI",
+"PES",
+"PLZ",
+"PTE",
+"ROK",
+"ROL",
+"STD",
+"CSD",
+"SKK",
+"SIT",
+"RHD",
+"ESA",
+"ESB",
+"SDD",
+"SDP",
+"SRG",
+"CHC",
+"TJR",
+"TPE",
+"TRL",
+"TMM",
+"UGS",
+"UGW",
+"UAK",
+"SUR",
+"USS",
+"UYN",
+"UYP",
+"VEB",
+"VEF",
+"VNC",
+"YDD",
+"YUD",
+"YUM",
+"YUN",
+"ZRN",
+"ZRZ",
+"ZMK",
+"ZWC",
+"ZWD",
+"ZWN",
+"ZWR",
+"XFO",
+"XRE",
+"XFU",
+
 ];
 
-///ALL Active codes
-pub const ALL_ACTIVE_CODE: &[&str] = &[
-    "AFN", "EUR", "ALL", "DZD", "USD", "AOA", "XCD", "ARS", "AMD", "AWG", "AUD", "AZN", "BSD",
-    "BHD", "BDT", "BBD", "BYN", "BZD", "XOF", "BMD", "INR", "BTN", "BOB", "BAM", "BWP", "NOK",
-    "BRL", "BND", "BGN", "BIF", "CVE", "KHR", "XAF", "CAD", "KYD", "CLP", "CNY", "COP", "KMF",
-    "CDF", "NZD", "CRC", "CUP", "CUC", "ANG", "CZK", "DKK", "DJF", "DOP", "EGP", "SVC", "ERN",
-    "SZL", "ETB", "FKP", "FJD", "XPF", "GMD", "GEL", "GHS", "GIP", "GTQ", "GBP", "GNF", "GYD",
-    "HTG", "HNL", "HKD", "HUF", "ISK", "IDR", "XDR", "IRR", "IQD", "ILS", "JMD", "JPY", "JOD",
-    "KZT", "KES", "KPW", "KRW", "KWD", "KGS", "LAK", "LBP", "LSL", "ZAR", "LRD", "LYD", "CHF",
-    "MOP", "MKD", "MGA", "MWK", "MYR", "MVR", "MRU", "MUR", "XUA", "MXN", "MDL", "MNT", "MAD",
-    "MZN", "MMK", "NAD", "NPR", "NIO", "NGN", "OMR", "PKR", "PAB", "PGK", "PYG", "PEN", "PHP",
-    "PLN", "QAR", "RON", "RUB", "RWF", "SHP", "WST", "STN", "SAR", "RSD", "SCR", "SLL", "SLE",
-    "SGD", "XSU", "SBD", "SOS", "SSP", "LKR", "SDG", "SRD", "SEK", "SYP", "TWD", "TJS", "TZS",
-    "THB", "TOP", "TTD", "TND", "TRY", "TMT", "UGX", "UAH", "AED", "UYU", "UZS", "VUV", "VES",
-    "VED", "VND", "YER", "ZMW", "ZWL", "XBA", "XBB", "XBC", "XBD", "XTS", "XXX", "XAU", "XPD",
-    "XPT", "XAG",
-];
 
 ///ALL Active codes
-pub const ALL_FUNDS_CODE: &[&str] = &[
-    "BOV", "CLF", "COU", "MXV", "CHE", "CHW", "USN", "UYI", "UYW",
+pub const ALL_ACTIVE_CODE: & [ & str] = &[
+    
+"AFN",
+"EUR",
+"ALL",
+"DZD",
+"USD",
+"AOA",
+"XCD",
+"ARS",
+"AMD",
+"AWG",
+"AUD",
+"AZN",
+"BSD",
+"BHD",
+"BDT",
+"BBD",
+"BYN",
+"BZD",
+"XOF",
+"BMD",
+"INR",
+"BTN",
+"BOB",
+"BAM",
+"BWP",
+"NOK",
+"BRL",
+"BND",
+"BGN",
+"BIF",
+"CVE",
+"KHR",
+"XAF",
+"CAD",
+"KYD",
+"CLP",
+"CNY",
+"COP",
+"KMF",
+"CDF",
+"NZD",
+"CRC",
+"CUP",
+"CUC",
+"ANG",
+"CZK",
+"DKK",
+"DJF",
+"DOP",
+"EGP",
+"SVC",
+"ERN",
+"SZL",
+"ETB",
+"FKP",
+"FJD",
+"XPF",
+"GMD",
+"GEL",
+"GHS",
+"GIP",
+"GTQ",
+"GBP",
+"GNF",
+"GYD",
+"HTG",
+"HNL",
+"HKD",
+"HUF",
+"ISK",
+"IDR",
+"XDR",
+"IRR",
+"IQD",
+"ILS",
+"JMD",
+"JPY",
+"JOD",
+"KZT",
+"KES",
+"KPW",
+"KRW",
+"KWD",
+"KGS",
+"LAK",
+"LBP",
+"LSL",
+"ZAR",
+"LRD",
+"LYD",
+"CHF",
+"MOP",
+"MKD",
+"MGA",
+"MWK",
+"MYR",
+"MVR",
+"MRU",
+"MUR",
+"XUA",
+"MXN",
+"MDL",
+"MNT",
+"MAD",
+"MZN",
+"MMK",
+"NAD",
+"NPR",
+"NIO",
+"NGN",
+"OMR",
+"PKR",
+"PAB",
+"PGK",
+"PYG",
+"PEN",
+"PHP",
+"PLN",
+"QAR",
+"RON",
+"RUB",
+"RWF",
+"SHP",
+"WST",
+"STN",
+"SAR",
+"RSD",
+"SCR",
+"SLL",
+"SLE",
+"SGD",
+"XSU",
+"SBD",
+"SOS",
+"SSP",
+"LKR",
+"SDG",
+"SRD",
+"SEK",
+"SYP",
+"TWD",
+"TJS",
+"TZS",
+"THB",
+"TOP",
+"TTD",
+"TND",
+"TRY",
+"TMT",
+"UGX",
+"UAH",
+"AED",
+"UYU",
+"UZS",
+"VUV",
+"VES",
+"VED",
+"VND",
+"YER",
+"ZMW",
+"ZWL",
+"XBA",
+"XBB",
+"XBC",
+"XBD",
+"XTS",
+"XXX",
+"XAU",
+"XPD",
+"XPT",
+"XAG",
+
 ];
+
+
+///ALL Active codes
+pub const ALL_FUNDS_CODE: & [ & str] = &[
+    
+"BOV",
+"CLF",
+"COU",
+"MXV",
+"CHE",
+"CHW",
+"USN",
+"UYI",
+"UYW",
+
+];
+
 
 ///ALL Historic codes
-pub const ALL_HISTORIC_CODE: &[&str] = &[
-    "AFA", "FIM", "ALK", "ADP", "ESP", "FRF", "AOK", "AON", "AOR", "ARA", "ARP", "ARY", "RUR",
-    "ATS", "AYM", "AZM", "BYB", "BYR", "BEC", "BEF", "BEL", "BOP", "BAD", "BRB", "BRC", "BRE",
-    "BRN", "BRR", "BGJ", "BGK", "BGL", "BUK", "HRD", "HRK", "CYP", "CSJ", "CSK", "ECS", "ECV",
-    "GQE", "EEK", "XEU", "GEK", "DDM", "DEM", "GHC", "GHP", "GRD", "GNE", "GNS", "GWE", "GWP",
-    "ITL", "ISJ", "IEP", "ILP", "ILR", "LAJ", "LVL", "LVR", "LSM", "ZAL", "LTL", "LTT", "LUC",
-    "LUF", "LUL", "MGF", "MVQ", "MLF", "MTL", "MTP", "MRO", "MXP", "MZE", "MZM", "NLG", "NIC",
-    "PEH", "PEI", "PES", "PLZ", "PTE", "ROK", "ROL", "STD", "CSD", "SKK", "SIT", "RHD", "ESA",
-    "ESB", "SDD", "SDP", "SRG", "CHC", "TJR", "TPE", "TRL", "TMM", "UGS", "UGW", "UAK", "SUR",
-    "USS", "UYN", "UYP", "VEB", "VEF", "VNC", "YDD", "YUD", "YUM", "YUN", "ZRN", "ZRZ", "ZMK",
-    "ZWC", "ZWD", "ZWN", "ZWR", "XFO", "XRE", "XFU",
+pub const ALL_HISTORIC_CODE: & [ & str] = &[
+    
+"AFA",
+"FIM",
+"ALK",
+"ADP",
+"ESP",
+"FRF",
+"AOK",
+"AON",
+"AOR",
+"ARA",
+"ARP",
+"ARY",
+"RUR",
+"ATS",
+"AYM",
+"AZM",
+"BYB",
+"BYR",
+"BEC",
+"BEF",
+"BEL",
+"BOP",
+"BAD",
+"BRB",
+"BRC",
+"BRE",
+"BRN",
+"BRR",
+"BGJ",
+"BGK",
+"BGL",
+"BUK",
+"HRD",
+"HRK",
+"CYP",
+"CSJ",
+"CSK",
+"ECS",
+"ECV",
+"GQE",
+"EEK",
+"XEU",
+"GEK",
+"DDM",
+"DEM",
+"GHC",
+"GHP",
+"GRD",
+"GNE",
+"GNS",
+"GWE",
+"GWP",
+"ITL",
+"ISJ",
+"IEP",
+"ILP",
+"ILR",
+"LAJ",
+"LVL",
+"LVR",
+"LSM",
+"ZAL",
+"LTL",
+"LTT",
+"LUC",
+"LUF",
+"LUL",
+"MGF",
+"MVQ",
+"MLF",
+"MTL",
+"MTP",
+"MRO",
+"MXP",
+"MZE",
+"MZM",
+"NLG",
+"NIC",
+"PEH",
+"PEI",
+"PES",
+"PLZ",
+"PTE",
+"ROK",
+"ROL",
+"STD",
+"CSD",
+"SKK",
+"SIT",
+"RHD",
+"ESA",
+"ESB",
+"SDD",
+"SDP",
+"SRG",
+"CHC",
+"TJR",
+"TPE",
+"TRL",
+"TMM",
+"UGS",
+"UGW",
+"UAK",
+"SUR",
+"USS",
+"UYN",
+"UYP",
+"VEB",
+"VEF",
+"VNC",
+"YDD",
+"YUD",
+"YUM",
+"YUN",
+"ZRN",
+"ZRZ",
+"ZMK",
+"ZWC",
+"ZWD",
+"ZWN",
+"ZWR",
+"XFO",
+"XRE",
+"XFU",
+
 ];
 
-///ALL the CurrencyCode struct
-pub const ALL_NUMERIC: &[i32] = &[
-    971, 978, 008, 012, 840, 973, 951, 032, 051, 533, 036, 944, 044, 048, 050, 052, 933, 084, 952,
-    060, 356, 064, 068, 984, 977, 072, 578, 986, 096, 975, 108, 132, 116, 950, 124, 136, 152, 990,
-    156, 170, 970, 174, 976, 554, 188, 192, 931, 532, 203, 208, 262, 214, 818, 222, 232, 748, 230,
-    238, 242, 953, 270, 981, 936, 292, 320, 826, 324, 328, 332, 340, 344, 348, 352, 360, 960, 364,
-    368, 376, 388, 392, 400, 398, 404, 408, 410, 414, 417, 418, 422, 426, 710, 430, 434, 756, 446,
-    807, 969, 454, 458, 462, 929, 480, 965, 484, 979, 498, 496, 504, 943, 104, 516, 524, 558, 566,
-    512, 586, 590, 598, 600, 604, 608, 985, 634, 946, 643, 646, 654, 882, 930, 682, 941, 690, 694,
-    925, 702, 994, 090, 706, 728, 144, 938, 968, 752, 947, 948, 760, 901, 972, 834, 764, 776, 780,
-    788, 949, 934, 800, 980, 784, 997, 858, 940, 927, 860, 548, 928, 926, 704, 886, 967, 932, 955,
-    956, 957, 958, 963, 999, 959, 964, 962, 961, 004, 246, 020, 724, 250, 024, 982, 810, 040, 945,
-    031, 112, 974, 993, 056, 992, 070, 076, 987, 100, 191, 196, 200, 218, 983, 226, 233, 954, 268,
-    278, 276, 288, 939, 300, 624, 380, 372, 428, 991, 440, 989, 442, 988, 450, 466, 470, 478, 508,
-    528, 616, 620, 642, 678, 891, 703, 705, 716, 996, 995, 736, 740, 762, 626, 792, 795, 804, 998,
-    862, 937, 720, 890, 180, 894, 942, 935,
-];
 
 ///ALL the CurrencyCode struct
-pub const ALL_NUMERIC_STR: &[&str] = &[
-    "971", "978", "008", "012", "840", "973", "951", "032", "051", "533", "036", "944", "044",
-    "048", "050", "052", "933", "084", "952", "060", "356", "064", "068", "984", "977", "072",
-    "578", "986", "096", "975", "108", "132", "116", "950", "124", "136", "152", "990", "156",
-    "170", "970", "174", "976", "554", "188", "192", "931", "532", "203", "208", "262", "214",
-    "818", "222", "232", "748", "230", "238", "242", "953", "270", "981", "936", "292", "320",
-    "826", "324", "328", "332", "340", "344", "348", "352", "360", "960", "364", "368", "376",
-    "388", "392", "400", "398", "404", "408", "410", "414", "417", "418", "422", "426", "710",
-    "430", "434", "756", "446", "807", "969", "454", "458", "462", "929", "480", "965", "484",
-    "979", "498", "496", "504", "943", "104", "516", "524", "558", "566", "512", "586", "590",
-    "598", "600", "604", "608", "985", "634", "946", "643", "646", "654", "882", "930", "682",
-    "941", "690", "694", "925", "702", "994", "090", "706", "728", "144", "938", "968", "752",
-    "947", "948", "760", "901", "972", "834", "764", "776", "780", "788", "949", "934", "800",
-    "980", "784", "997", "858", "940", "927", "860", "548", "928", "926", "704", "886", "967",
-    "932", "955", "956", "957", "958", "963", "999", "959", "964", "962", "961", "004", "246",
-    "020", "724", "250", "024", "982", "810", "040", "945", "031", "112", "974", "993", "056",
-    "992", "070", "076", "987", "100", "191", "196", "200", "218", "983", "226", "233", "954",
-    "268", "278", "276", "288", "939", "300", "624", "380", "372", "428", "991", "440", "989",
-    "442", "988", "450", "466", "470", "478", "508", "528", "616", "620", "642", "678", "891",
-    "703", "705", "716", "996", "995", "736", "740", "762", "626", "792", "795", "804", "998",
-    "862", "937", "720", "890", "180", "894", "942", "935",
+pub const ALL_NUMERIC: & [i32] = &[
+
+971,
+978,
+008,
+012,
+840,
+973,
+951,
+032,
+051,
+533,
+036,
+944,
+044,
+048,
+050,
+052,
+933,
+084,
+952,
+060,
+356,
+064,
+068,
+984,
+977,
+072,
+578,
+986,
+096,
+975,
+108,
+132,
+116,
+950,
+124,
+136,
+152,
+990,
+156,
+170,
+970,
+174,
+976,
+554,
+188,
+192,
+931,
+532,
+203,
+208,
+262,
+214,
+818,
+222,
+232,
+748,
+230,
+238,
+242,
+953,
+270,
+981,
+936,
+292,
+320,
+826,
+324,
+328,
+332,
+340,
+344,
+348,
+352,
+360,
+960,
+364,
+368,
+376,
+388,
+392,
+400,
+398,
+404,
+408,
+410,
+414,
+417,
+418,
+422,
+426,
+710,
+430,
+434,
+756,
+446,
+807,
+969,
+454,
+458,
+462,
+929,
+480,
+965,
+484,
+979,
+498,
+496,
+504,
+943,
+104,
+516,
+524,
+558,
+566,
+512,
+586,
+590,
+598,
+600,
+604,
+608,
+985,
+634,
+946,
+643,
+646,
+654,
+882,
+930,
+682,
+941,
+690,
+694,
+925,
+702,
+994,
+090,
+706,
+728,
+144,
+938,
+968,
+752,
+947,
+948,
+760,
+901,
+972,
+834,
+764,
+776,
+780,
+788,
+949,
+934,
+800,
+980,
+784,
+997,
+858,
+940,
+927,
+860,
+548,
+928,
+926,
+704,
+886,
+967,
+932,
+955,
+956,
+957,
+958,
+963,
+999,
+959,
+964,
+962,
+961,
+004,
+246,
+020,
+724,
+250,
+024,
+982,
+810,
+040,
+945,
+031,
+112,
+974,
+993,
+056,
+992,
+070,
+076,
+987,
+100,
+191,
+196,
+200,
+218,
+983,
+226,
+233,
+954,
+268,
+278,
+276,
+288,
+939,
+300,
+624,
+380,
+372,
+428,
+991,
+440,
+989,
+442,
+988,
+450,
+466,
+470,
+478,
+508,
+528,
+616,
+620,
+642,
+678,
+891,
+703,
+705,
+716,
+996,
+995,
+736,
+740,
+762,
+626,
+792,
+795,
+804,
+998,
+862,
+937,
+720,
+890,
+180,
+894,
+942,
+935,
+
 ];
 
+
 ///ALL the CurrencyCode struct
-pub const ALL_CODES: &[CurrencyCode] = &[
-    AFN, EUR, ALL, DZD, USD, AOA, XCD, ARS, AMD, AWG, AUD, AZN, BSD, BHD, BDT, BBD, BYN, BZD, XOF,
-    BMD, INR, BTN, BOB, BOV, BAM, BWP, NOK, BRL, BND, BGN, BIF, CVE, KHR, XAF, CAD, KYD, CLP, CLF,
-    CNY, COP, COU, KMF, CDF, NZD, CRC, CUP, CUC, ANG, CZK, DKK, DJF, DOP, EGP, SVC, ERN, SZL, ETB,
-    FKP, FJD, XPF, GMD, GEL, GHS, GIP, GTQ, GBP, GNF, GYD, HTG, HNL, HKD, HUF, ISK, IDR, XDR, IRR,
-    IQD, ILS, JMD, JPY, JOD, KZT, KES, KPW, KRW, KWD, KGS, LAK, LBP, LSL, ZAR, LRD, LYD, CHF, MOP,
-    MKD, MGA, MWK, MYR, MVR, MRU, MUR, XUA, MXN, MXV, MDL, MNT, MAD, MZN, MMK, NAD, NPR, NIO, NGN,
-    OMR, PKR, PAB, PGK, PYG, PEN, PHP, PLN, QAR, RON, RUB, RWF, SHP, WST, STN, SAR, RSD, SCR, SLL,
-    SLE, SGD, XSU, SBD, SOS, SSP, LKR, SDG, SRD, SEK, CHE, CHW, SYP, TWD, TJS, TZS, THB, TOP, TTD,
-    TND, TRY, TMT, UGX, UAH, AED, USN, UYU, UYI, UYW, UZS, VUV, VES, VED, VND, YER, ZMW, ZWL, XBA,
-    XBB, XBC, XBD, XTS, XXX, XAU, XPD, XPT, XAG, AFA, FIM, ALK, ADP, ESP, FRF, AOK, AON, AOR, ARA,
-    ARP, ARY, RUR, ATS, AYM, AZM, BYB, BYR, BEC, BEF, BEL, BOP, BAD, BRB, BRC, BRE, BRN, BRR, BGJ,
-    BGK, BGL, BUK, HRD, HRK, CYP, CSJ, CSK, ECS, ECV, GQE, EEK, XEU, GEK, DDM, DEM, GHC, GHP, GRD,
-    GNE, GNS, GWE, GWP, ITL, ISJ, IEP, ILP, ILR, LAJ, LVL, LVR, LSM, ZAL, LTL, LTT, LUC, LUF, LUL,
-    MGF, MVQ, MLF, MTL, MTP, MRO, MXP, MZE, MZM, NLG, NIC, PEH, PEI, PES, PLZ, PTE, ROK, ROL, STD,
-    CSD, SKK, SIT, RHD, ESA, ESB, SDD, SDP, SRG, CHC, TJR, TPE, TRL, TMM, UGS, UGW, UAK, SUR, USS,
-    UYN, UYP, VEB, VEF, VNC, YDD, YUD, YUM, YUN, ZRN, ZRZ, ZMK, ZWC, ZWD, ZWN, ZWR, XFO, XRE, XFU,
+pub const ALL_NUMERIC_STR: & [ & str] = &[
+
+"971",
+"978",
+"008",
+"012",
+"840",
+"973",
+"951",
+"032",
+"051",
+"533",
+"036",
+"944",
+"044",
+"048",
+"050",
+"052",
+"933",
+"084",
+"952",
+"060",
+"356",
+"064",
+"068",
+"984",
+"977",
+"072",
+"578",
+"986",
+"096",
+"975",
+"108",
+"132",
+"116",
+"950",
+"124",
+"136",
+"152",
+"990",
+"156",
+"170",
+"970",
+"174",
+"976",
+"554",
+"188",
+"192",
+"931",
+"532",
+"203",
+"208",
+"262",
+"214",
+"818",
+"222",
+"232",
+"748",
+"230",
+"238",
+"242",
+"953",
+"270",
+"981",
+"936",
+"292",
+"320",
+"826",
+"324",
+"328",
+"332",
+"340",
+"344",
+"348",
+"352",
+"360",
+"960",
+"364",
+"368",
+"376",
+"388",
+"392",
+"400",
+"398",
+"404",
+"408",
+"410",
+"414",
+"417",
+"418",
+"422",
+"426",
+"710",
+"430",
+"434",
+"756",
+"446",
+"807",
+"969",
+"454",
+"458",
+"462",
+"929",
+"480",
+"965",
+"484",
+"979",
+"498",
+"496",
+"504",
+"943",
+"104",
+"516",
+"524",
+"558",
+"566",
+"512",
+"586",
+"590",
+"598",
+"600",
+"604",
+"608",
+"985",
+"634",
+"946",
+"643",
+"646",
+"654",
+"882",
+"930",
+"682",
+"941",
+"690",
+"694",
+"925",
+"702",
+"994",
+"090",
+"706",
+"728",
+"144",
+"938",
+"968",
+"752",
+"947",
+"948",
+"760",
+"901",
+"972",
+"834",
+"764",
+"776",
+"780",
+"788",
+"949",
+"934",
+"800",
+"980",
+"784",
+"997",
+"858",
+"940",
+"927",
+"860",
+"548",
+"928",
+"926",
+"704",
+"886",
+"967",
+"932",
+"955",
+"956",
+"957",
+"958",
+"963",
+"999",
+"959",
+"964",
+"962",
+"961",
+"004",
+"246",
+"020",
+"724",
+"250",
+"024",
+"982",
+"810",
+"040",
+"945",
+"031",
+"112",
+"974",
+"993",
+"056",
+"992",
+"070",
+"076",
+"987",
+"100",
+"191",
+"196",
+"200",
+"218",
+"983",
+"226",
+"233",
+"954",
+"268",
+"278",
+"276",
+"288",
+"939",
+"300",
+"624",
+"380",
+"372",
+"428",
+"991",
+"440",
+"989",
+"442",
+"988",
+"450",
+"466",
+"470",
+"478",
+"508",
+"528",
+"616",
+"620",
+"642",
+"678",
+"891",
+"703",
+"705",
+"716",
+"996",
+"995",
+"736",
+"740",
+"762",
+"626",
+"792",
+"795",
+"804",
+"998",
+"862",
+"937",
+"720",
+"890",
+"180",
+"894",
+"942",
+"935",
+
 ];
+
+
+///ALL the CurrencyCode struct
+pub const ALL_CODES: & [CurrencyCode] = &[
+
+AFN,
+EUR,
+ALL,
+DZD,
+USD,
+AOA,
+XCD,
+ARS,
+AMD,
+AWG,
+AUD,
+AZN,
+BSD,
+BHD,
+BDT,
+BBD,
+BYN,
+BZD,
+XOF,
+BMD,
+INR,
+BTN,
+BOB,
+BOV,
+BAM,
+BWP,
+NOK,
+BRL,
+BND,
+BGN,
+BIF,
+CVE,
+KHR,
+XAF,
+CAD,
+KYD,
+CLP,
+CLF,
+CNY,
+COP,
+COU,
+KMF,
+CDF,
+NZD,
+CRC,
+CUP,
+CUC,
+ANG,
+CZK,
+DKK,
+DJF,
+DOP,
+EGP,
+SVC,
+ERN,
+SZL,
+ETB,
+FKP,
+FJD,
+XPF,
+GMD,
+GEL,
+GHS,
+GIP,
+GTQ,
+GBP,
+GNF,
+GYD,
+HTG,
+HNL,
+HKD,
+HUF,
+ISK,
+IDR,
+XDR,
+IRR,
+IQD,
+ILS,
+JMD,
+JPY,
+JOD,
+KZT,
+KES,
+KPW,
+KRW,
+KWD,
+KGS,
+LAK,
+LBP,
+LSL,
+ZAR,
+LRD,
+LYD,
+CHF,
+MOP,
+MKD,
+MGA,
+MWK,
+MYR,
+MVR,
+MRU,
+MUR,
+XUA,
+MXN,
+MXV,
+MDL,
+MNT,
+MAD,
+MZN,
+MMK,
+NAD,
+NPR,
+NIO,
+NGN,
+OMR,
+PKR,
+PAB,
+PGK,
+PYG,
+PEN,
+PHP,
+PLN,
+QAR,
+RON,
+RUB,
+RWF,
+SHP,
+WST,
+STN,
+SAR,
+RSD,
+SCR,
+SLL,
+SLE,
+SGD,
+XSU,
+SBD,
+SOS,
+SSP,
+LKR,
+SDG,
+SRD,
+SEK,
+CHE,
+CHW,
+SYP,
+TWD,
+TJS,
+TZS,
+THB,
+TOP,
+TTD,
+TND,
+TRY,
+TMT,
+UGX,
+UAH,
+AED,
+USN,
+UYU,
+UYI,
+UYW,
+UZS,
+VUV,
+VES,
+VED,
+VND,
+YER,
+ZMW,
+ZWL,
+XBA,
+XBB,
+XBC,
+XBD,
+XTS,
+XXX,
+XAU,
+XPD,
+XPT,
+XAG,
+AFA,
+FIM,
+ALK,
+ADP,
+ESP,
+FRF,
+AOK,
+AON,
+AOR,
+ARA,
+ARP,
+ARY,
+RUR,
+ATS,
+AYM,
+AZM,
+BYB,
+BYR,
+BEC,
+BEF,
+BEL,
+BOP,
+BAD,
+BRB,
+BRC,
+BRE,
+BRN,
+BRR,
+BGJ,
+BGK,
+BGL,
+BUK,
+HRD,
+HRK,
+CYP,
+CSJ,
+CSK,
+ECS,
+ECV,
+GQE,
+EEK,
+XEU,
+GEK,
+DDM,
+DEM,
+GHC,
+GHP,
+GRD,
+GNE,
+GNS,
+GWE,
+GWP,
+ITL,
+ISJ,
+IEP,
+ILP,
+ILR,
+LAJ,
+LVL,
+LVR,
+LSM,
+ZAL,
+LTL,
+LTT,
+LUC,
+LUF,
+LUL,
+MGF,
+MVQ,
+MLF,
+MTL,
+MTP,
+MRO,
+MXP,
+MZE,
+MZM,
+NLG,
+NIC,
+PEH,
+PEI,
+PES,
+PLZ,
+PTE,
+ROK,
+ROL,
+STD,
+CSD,
+SKK,
+SIT,
+RHD,
+ESA,
+ESB,
+SDD,
+SDP,
+SRG,
+CHC,
+TJR,
+TPE,
+TRL,
+TMM,
+UGS,
+UGW,
+UAK,
+SUR,
+USS,
+UYN,
+UYP,
+VEB,
+VEF,
+VNC,
+YDD,
+YUD,
+YUM,
+YUN,
+ZRN,
+ZRZ,
+ZMK,
+ZWC,
+ZWD,
+ZWN,
+ZWR,
+XFO,
+XRE,
+XFU,
+
+];
+
