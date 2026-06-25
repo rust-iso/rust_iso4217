@@ -12,7 +12,7 @@ codes_map = {}
 for row in table_active.index:
     code = {}
     for i, k in enumerate(active_keys):
-        code[k] = table_active.iloc[row][i]
+        code[k] = table_active.iloc[row, i]
     if pd.isna(code["code"]):
         continue
     if code["entity"] == "ENTITY":
@@ -95,7 +95,7 @@ table_historic = list_three_xls.parse(list_three_xls.sheet_names[0])
 for row in table_historic.index:
     code = {}
     for i, k in enumerate(active_keys):
-        code[k] = table_historic.iloc[row][i]
+        code[k] = table_historic.iloc[row, i]
     if pd.isna(code["code"]):
         continue
     if code["entity"] == "ENTITY":
@@ -117,7 +117,7 @@ for x in f:
     iso3166_code = x[2]
     iso3166_numeric = x[5]
     iso4217_name = x[18]
-    iso4217_codes = x[22].split(",")
+    iso4217_codes = x[21].split(",")
     if "ISO3166-1-Alpha-3" == iso3166_code:
         continue
     for iso4217_code in iso4217_codes:
@@ -133,6 +133,20 @@ for x in f:
                 {"iso4217_code": iso4217_code, "iso4217_name": iso4217_name})
 
 '''hot fix '''
+
+
+def ensure_country_currency(iso3166_code, iso4217_code):
+    """Idempotently map a country to a currency.
+
+    The datahub country-codes CSV is community maintained and occasionally
+    drops the ISO4217 code for a country (e.g. TUR), so we force the mapping
+    here. The guard keeps it from duplicating entries the CSV already has.
+    """
+    country_currency.setdefault(iso3166_code, [])
+    if iso4217_code not in [c["iso4217_code"] for c in country_currency[iso3166_code]]:
+        country_currency[iso3166_code].append({"iso4217_code": iso4217_code})
+
+
 currency_country["BOV"] = [{"iso3166_code": "BOL"}]
 currency_country["CLF"] = [{"iso3166_code": "CHL"}]
 currency_country["COU"] = [{"iso3166_code": "COL"}]
@@ -143,16 +157,18 @@ currency_country["UYI"] = [{"iso3166_code": "URY"}]
 currency_country["UYW"] = [{"iso3166_code": "URY"}]
 
 currency_country["VED"] = [{"iso3166_code": "VEN"}]
-country_currency["VEN"].append({"iso4217_code": "VED"})
-
+ensure_country_currency("VEN", "VED")
 
 # print(country_currency["TWN"])
 # print(country_currency["TWD"])
 currency_country["TWD"] = [{"iso3166_code": "TWN"}]
-country_currency["TWN"].append({"iso4217_code": "TWD"})
+ensure_country_currency("TWN", "TWD")
 
 currency_country["FKP"] = [{"iso3166_code": "FLK"}]
-country_currency["FLK"].append({"iso4217_code": "FKP"})
+ensure_country_currency("FLK", "FKP")
+
+currency_country["TRY"] = [{"iso3166_code": "TUR"}]
+ensure_country_currency("TUR", "TRY")
 
 prefix = """use phf::{phf_map, Map};
 #[cfg(target_arch = "wasm32")]
@@ -400,7 +416,10 @@ print("""
 """)
 
 exclude_map_keys = ["ALK", "AON", "ARA",
-                    "ARP", "ARY", "BOP", "BRC", "BRE", "BRN", "BGK", "BGL", "BUK", "CHC", "CSJ", "GNE", "GNS", "GWP", "HRK", "ILP", "ILR", "LAJ", "LSM", "LVR", "LTT", "MTP", "MXP", "MZM", "NIC", "PEI", "PEH", "PES", "ROL", "SDP", "UGW", "UYN", "VNC", "UYP", "UGS", "UGW", "MVQ", "ZRZ", "ZWD", "ISJ", "SUR", "YUM", "YUN", "ZWC"]
+                    "ARP", "ARY", "BOP", "BRC", "BRE", "BRN", "BGK", "BGL", "BUK", "CHC", "CSJ", "GNE", "GNS", "GWP", "HRK", "ILP", "ILR", "LAJ", "LSM", "LVR", "LTT", "MTP", "MXP", "MZM", "NIC", "PEI", "PEH", "PES", "ROL", "SDP", "UGW", "UYN", "VNC", "UYP", "UGS", "UGW", "MVQ", "ZRZ", "ZWD", "ISJ", "SUR", "YUM", "YUN", "ZWC",
+                    # ANG (Netherlands Antillean Guilder, numeric 532) is now
+                    # historic; XCG (Caribbean Guilder) reuses numeric 532.
+                    "ANG"]
 print("""
 ///CurrencyCode map with  3 len numeric str Code key
 pub const NUMERIC_MAP: Map<&str, CurrencyCode> = phf_map! {

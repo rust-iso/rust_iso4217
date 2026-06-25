@@ -222,7 +222,7 @@ pub const EUR: CurrencyCode = CurrencyCode {
     numeric: 978,
     unit: 2,
     code_type: "currency",
-    countries: &["AND","AUT","BEL","CYP","EST","FIN","FRA","GUF","ATF","DEU","GRC","GLP","VAT","IRL","ITA","LVA","LTU","LUX","MLT","MTQ","MYT","MCO","MNE","NLD","PRT","REU","BLM","MAF","SPM","SMR","SVK","SVN","ESP","ALA"],
+    countries: &["ALA","AND","AUT","BEL","BGR","HRV","CYP","EST","FIN","FRA","GUF","ATF","DEU","GRC","GLP","VAT","IRL","ITA","LVA","LTU","LUX","MLT","MTQ","MYT","MCO","MNE","NLD","PRT","REU","BLM","MAF","SPM","SMR","SVK","SVN","ESP"],
 
 };
 
@@ -255,7 +255,7 @@ pub const USD: CurrencyCode = CurrencyCode {
     numeric: 840,
     unit: 2,
     code_type: "currency",
-    countries: &["ASM","BES","IOT","VGB","ECU","SLV","GUM","HTI","MHL","FSM","MNP","PLW","PAN","PRI","TLS","TCA","UMI","VIR","USA"],
+    countries: &["ASM","BES","IOT","VGB","ECU","SLV","GUM","HTI","MHL","FSM","MNP","PLW","PAN","PRI","TLS","TCA","UMI","USA","VIR"],
 
 };
 
@@ -278,6 +278,17 @@ pub const XCD: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["AIA","ATG","DMA","GRD","MSR","KNA","LCA","VCT"],
+
+};
+
+
+pub const XAD: CurrencyCode = CurrencyCode {
+    name: "Arab Accounting Dinar",
+    code: "XAD",
+    numeric: 396,
+    unit: 2,
+    code_type: "currency",
+    countries: &[],
 
 };
 
@@ -409,7 +420,7 @@ pub const XOF: CurrencyCode = CurrencyCode {
     numeric: 952,
     unit: 0,
     code_type: "currency",
-    countries: &["BEN","BFA","CIV","GNB","MLI","NER","SEN","TGO"],
+    countries: &["BEN","BFA","GNB","CIV","MLI","NER","SEN","TGO"],
 
 };
 
@@ -520,17 +531,6 @@ pub const BND: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["BRN"],
-
-};
-
-
-pub const BGN: CurrencyCode = CurrencyCode {
-    name: "Bulgarian Lev",
-    code: "BGN",
-    numeric: 975,
-    unit: 2,
-    code_type: "currency",
-    countries: &["BGR"],
 
 };
 
@@ -711,20 +711,9 @@ pub const CUP: CurrencyCode = CurrencyCode {
 };
 
 
-pub const CUC: CurrencyCode = CurrencyCode {
-    name: "Peso Convertible",
-    code: "CUC",
-    numeric: 931,
-    unit: 2,
-    code_type: "currency",
-    countries: &["CUB"],
-
-};
-
-
-pub const ANG: CurrencyCode = CurrencyCode {
-    name: "Netherlands Antillean Guilder",
-    code: "ANG",
+pub const XCG: CurrencyCode = CurrencyCode {
+    name: "Caribbean Guilder",
+    code: "XCG",
     numeric: 532,
     unit: 2,
     code_type: "currency",
@@ -1250,17 +1239,6 @@ pub const MOP: CurrencyCode = CurrencyCode {
 };
 
 
-pub const MKD: CurrencyCode = CurrencyCode {
-    name: "Denar",
-    code: "MKD",
-    numeric: 807,
-    unit: 2,
-    code_type: "currency",
-    countries: &["MKD"],
-
-};
-
-
 pub const MGA: CurrencyCode = CurrencyCode {
     name: "Malagasy Ariary",
     code: "MGA",
@@ -1455,6 +1433,17 @@ pub const NGN: CurrencyCode = CurrencyCode {
     unit: 2,
     code_type: "currency",
     countries: &["NGA"],
+
+};
+
+
+pub const MKD: CurrencyCode = CurrencyCode {
+    name: "Denar",
+    code: "MKD",
+    numeric: 807,
+    unit: 2,
+    code_type: "currency",
+    countries: &["MKD"],
 
 };
 
@@ -1657,24 +1646,13 @@ pub const SCR: CurrencyCode = CurrencyCode {
 };
 
 
-pub const SLL: CurrencyCode = CurrencyCode {
-    name: "Leone",
-    code: "SLL",
-    numeric: 694,
-    unit: 2,
-    code_type: "currency",
-    countries: &["SLE"],
-
-};
-
-
 pub const SLE: CurrencyCode = CurrencyCode {
     name: "Leone",
     code: "SLE",
     numeric: 925,
     unit: 2,
     code_type: "currency",
-    countries: &[],
+    countries: &["SLE"],
 
 };
 
@@ -2064,10 +2042,10 @@ pub const ZMW: CurrencyCode = CurrencyCode {
 };
 
 
-pub const ZWL: CurrencyCode = CurrencyCode {
-    name: "Zimbabwe Dollar",
-    code: "ZWL",
-    numeric: 932,
+pub const ZWG: CurrencyCode = CurrencyCode {
+    name: "Zimbabwe Gold",
+    code: "ZWG",
+    numeric: 924,
     unit: 2,
     code_type: "currency",
     countries: &["ZWE"],
@@ -2526,6 +2504,17 @@ pub const BGL: CurrencyCode = CurrencyCode {
 };
 
 
+pub const BGN: CurrencyCode = CurrencyCode {
+    name: "Bulgarian Lev",
+    code: "BGN",
+    numeric: 975,
+    unit: -1,
+    code_type: "historic",
+    countries: &[],
+
+};
+
+
 pub const BUK: CurrencyCode = CurrencyCode {
     name: "Kyat",
     code: "BUK",
@@ -2554,7 +2543,29 @@ pub const HRK: CurrencyCode = CurrencyCode {
     numeric: 191,
     unit: -1,
     code_type: "historic",
-    countries: &["HRV"],
+    countries: &[],
+
+};
+
+
+pub const CUC: CurrencyCode = CurrencyCode {
+    name: "Peso Convertible",
+    code: "CUC",
+    numeric: 931,
+    unit: -1,
+    code_type: "historic",
+    countries: &[],
+
+};
+
+
+pub const ANG: CurrencyCode = CurrencyCode {
+    name: "Netherlands Antillean Guilder",
+    code: "ANG",
+    numeric: 532,
+    unit: -1,
+    code_type: "historic",
+    countries: &[],
 
 };
 
@@ -3142,6 +3153,17 @@ pub const CSD: CurrencyCode = CurrencyCode {
 };
 
 
+pub const SLL: CurrencyCode = CurrencyCode {
+    name: "Leone",
+    code: "SLL",
+    numeric: 694,
+    unit: -1,
+    code_type: "historic",
+    countries: &[],
+
+};
+
+
 pub const SKK: CurrencyCode = CurrencyCode {
     name: "Slovak Koruna",
     code: "SKK",
@@ -3516,6 +3538,17 @@ pub const ZWR: CurrencyCode = CurrencyCode {
 };
 
 
+pub const ZWL: CurrencyCode = CurrencyCode {
+    name: "Zimbabwe Dollar",
+    code: "ZWL",
+    numeric: 932,
+    unit: -1,
+    code_type: "historic",
+    countries: &[],
+
+};
+
+
 pub const XFO: CurrencyCode = CurrencyCode {
     name: "Gold-Franc",
     code: "XFO",
@@ -3559,6 +3592,7 @@ pub const ALL_MAP: Map<&str, CurrencyCode> = phf_map! {
 "USD" => USD, 
 "AOA" => AOA, 
 "XCD" => XCD, 
+"XAD" => XAD, 
 "ARS" => ARS, 
 "AMD" => AMD, 
 "AWG" => AWG, 
@@ -3581,7 +3615,6 @@ pub const ALL_MAP: Map<&str, CurrencyCode> = phf_map! {
 "NOK" => NOK, 
 "BRL" => BRL, 
 "BND" => BND, 
-"BGN" => BGN, 
 "BIF" => BIF, 
 "CVE" => CVE, 
 "KHR" => KHR, 
@@ -3598,8 +3631,7 @@ pub const ALL_MAP: Map<&str, CurrencyCode> = phf_map! {
 "NZD" => NZD, 
 "CRC" => CRC, 
 "CUP" => CUP, 
-"CUC" => CUC, 
-"ANG" => ANG, 
+"XCG" => XCG, 
 "CZK" => CZK, 
 "DKK" => DKK, 
 "DJF" => DJF, 
@@ -3647,7 +3679,6 @@ pub const ALL_MAP: Map<&str, CurrencyCode> = phf_map! {
 "LYD" => LYD, 
 "CHF" => CHF, 
 "MOP" => MOP, 
-"MKD" => MKD, 
 "MGA" => MGA, 
 "MWK" => MWK, 
 "MYR" => MYR, 
@@ -3666,6 +3697,7 @@ pub const ALL_MAP: Map<&str, CurrencyCode> = phf_map! {
 "NPR" => NPR, 
 "NIO" => NIO, 
 "NGN" => NGN, 
+"MKD" => MKD, 
 "OMR" => OMR, 
 "PKR" => PKR, 
 "PAB" => PAB, 
@@ -3684,7 +3716,6 @@ pub const ALL_MAP: Map<&str, CurrencyCode> = phf_map! {
 "SAR" => SAR, 
 "RSD" => RSD, 
 "SCR" => SCR, 
-"SLL" => SLL, 
 "SLE" => SLE, 
 "SGD" => SGD, 
 "XSU" => XSU, 
@@ -3721,7 +3752,7 @@ pub const ALL_MAP: Map<&str, CurrencyCode> = phf_map! {
 "VND" => VND, 
 "YER" => YER, 
 "ZMW" => ZMW, 
-"ZWL" => ZWL, 
+"ZWG" => ZWG, 
 "XBA" => XBA, 
 "XBB" => XBB, 
 "XBC" => XBC, 
@@ -3763,9 +3794,12 @@ pub const ALL_MAP: Map<&str, CurrencyCode> = phf_map! {
 "BGJ" => BGJ, 
 "BGK" => BGK, 
 "BGL" => BGL, 
+"BGN" => BGN, 
 "BUK" => BUK, 
 "HRD" => HRD, 
 "HRK" => HRK, 
+"CUC" => CUC, 
+"ANG" => ANG, 
 "CYP" => CYP, 
 "CSJ" => CSJ, 
 "CSK" => CSK, 
@@ -3819,6 +3853,7 @@ pub const ALL_MAP: Map<&str, CurrencyCode> = phf_map! {
 "ROL" => ROL, 
 "STD" => STD, 
 "CSD" => CSD, 
+"SLL" => SLL, 
 "SKK" => SKK, 
 "SIT" => SIT, 
 "RHD" => RHD, 
@@ -3853,6 +3888,7 @@ pub const ALL_MAP: Map<&str, CurrencyCode> = phf_map! {
 "ZWD" => ZWD, 
 "ZWN" => ZWN, 
 "ZWR" => ZWR, 
+"ZWL" => ZWL, 
 "XFO" => XFO, 
 "XRE" => XRE, 
 "XFU" => XFU, 
@@ -3870,6 +3906,7 @@ pub const NUMERIC_MAP: Map<&str, CurrencyCode> = phf_map! {
 "840" => USD, 
 "973" => AOA, 
 "951" => XCD, 
+"396" => XAD, 
 "032" => ARS, 
 "051" => AMD, 
 "533" => AWG, 
@@ -3892,7 +3929,6 @@ pub const NUMERIC_MAP: Map<&str, CurrencyCode> = phf_map! {
 "578" => NOK, 
 "986" => BRL, 
 "096" => BND, 
-"975" => BGN, 
 "108" => BIF, 
 "132" => CVE, 
 "116" => KHR, 
@@ -3909,8 +3945,7 @@ pub const NUMERIC_MAP: Map<&str, CurrencyCode> = phf_map! {
 "554" => NZD, 
 "188" => CRC, 
 "192" => CUP, 
-"931" => CUC, 
-"532" => ANG, 
+"532" => XCG, 
 "203" => CZK, 
 "208" => DKK, 
 "262" => DJF, 
@@ -3958,7 +3993,6 @@ pub const NUMERIC_MAP: Map<&str, CurrencyCode> = phf_map! {
 "434" => LYD, 
 "756" => CHF, 
 "446" => MOP, 
-"807" => MKD, 
 "969" => MGA, 
 "454" => MWK, 
 "458" => MYR, 
@@ -3977,6 +4011,7 @@ pub const NUMERIC_MAP: Map<&str, CurrencyCode> = phf_map! {
 "524" => NPR, 
 "558" => NIO, 
 "566" => NGN, 
+"807" => MKD, 
 "512" => OMR, 
 "586" => PKR, 
 "590" => PAB, 
@@ -3995,7 +4030,6 @@ pub const NUMERIC_MAP: Map<&str, CurrencyCode> = phf_map! {
 "682" => SAR, 
 "941" => RSD, 
 "690" => SCR, 
-"694" => SLL, 
 "925" => SLE, 
 "702" => SGD, 
 "994" => XSU, 
@@ -4032,7 +4066,7 @@ pub const NUMERIC_MAP: Map<&str, CurrencyCode> = phf_map! {
 "704" => VND, 
 "886" => YER, 
 "967" => ZMW, 
-"932" => ZWL, 
+"924" => ZWG, 
 "955" => XBA, 
 "956" => XBB, 
 "957" => XBC, 
@@ -4063,7 +4097,9 @@ pub const NUMERIC_MAP: Map<&str, CurrencyCode> = phf_map! {
 "076" => BRB, 
 "987" => BRR, 
 "100" => BGJ, 
+"975" => BGN, 
 "191" => HRD, 
+"931" => CUC, 
 "196" => CYP, 
 "200" => CSK, 
 "218" => ECS, 
@@ -4097,6 +4133,7 @@ pub const NUMERIC_MAP: Map<&str, CurrencyCode> = phf_map! {
 "642" => ROK, 
 "678" => STD, 
 "891" => CSD, 
+"694" => SLL, 
 "703" => SKK, 
 "705" => SIT, 
 "716" => RHD, 
@@ -4118,6 +4155,7 @@ pub const NUMERIC_MAP: Map<&str, CurrencyCode> = phf_map! {
 "894" => ZMK, 
 "942" => ZWN, 
 "935" => ZWR, 
+"932" => ZWL, 
 
 };
 
@@ -4125,8 +4163,8 @@ pub const NUMERIC_MAP: Map<&str, CurrencyCode> = phf_map! {
 ///CurrencyCode map with  3 len numeric str Code key
 pub const COUNTRY_MAP: Map<&str,&'static [&'static CurrencyCode]> = phf_map! {
     
-"TWN" => &[&TWD], 
 "AFG" => &[&AFN], 
+"ALA" => &[&EUR], 
 "ALB" => &[&ALL], 
 "DZA" => &[&DZD], 
 "ASM" => &[&USD], 
@@ -4159,7 +4197,7 @@ pub const COUNTRY_MAP: Map<&str,&'static [&'static CurrencyCode]> = phf_map! {
 "IOT" => &[&USD], 
 "VGB" => &[&USD], 
 "BRN" => &[&BND], 
-"BGR" => &[&BGN], 
+"BGR" => &[&EUR], 
 "BFA" => &[&XOF], 
 "BDI" => &[&BIF], 
 "CPV" => &[&CVE], 
@@ -4180,12 +4218,11 @@ pub const COUNTRY_MAP: Map<&str,&'static [&'static CurrencyCode]> = phf_map! {
 "COG" => &[&XAF], 
 "COK" => &[&NZD], 
 "CRI" => &[&CRC], 
-"HRV" => &[&HRK], 
-"CUB" => &[&CUP,&CUC], 
-"CUW" => &[&ANG], 
+"HRV" => &[&EUR], 
+"CUB" => &[&CUP], 
+"CUW" => &[&XCG], 
 "CYP" => &[&EUR], 
 "CZE" => &[&CZK], 
-"CIV" => &[&XOF], 
 "PRK" => &[&KPW], 
 "COD" => &[&CDF], 
 "DNK" => &[&DKK], 
@@ -4238,6 +4275,7 @@ pub const COUNTRY_MAP: Map<&str,&'static [&'static CurrencyCode]> = phf_map! {
 "IMN" => &[&GBP], 
 "ISR" => &[&ILS], 
 "ITA" => &[&EUR], 
+"CIV" => &[&XOF], 
 "JAM" => &[&JMD], 
 "JPN" => &[&JPY], 
 "JEY" => &[&GBP], 
@@ -4288,6 +4326,7 @@ pub const COUNTRY_MAP: Map<&str,&'static [&'static CurrencyCode]> = phf_map! {
 "NIU" => &[&NZD], 
 "NFK" => &[&AUD], 
 "MNP" => &[&USD], 
+"MKD" => &[&MKD], 
 "NOR" => &[&NOK], 
 "OMN" => &[&OMR], 
 "PAK" => &[&PKR], 
@@ -4304,10 +4343,10 @@ pub const COUNTRY_MAP: Map<&str,&'static [&'static CurrencyCode]> = phf_map! {
 "QAT" => &[&QAR], 
 "KOR" => &[&KRW], 
 "MDA" => &[&MDL], 
+"REU" => &[&EUR], 
 "ROU" => &[&RON], 
 "RUS" => &[&RUB], 
 "RWA" => &[&RWF], 
-"REU" => &[&EUR], 
 "BLM" => &[&EUR], 
 "SHN" => &[&SHP], 
 "KNA" => &[&XCD], 
@@ -4322,9 +4361,9 @@ pub const COUNTRY_MAP: Map<&str,&'static [&'static CurrencyCode]> = phf_map! {
 "SEN" => &[&XOF], 
 "SRB" => &[&RSD], 
 "SYC" => &[&SCR], 
-"SLE" => &[&SLL], 
+"SLE" => &[&SLE], 
 "SGP" => &[&SGD], 
-"SXM" => &[&ANG], 
+"SXM" => &[&XCG], 
 "SVK" => &[&EUR], 
 "SVN" => &[&EUR], 
 "SLB" => &[&SBD], 
@@ -4339,9 +4378,9 @@ pub const COUNTRY_MAP: Map<&str,&'static [&'static CurrencyCode]> = phf_map! {
 "SWE" => &[&SEK], 
 "CHE" => &[&CHF], 
 "SYR" => &[&SYP], 
+"TWN" => &[&TWD], 
 "TJK" => &[&TJS], 
 "THA" => &[&THB], 
-"MKD" => &[&MKD], 
 "TLS" => &[&USD], 
 "TGO" => &[&XOF], 
 "TKL" => &[&NZD], 
@@ -4358,9 +4397,9 @@ pub const COUNTRY_MAP: Map<&str,&'static [&'static CurrencyCode]> = phf_map! {
 "GBR" => &[&GBP], 
 "TZA" => &[&TZS], 
 "UMI" => &[&USD], 
-"VIR" => &[&USD], 
 "USA" => &[&USD], 
-"URY" => &[&UYU], 
+"VIR" => &[&USD], 
+"URY" => &[&UYU,&UYW], 
 "UZB" => &[&UZS], 
 "VUT" => &[&VUV], 
 "VEN" => &[&VES,&VED], 
@@ -4369,8 +4408,7 @@ pub const COUNTRY_MAP: Map<&str,&'static [&'static CurrencyCode]> = phf_map! {
 "ESH" => &[&MAD], 
 "YEM" => &[&YER], 
 "ZMB" => &[&ZMW], 
-"ZWE" => &[&ZWL], 
-"ALA" => &[&EUR], 
+"ZWE" => &[&ZWG], 
 
 };
 
@@ -4385,6 +4423,7 @@ pub const ALL_NAME: & [ & str] = &[
 "US Dollar",
 "Kwanza",
 "East Caribbean Dollar",
+"Arab Accounting Dinar",
 "Argentine Peso",
 "Armenian Dram",
 "Aruban Florin",
@@ -4407,7 +4446,6 @@ pub const ALL_NAME: & [ & str] = &[
 "Norwegian Krone",
 "Brazilian Real",
 "Brunei Dollar",
-"Bulgarian Lev",
 "Burundi Franc",
 "Cabo Verde Escudo",
 "Riel",
@@ -4424,8 +4462,7 @@ pub const ALL_NAME: & [ & str] = &[
 "New Zealand Dollar",
 "Costa Rican Colon",
 "Cuban Peso",
-"Peso Convertible",
-"Netherlands Antillean Guilder",
+"Caribbean Guilder",
 "Czech Koruna",
 "Danish Krone",
 "Djibouti Franc",
@@ -4473,7 +4510,6 @@ pub const ALL_NAME: & [ & str] = &[
 "Libyan Dinar",
 "Swiss Franc",
 "Pataca",
-"Denar",
 "Malagasy Ariary",
 "Malawi Kwacha",
 "Malaysian Ringgit",
@@ -4492,6 +4528,7 @@ pub const ALL_NAME: & [ & str] = &[
 "Nepalese Rupee",
 "Cordoba Oro",
 "Naira",
+"Denar",
 "Rial Omani",
 "Pakistan Rupee",
 "Balboa",
@@ -4510,7 +4547,6 @@ pub const ALL_NAME: & [ & str] = &[
 "Saudi Riyal",
 "Serbian Dinar",
 "Seychelles Rupee",
-"Leone",
 "Leone",
 "Singapore Dollar",
 "Sucre",
@@ -4547,7 +4583,7 @@ pub const ALL_NAME: & [ & str] = &[
 "Dong",
 "Yemeni Rial",
 "Zambian Kwacha",
-"Zimbabwe Dollar",
+"Zimbabwe Gold",
 "Bond Markets Unit European Composite Unit (EURCO)",
 "Bond Markets Unit European Monetary Unit (E.M.U.-6)",
 "Bond Markets Unit European Unit of Account 9 (E.U.A.-9)",
@@ -4589,9 +4625,12 @@ pub const ALL_NAME: & [ & str] = &[
 "Lev A/52",
 "Lev A/62",
 "Lev",
+"Bulgarian Lev",
 "Kyat",
 "Croatian Dinar",
 "Croatian Kuna",
+"Peso Convertible",
+"Netherlands Antillean Guilder",
 "Cyprus Pound",
 "Krona A/53",
 "Koruna",
@@ -4645,6 +4684,7 @@ pub const ALL_NAME: & [ & str] = &[
 "Old Leu",
 "Dobra",
 "Serbian Dinar",
+"Leone",
 "Slovak Koruna",
 "Tolar",
 "Rhodesian Dollar",
@@ -4679,6 +4719,7 @@ pub const ALL_NAME: & [ & str] = &[
 "Zimbabwe Dollar (old)",
 "Zimbabwe Dollar (new)",
 "Zimbabwe Dollar",
+"Zimbabwe Dollar",
 "Gold-Franc",
 "RINET Funds Code",
 "UIC-Franc",
@@ -4696,6 +4737,7 @@ pub const ALL_CODE: & [ & str] = &[
 "USD",
 "AOA",
 "XCD",
+"XAD",
 "ARS",
 "AMD",
 "AWG",
@@ -4718,7 +4760,6 @@ pub const ALL_CODE: & [ & str] = &[
 "NOK",
 "BRL",
 "BND",
-"BGN",
 "BIF",
 "CVE",
 "KHR",
@@ -4735,8 +4776,7 @@ pub const ALL_CODE: & [ & str] = &[
 "NZD",
 "CRC",
 "CUP",
-"CUC",
-"ANG",
+"XCG",
 "CZK",
 "DKK",
 "DJF",
@@ -4784,7 +4824,6 @@ pub const ALL_CODE: & [ & str] = &[
 "LYD",
 "CHF",
 "MOP",
-"MKD",
 "MGA",
 "MWK",
 "MYR",
@@ -4803,6 +4842,7 @@ pub const ALL_CODE: & [ & str] = &[
 "NPR",
 "NIO",
 "NGN",
+"MKD",
 "OMR",
 "PKR",
 "PAB",
@@ -4821,7 +4861,6 @@ pub const ALL_CODE: & [ & str] = &[
 "SAR",
 "RSD",
 "SCR",
-"SLL",
 "SLE",
 "SGD",
 "XSU",
@@ -4858,7 +4897,7 @@ pub const ALL_CODE: & [ & str] = &[
 "VND",
 "YER",
 "ZMW",
-"ZWL",
+"ZWG",
 "XBA",
 "XBB",
 "XBC",
@@ -4900,9 +4939,12 @@ pub const ALL_CODE: & [ & str] = &[
 "BGJ",
 "BGK",
 "BGL",
+"BGN",
 "BUK",
 "HRD",
 "HRK",
+"CUC",
+"ANG",
 "CYP",
 "CSJ",
 "CSK",
@@ -4956,6 +4998,7 @@ pub const ALL_CODE: & [ & str] = &[
 "ROL",
 "STD",
 "CSD",
+"SLL",
 "SKK",
 "SIT",
 "RHD",
@@ -4990,6 +5033,7 @@ pub const ALL_CODE: & [ & str] = &[
 "ZWD",
 "ZWN",
 "ZWR",
+"ZWL",
 "XFO",
 "XRE",
 "XFU",
@@ -5007,6 +5051,7 @@ pub const ALL_ACTIVE_CODE: & [ & str] = &[
 "USD",
 "AOA",
 "XCD",
+"XAD",
 "ARS",
 "AMD",
 "AWG",
@@ -5028,7 +5073,6 @@ pub const ALL_ACTIVE_CODE: & [ & str] = &[
 "NOK",
 "BRL",
 "BND",
-"BGN",
 "BIF",
 "CVE",
 "KHR",
@@ -5043,8 +5087,7 @@ pub const ALL_ACTIVE_CODE: & [ & str] = &[
 "NZD",
 "CRC",
 "CUP",
-"CUC",
-"ANG",
+"XCG",
 "CZK",
 "DKK",
 "DJF",
@@ -5092,7 +5135,6 @@ pub const ALL_ACTIVE_CODE: & [ & str] = &[
 "LYD",
 "CHF",
 "MOP",
-"MKD",
 "MGA",
 "MWK",
 "MYR",
@@ -5110,6 +5152,7 @@ pub const ALL_ACTIVE_CODE: & [ & str] = &[
 "NPR",
 "NIO",
 "NGN",
+"MKD",
 "OMR",
 "PKR",
 "PAB",
@@ -5128,7 +5171,6 @@ pub const ALL_ACTIVE_CODE: & [ & str] = &[
 "SAR",
 "RSD",
 "SCR",
-"SLL",
 "SLE",
 "SGD",
 "XSU",
@@ -5160,7 +5202,7 @@ pub const ALL_ACTIVE_CODE: & [ & str] = &[
 "VND",
 "YER",
 "ZMW",
-"ZWL",
+"ZWG",
 "XBA",
 "XBB",
 "XBC",
@@ -5225,9 +5267,12 @@ pub const ALL_HISTORIC_CODE: & [ & str] = &[
 "BGJ",
 "BGK",
 "BGL",
+"BGN",
 "BUK",
 "HRD",
 "HRK",
+"CUC",
+"ANG",
 "CYP",
 "CSJ",
 "CSK",
@@ -5281,6 +5326,7 @@ pub const ALL_HISTORIC_CODE: & [ & str] = &[
 "ROL",
 "STD",
 "CSD",
+"SLL",
 "SKK",
 "SIT",
 "RHD",
@@ -5315,6 +5361,7 @@ pub const ALL_HISTORIC_CODE: & [ & str] = &[
 "ZWD",
 "ZWN",
 "ZWR",
+"ZWL",
 "XFO",
 "XRE",
 "XFU",
@@ -5332,6 +5379,7 @@ pub const ALL_NUMERIC: & [i32] = &[
 840,
 973,
 951,
+396,
 032,
 051,
 533,
@@ -5354,7 +5402,6 @@ pub const ALL_NUMERIC: & [i32] = &[
 578,
 986,
 096,
-975,
 108,
 132,
 116,
@@ -5371,7 +5418,6 @@ pub const ALL_NUMERIC: & [i32] = &[
 554,
 188,
 192,
-931,
 532,
 203,
 208,
@@ -5420,7 +5466,6 @@ pub const ALL_NUMERIC: & [i32] = &[
 434,
 756,
 446,
-807,
 969,
 454,
 458,
@@ -5439,6 +5484,7 @@ pub const ALL_NUMERIC: & [i32] = &[
 524,
 558,
 566,
+807,
 512,
 586,
 590,
@@ -5457,7 +5503,6 @@ pub const ALL_NUMERIC: & [i32] = &[
 682,
 941,
 690,
-694,
 925,
 702,
 994,
@@ -5494,7 +5539,7 @@ pub const ALL_NUMERIC: & [i32] = &[
 704,
 886,
 967,
-932,
+924,
 955,
 956,
 957,
@@ -5525,7 +5570,9 @@ pub const ALL_NUMERIC: & [i32] = &[
 076,
 987,
 100,
+975,
 191,
+931,
 196,
 200,
 218,
@@ -5559,6 +5606,7 @@ pub const ALL_NUMERIC: & [i32] = &[
 642,
 678,
 891,
+694,
 703,
 705,
 716,
@@ -5580,6 +5628,7 @@ pub const ALL_NUMERIC: & [i32] = &[
 894,
 942,
 935,
+932,
 
 ];
 
@@ -5594,6 +5643,7 @@ pub const ALL_NUMERIC_STR: & [ & str] = &[
 "840",
 "973",
 "951",
+"396",
 "032",
 "051",
 "533",
@@ -5616,7 +5666,6 @@ pub const ALL_NUMERIC_STR: & [ & str] = &[
 "578",
 "986",
 "096",
-"975",
 "108",
 "132",
 "116",
@@ -5633,7 +5682,6 @@ pub const ALL_NUMERIC_STR: & [ & str] = &[
 "554",
 "188",
 "192",
-"931",
 "532",
 "203",
 "208",
@@ -5682,7 +5730,6 @@ pub const ALL_NUMERIC_STR: & [ & str] = &[
 "434",
 "756",
 "446",
-"807",
 "969",
 "454",
 "458",
@@ -5701,6 +5748,7 @@ pub const ALL_NUMERIC_STR: & [ & str] = &[
 "524",
 "558",
 "566",
+"807",
 "512",
 "586",
 "590",
@@ -5719,7 +5767,6 @@ pub const ALL_NUMERIC_STR: & [ & str] = &[
 "682",
 "941",
 "690",
-"694",
 "925",
 "702",
 "994",
@@ -5756,7 +5803,7 @@ pub const ALL_NUMERIC_STR: & [ & str] = &[
 "704",
 "886",
 "967",
-"932",
+"924",
 "955",
 "956",
 "957",
@@ -5787,7 +5834,9 @@ pub const ALL_NUMERIC_STR: & [ & str] = &[
 "076",
 "987",
 "100",
+"975",
 "191",
+"931",
 "196",
 "200",
 "218",
@@ -5821,6 +5870,7 @@ pub const ALL_NUMERIC_STR: & [ & str] = &[
 "642",
 "678",
 "891",
+"694",
 "703",
 "705",
 "716",
@@ -5842,6 +5892,7 @@ pub const ALL_NUMERIC_STR: & [ & str] = &[
 "894",
 "942",
 "935",
+"932",
 
 ];
 
@@ -5856,6 +5907,7 @@ DZD,
 USD,
 AOA,
 XCD,
+XAD,
 ARS,
 AMD,
 AWG,
@@ -5878,7 +5930,6 @@ BWP,
 NOK,
 BRL,
 BND,
-BGN,
 BIF,
 CVE,
 KHR,
@@ -5895,8 +5946,7 @@ CDF,
 NZD,
 CRC,
 CUP,
-CUC,
-ANG,
+XCG,
 CZK,
 DKK,
 DJF,
@@ -5944,7 +5994,6 @@ LRD,
 LYD,
 CHF,
 MOP,
-MKD,
 MGA,
 MWK,
 MYR,
@@ -5963,6 +6012,7 @@ NAD,
 NPR,
 NIO,
 NGN,
+MKD,
 OMR,
 PKR,
 PAB,
@@ -5981,7 +6031,6 @@ STN,
 SAR,
 RSD,
 SCR,
-SLL,
 SLE,
 SGD,
 XSU,
@@ -6018,7 +6067,7 @@ VED,
 VND,
 YER,
 ZMW,
-ZWL,
+ZWG,
 XBA,
 XBB,
 XBC,
@@ -6060,9 +6109,12 @@ BRR,
 BGJ,
 BGK,
 BGL,
+BGN,
 BUK,
 HRD,
 HRK,
+CUC,
+ANG,
 CYP,
 CSJ,
 CSK,
@@ -6116,6 +6168,7 @@ ROK,
 ROL,
 STD,
 CSD,
+SLL,
 SKK,
 SIT,
 RHD,
@@ -6150,6 +6203,7 @@ ZWC,
 ZWD,
 ZWN,
 ZWR,
+ZWL,
 XFO,
 XRE,
 XFU,
