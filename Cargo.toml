@@ -1,7 +1,8 @@
 [package]
 name = "rust_iso4217"
-version = "0.1.2"
+version = "0.1.3"
 edition = "2021"
+rust-version = "1.85"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
@@ -19,14 +20,11 @@ keywords=[ "iso4217","4217","currency"]
 crate-type = ["cdylib", "rlib"]
 
 [dependencies]
-phf = { version = "^0.11.1", features = ["macros"] }
-
-[target.'cfg(not(target_arch = "wasm32"))'.dependencies]
-prettytable-rs = "^0.10.0"
+phf = { version = "^0.14.0", features = ["macros"] }
 
 [target.'cfg(target_arch = "wasm32")'.dependencies]
-wasm-bindgen = "^0.2.83"
-js-sys = "^0.3.60"
+wasm-bindgen = "^0.2.100"
+js-sys = "^0.3.77"
 
 [target.'cfg(target_arch = "wasm32")'.dev-dependencies]
-wasm-bindgen-test = "^0.3.33"
+wasm-bindgen-test = "^0.3.50"

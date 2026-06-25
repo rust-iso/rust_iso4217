@@ -14,7 +14,7 @@ A rust crate providing ISO 4217 support.
 
 ``` sh
 [dependencies]
-rust_iso4217 = "0.1.2"
+rust_iso4217 = "0.1.3"
 ```
 
 ## Using

@@ -178,7 +178,7 @@ pub fn from_country(country: &str) -> Array {
 pub fn all_active_code() -> Array {
     let mut vector: Vec<&str> = Vec::new();
     for i in 0..ALL_ACTIVE_CODE.len() {
-        vector.push(ALL_ACTIVE_CODE[i].clone())
+        vector.push(ALL_ACTIVE_CODE[i])
     }
     vector.into_iter().map(JsValue::from).collect()
 }
@@ -188,7 +188,7 @@ pub fn all_active_code() -> Array {
 pub fn all_funds_code() -> Array {
     let mut vector: Vec<&str> = Vec::new();
     for i in 0..ALL_FUNDS_CODE.len() {
-        vector.push(ALL_FUNDS_CODE[i].clone())
+        vector.push(ALL_FUNDS_CODE[i])
     }
     vector.into_iter().map(JsValue::from).collect()
 }
@@ -198,7 +198,7 @@ pub fn all_funds_code() -> Array {
 pub fn all_historic_code() -> Array {
     let mut vector: Vec<&str> = Vec::new();
     for i in 0..ALL_HISTORIC_CODE.len() {
-        vector.push(ALL_HISTORIC_CODE[i].clone())
+        vector.push(ALL_HISTORIC_CODE[i])
     }
     vector.into_iter().map(JsValue::from).collect()
 }
